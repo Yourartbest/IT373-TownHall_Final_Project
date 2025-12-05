@@ -1,0 +1,3 @@
+Node.js: version 22.19.0
+npm: version 11.6.2
+Eleventy (@11ty/eleventy): version 3.1.2
