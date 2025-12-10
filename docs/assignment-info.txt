@@ -1,0 +1,868 @@
+This file has the information about the assignment.
+
+Town Hall - Project Brief
+
+Nice, this is a killer trio for 373. You’ve basically defined a mini ecosystem of AI-era orgs: a design museum, a career accelerator, and a civic nonprofit — all with real workflows.
+
+I’ll walk through this in 4 parts:
+
+    How the three projects fit together (shared systems + mindset)
+
+    MyWebClass.org – goals, workflows, tools, what you can demand from teams
+
+    Job Club – onboarding pipeline, CRM-ish thinking, automations
+
+    Town Hall – events, content, community, and how to make it feel “real”
+
+I’ll keep it assignment-oriented so you can turn this straight into specs.
+1. The ecosystem: one “stack”, three orgs
+
+You can frame this to students as:
+
+    “You’re building three organizations that could actually run tomorrow. Your job is to design the workflows, choose the tools, and implement just enough of the stack that a real person could use it.”
+
+Common expectations across all three:
+
+    Professional discovery & UX process
+
+        Stakeholder interviews (even if simulated)
+
+        Personas
+
+        Customer journey maps
+
+        Information architecture / sitemap
+
+        Low-/mid-fidelity wireframes
+
+        Brand guide (logo, colors, typography, tone of voice)
+
+    Tool evaluation
+
+        Compare at least 2 options for each category:
+
+            CMS (Sanity / WordPress / Strapi / Notion-as-CMS, etc.)
+
+            Automation (Zapier / Make / n8n)
+
+            CRM / contact management (HubSpot / Mailchimp / Airtable)
+
+            Community (Discord vs Slack vs “nothing”)
+
+    AI usage
+
+        “Vibe coding” with AI to generate boilerplate, content, and UX ideas
+
+        Use AI for process, not just code: interview scripts, persona drafts, journey maps, brand voice, etc.
+
+    Teams of 2
+
+        One leans slightly toward UX/strategy, one toward implementation, but both must touch everything.
+
+You can even let them share some global infrastructure (e.g., one Discord with separate channels for MyWebClass, Job Club, Town Hall) but separate sites/brands.
+2. MyWebClass.org – Design Styles as Living Websites
+
+Concept:
+A living gallery of web pages, each one a perfect demo of a design style (Swiss, Bauhaus, Flat, Brutalist, Neumorphism, etc.), wrapped by an umbrella site about “design + web tech.”
+Primary users
+
+    Design & CS/IS students
+
+    Teachers looking for examples
+
+    Curious devs/designers
+
+    Future 373 students
+
+Required UX & workflows
+
+a. Design Gallery Submission Workflow
+
+You specifically need:
+
+    Submission form
+
+        Fields:
+
+            Name, email
+
+            Role (student / external contributor / instructor)
+
+            Design style (select from taxonomy)
+
+            URL to live demo (or Git repo)
+
+            Short description: What makes this authentically Swiss/Bauhaus/Flat?
+
+            Assets: screenshots, maybe a Figma link
+
+    Moderation workflow
+
+        States: submitted → under review → approved → rejected
+
+        Someone (instructor or “curator” role) reviews submissions and approves.
+
+    Gallery display
+
+        Filter chips or tags by style (Swiss, Bauhaus, etc.).
+
+        Each gallery item: thumbnail, style, short blurb, link to “Learn more” page.
+
+        Detail page: explanation of the style, what this implementation demonstrates, links to code.
+
+b. CMS & tooling suggestions
+
+    CMS: Sanity is a great teaching example:
+
+        You get strongly-typed schema, modular content modeling, and good API.
+
+        Students define schemas for Style, GalleryEntry, Author, Article.
+
+    Front-end: Next.js / Astro front-end hitting Sanity content.
+
+    Automations with Zapier:
+
+        When a submission form is submitted → create a new CMS document in “submitted” state.
+
+        Notify a #mywebclass-submissions channel in Discord.
+
+        Optionally add submitter to HubSpot as “Design Contributor”.
+
+c. Educational content
+
+Every design style should have:
+
+    A style profile page:
+
+        History (timeline, origin)
+
+        Key characteristics (grid, type, color, layout)
+
+        Web examples
+
+        “Do / Don’t” list
+
+    A canonical web demo:
+
+        Actually implemented page that embodies the style.
+
+        Clear code structure: layout, CSS strategy, typography.
+
+d. AI integration ideas
+
+    Students use AI to:
+
+        Generate first-pass explanations of each design style, then fact-check and refine.
+
+        Generate CSS snippets, but then hand-tune them to match the authentic style.
+
+        Analyze a submitted page: “Explain why this is or isn’t Swiss style.”
+
+Good assignment asks:
+
+For MyWebClass.org, each team must:
+
+    Model at least:
+
+        3–4 design styles
+
+        3+ gallery entries
+
+        2–3 learning articles
+
+    Implement:
+
+        Submission form → CMS doc → moderation workflow
+
+        Approved entries show up automatically in the gallery
+
+    Deliver:
+
+        Personas (e.g., “design student”, “HS teacher”, “self-taught dev”)
+
+        Customer journey: “HS teacher wants examples for a slide deck”
+
+        Brand guide: how MyWebClass.org should look/feel (meta-style above the specific styles)
+
+3. Job Club – AI Careers & Consulting Onboarding Machine
+
+Concept:
+A club that onboards students into being AI consultants / startup builders; gives them structure, community, and a “career stack”: LinkedIn, GitHub, personal site, Calendly, Discord, etc.
+Primary users
+
+    NJIT students who want an AI-related career (consultant, startup founder, dev).
+
+    Secondary: mentors, alumni, employer partners.
+
+Core requirement: Onboarding workflow
+
+You already defined a strong constraint:
+
+    Students must get LinkedIn, GitHub, personal consulting site, Calendly/Zapier, and join Discord.
+
+Turn that into a concrete pipeline:
+
+    Landing page → “Join Job Club” CTA
+
+    Onboarding form
+
+        Name, major, grad year
+
+        Current links: LinkedIn, GitHub, personal site (if they have them)
+
+        Career goal (consulting, startup, SWE, data, etc.)
+
+        Skill self-assessment
+
+    Automated checklist
+
+        If LinkedIn missing → send “Set up LinkedIn” guide
+
+        If GitHub missing → send “GitHub starter” guide
+
+        If personal site missing → suggest templates (e.g., Notion or simple static)
+
+        Provide a personalized onboarding checklist email/Discord DM.
+
+    Calendly + Zapier
+
+        New member can book a “Career Onboarding Call” (maybe with student leaders).
+
+        Zapier: When an event is booked in Calendly:
+
+            Add/update HubSpot contact with “Onboarding call scheduled”.
+
+            Post in #jobclub-intros channel with key info so mentors can prep.
+
+    Discord integration
+
+        When someone submits the form and confirms email → auto-invite to Discord.
+
+        Roles: member, mentor, admin.
+
+        Optionally assign roles based on self-declared career path.
+
+Events & ongoing support
+
+    Recurring events:
+
+        Weekly standup: “What did you ship for your career this week?”
+
+        Monthly workshop: “Optimize your LinkedIn”, “Cold outreach for consulting gigs”.
+
+    Event system (CMS-based):
+
+        Store events in the same CMS (Sanity/Airtable/HubSpot).
+
+        Events page lists upcoming meetups, online sessions, etc.
+
+        “Add to calendar” links (Google/Outlook).
+
+AI usage baked into the club
+
+You can explicitly require they design AI-powered support flows, such as:
+
+    AI assistant that:
+
+        Reviews your LinkedIn and suggests improvements.
+
+        Creates a GitHub README template.
+
+        Drafts 3 outreach messages to potential clients/employers.
+
+    Discord bot (simple) that:
+
+        Responds to commands like !career-plan to give a template.
+
+        References internal docs.
+
+Good assignment asks:
+
+Job Club teams must:
+
+    Produce a customer journey map for:
+
+        “Student hears about the club → becomes onboarded → lands their first AI-related opportunity (internship, freelance gig, project).”
+
+    Implement:
+
+        Onboarding form → automation → Discord invite + HubSpot record + email with checklist.
+
+        An events page (at least 3 upcoming “fake but plausible” events).
+
+    Provide:
+
+        Persona set: e.g., “Sophomore with zero experience”, “Senior switching from business to AI”, “Grad student already coding.”
+
+        Brand guide: colors, visual tone (optimistic, practical, “builders, not hype”).
+
+4. Town Hall – Newark AI Community Nonprofit
+
+Concept:
+A community-facing nonprofit that hosts AI town halls, free training sessions, and has a content hub (blog/vlog) plus Discord for ongoing conversation.
+Primary users
+
+    Newark residents (low to moderate tech literacy)
+
+    Local educators, community organizers
+
+    Students & volunteers from NJIT who want to help
+
+Key features & workflows
+
+a. Events
+
+    Events listing:
+
+        Title, description (plain-language), location (physical or Zoom), date/time.
+
+        “What you’ll learn in this session” in accessible language.
+
+    Registration
+
+        Simple form: name, email, neighborhood, interest level.
+
+        Choose event(s) to attend.
+
+    Automation
+
+        On registration:
+
+            Add to HubSpot or mailing list as “Community Member”.
+
+            Send confirmation email (and/or SMS if integrated).
+
+            Optionally auto-generate a Discord invite link.
+
+    Post-event
+
+        Email follow-up with:
+
+            Recording or summary.
+
+            Slide deck link.
+
+            Next events.
+
+b. Content (Blog/Vlog)
+
+    Blog:
+
+        Plain-language posts like “What is AI?”, “How can AI help my small business?”, “AI and privacy: What should I know?”
+
+    Vlog:
+
+        Short recap videos of Town Halls.
+
+    Workflow:
+
+        Editors create content in CMS → mark as draft, ready, published.
+
+        Auto-post to Discord #announcements when new piece is published.
+
+c. Discord community
+
+    Channels like:
+
+        #announcements
+
+        #events
+
+        #ai-questions
+
+        #volunteers
+
+    Automations:
+
+        When someone registers as a volunteer → give them volunteer role in Discord.
+
+        Use Zapier to bridge forms ↔ Discord.
+
+AI usage for Town Hall
+
+    Summarize event transcripts into:
+
+        Blog posts
+
+        “Key takeaways” bullet lists
+
+        Social media copy
+
+    Generate:
+
+        Draft workshop outlines
+
+        Visuals (flyers, banners) with AI assistance (but human review)
+
+Good assignment asks:
+
+Town Hall teams must:
+
+    Design a customer journey like:
+
+        “Newark resident sees a flyer → visits site → registers for event → attends → stays in touch with community.”
+
+    Implement:
+
+        Event creation + listing + registration + confirmation flow.
+
+        Blog/vlog content model in CMS (even if content is minimal).
+
+    Deliver:
+
+        Personas including “low-tech literacy” and “concerned parent / small business owner.”
+
+        Brand guide that emphasizes trust, accessibility, and inclusion.
+
+
+
+
+
+Final Project
+
+    Due Dec 18 by 11:30am Points 100
+
+Two-Week Production Sprint – Master Requirements (All Projects)
+
+Applies to:
+
+    MyWebClass.org – Design Styles Gallery
+
+    Job Club – AI Career Accelerator
+
+    Town Hall – Newark AI Community Hub
+
+All teams must complete ALL the general requirements below, in addition to their project-specific requirements.
+1. Project Overview
+
+Each team will:
+
+    Clone, analyze, and adapt the EAiKW site architecture
+
+    Use Eleventy (11ty) for static generation
+
+    Integrate Sanity as the headless CMS
+
+    Build automations, integrate Discord, and create CRM pipelines
+
+    Follow a complete UX and discovery process
+
+    Use AI to accelerate all phases (research, UX, content, code)
+
+    Deliver a fully functional, production-ready website
+
+The top-performing teams in each category will have their projects selected as the official deployed version.
+2. Required Technology Stack
+Frontend & Architecture
+
+    Eleventy (11ty)
+
+    Node.js 20+
+
+    CSS structure harvested from EAiKW
+
+    Accessibility & SEO patterns derived from EAiKW
+
+    Minimal JS footprint unless necessary
+
+Backend & CMS
+
+    Sanity headless CMS (required)
+
+    API integration via GROQ, REST, or data-fetch script
+
+Automations & Integrations
+
+    Zapier or Make (at least one automation)
+
+    Discord (required for ALL projects)
+
+    CRM (HubSpot, Airtable, or Notion — required for ALL projects)
+
+CI/CD
+
+    GitHub Actions with linting, testing, Lighthouse, bundle-size checks, and deploy
+
+3. EAiKW Reference Site Requirement
+
+Each team must:
+
+    Clone the EAiKW repo:
+    https://github.com/kaw393939/eaikw 
+
+    Links to an external site.
+
+    Create a reference/ folder in their project repo containing:
+
+        Eleventy config analysis
+
+        CSS architecture notes
+
+        Accessibility findings
+
+        SEO strategy
+
+        Layout approach
+
+        Performance techniques
+
+        AI-generated harvest notes (harvest-notes.md)
+
+    Use VS Code with AI (“vibe coder”) to:
+
+        Extract reusable techniques
+
+        Assess accessibility practices
+
+        Document how EAiKW improves SEO, performance, and code structure
+
+        Adapt these into the new project
+
+4. Headless CMS Evaluation (Mandatory)
+
+Each team must evaluate Sanity + two other headless CMS options, such as:
+
+    Strapi
+
+    Contentful
+
+    Payload CMS
+
+    Hygraph
+
+    Ghost
+
+    Headless WordPress
+
+    Airtable/Notion (pseudo CMS)
+
+CMS Evaluation Report Must Include:
+
+    Comparison table across:
+
+        Data modeling
+
+        API/querying
+
+        Developer experience
+
+        Editorial workflow
+
+        Pricing & limits
+
+        Integration ease with Eleventy
+
+        Fit for THIS project
+
+    Final selection + justification (Sanity should win, but they must explain why)
+
+Deliverable: docs/cms-evaluation.md
+5. Discovery Requirements
+Personas (min. 3)
+
+Detailed, AI-assisted but human-refined.
+Customer Journey Map
+
+    Primary persona
+
+    Emotional states, pain points, opportunities
+
+Problem Statement & Goals
+
+Clear definition of:
+
+    The audience
+
+    The problem solved
+
+    Success metrics
+
+Competitor/Comparable Analysis
+
+At least 2 reference sites or tools.
+6. UX Requirements
+Information Architecture
+
+    Sitemap
+
+    Content models
+
+    Navigation map
+
+Wireframes
+
+Low-to-mid fidelity for:
+
+    Home page
+
+    Primary workflow
+
+    One secondary page
+
+Brand Guide
+
+    Logo
+
+    Colors
+
+    Typography
+
+    Tone/voice
+
+    Component samples
+
+7. Implementation Requirements
+Functional Site
+
+Each team must deploy:
+
+    A multi-page Eleventy site
+
+    CMS-driven content
+
+    A live demo URL (GitHub Pages, Vercel, or Netlify)
+
+Workflow Features
+
+Each project has a specific end-to-end workflow; all must function.
+Automation
+
+Minimum 1 automation using Zapier/Make, such as:
+
+    Form submission → Discord
+
+    Registration → CRM entry
+
+    Publish event in Sanity → Announcement to Discord
+
+    New member → Email with personalized checklist
+
+CRM Integration (Required across ALL projects)
+
+Each site must integrate with:
+
+    HubSpot (recommended)
+    OR
+
+    Airtable
+    OR
+
+    Notion database
+
+CRM must receive:
+
+    Form submissions
+
+    Registrations
+
+    Membership/onboarding data
+
+    Real user or sample test data
+
+Discord Integration (Required for ALL projects)
+
+Each site MUST:
+
+    Provide a Discord server or dedicated channels
+
+    Automate at least one base action, e.g.:
+
+        New submission → post in #submissions
+
+        New registrant → post in #events
+
+        New member → post in #introductions
+
+8. Privacy, GDPR, and Legal Requirements (Required)
+
+Every site must:
+GDPR-Compliant Cookie Consent Banner
+
+    Load only essential cookies initially
+
+    Delay analytics scripts until consent
+
+    Provide “Accept / Reject / Preferences”
+
+    Link to Privacy Policy page
+
+Privacy Policy Page
+
+Must include:
+
+    What data is collected
+
+    How data is stored (CRM, Sanity, forms)
+
+    Analytics tools used
+
+    How users can request deletion of their data
+
+    Cookie usage
+
+Legal Compliance Checklist
+
+    GDPR-aligned data transparency
+
+    Cookie banner before analytics
+
+    Clear consent logging if analytics are opt-in
+
+    Accessible forms with required labels
+
+    Alt text for all images
+
+    WCAG accessibility support
+
+Deliverable:
+
+    privacy.md or a page on the site
+
+    Screenshot proof of cookie consent being functional
+
+9. Web Analytics Evaluation + Implementation (Required)
+
+Teams must evaluate at least 2 analytics solutions, such as:
+Traditional Analytics
+
+    Google Analytics 4
+
+    Matomo
+
+    Plausible
+
+    Fathom
+
+    Cloudflare Web Analytics
+
+Privacy-Focused Alternatives
+
+    Simple Analytics
+
+    Umami
+
+Analytics Evaluation Must Include:
+
+    GDPR compliance
+
+    Cookie requirements
+
+    Cost
+
+    Setup complexity
+
+    Integration with Eleventy
+
+    Integration with consent banner
+
+    Pros/cons for this project
+
+Implementation Requirement
+
+Choose one analytics solution that:
+
+    Supports GDPR consent mode
+
+    Does not load until consent is given
+
+    Tracks basic interactions:
+
+        Page views
+
+        Events (e.g., form submissions)
+
+Deliverables:
+
+    docs/analytics-evaluation.md
+
+    Screenshot of the analytics dashboard with sample data
+
+    Code snippet or config file showing analytics injection into Eleventy layouts
+
+10. QA, Testing & CI/CD
+
+Each team must implement ALL of:
+
+    Linting: JS, CSS, Markdown, formatting
+
+    Playwright Tests: min. 2–3 (homepage + workflow page)
+
+    GitHub Actions CI:
+
+        Quality gates
+
+        Build
+
+        Test
+
+        Lighthouse
+
+        Bundle-size
+
+        Deploy
+
+QA Report
+
+A written QA document including:
+
+    Lighthouse scores
+
+    Bundle size
+
+    CI screenshots or logs
+
+    Test results
+
+    Accessibility notes
+
+Deliverable: docs/qa-report.md
+11. AI Usage Documentation
+
+Teams must maintain a clear record of AI usage.
+
+Include:
+
+    UX deliverables
+
+    Code generation
+
+    Research
+
+    Debugging
+
+    Content creation
+
+    Automation setup
+
+Deliverable: docs/ai-usage.md
+12. Final Presentation Requirements
+
+Each team must deliver a 5-minute pitch including:
+
+    Problem summary
+
+    Personas & journey map
+
+    CMS comparison
+
+    UX walkthrough
+
+    Workflow demo
+
+    Automation & CRM integration
+
+    GDPR & analytics solution
+
+    QA results (Lighthouse, CI, testing)
+
+    Why THEIR implementation should be chosen
+
+13. Deployment Requirement
+
+    Deployed site must be public
+
+    Deploy must be automated via CI
+
+    Must operate without build errors
+
+    Must display cookie banner and analytics only after consent
