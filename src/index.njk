@@ -1,0 +1,177 @@
+---
+layout: layouts/base.njk
+title: "Newark AI Town Hall - Accessible AI Education"
+description: "Making AI education accessible, plain-language, and community-centered for Newark residents. Free events, resources, and volunteer opportunities."
+---
+
+{# Hero Section #}
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1 id="hero-heading" class="hero-title">
+        AI EDUCATION<br>
+        FOR EVERYONE
+      </h1>
+      <p class="hero-text">
+        Making artificial intelligence accessible, plain-language, and community-centered for Newark residents.
+      </p>
+      <div class="hero-cta">
+        <a href="#events" class="btn btn-primary">View Upcoming Events</a>
+        <a href="/volunteer/" class="btn btn-outline">Get Involved</a>
+      </div>
+    </div>
+    <div class="hero-graphic" aria-hidden="true">
+      <div class="geometric-shape shape-circle"></div>
+      <div class="geometric-shape shape-square"></div>
+      <div class="geometric-shape shape-triangle"></div>
+    </div>
+  </div>
+</section>
+
+{# Mission Section #}
+<section class="mission" aria-labelledby="mission-heading">
+  <div class="container">
+    <h2 id="mission-heading" class="section-heading">OUR MISSION</h2>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="mission-icon mission-icon-accessible" aria-hidden="true"></div>
+        <h3 class="mission-card-title">ACCESSIBLE</h3>
+        <p class="mission-card-text">
+          No technical background required. We use plain language and real examples everyone can understand.
+        </p>
+      </div>
+      
+      <div class="mission-card">
+        <div class="mission-icon mission-icon-community" aria-hidden="true"></div>
+        <h3 class="mission-card-title">COMMUNITY-CENTERED</h3>
+        <p class="mission-card-text">
+          Led by Newark residents, for Newark residents. Local voices shape our content and events.
+        </p>
+      </div>
+      
+      <div class="mission-card">
+        <div class="mission-icon mission-icon-practical" aria-hidden="true"></div>
+        <h3 class="mission-card-title">PRACTICAL</h3>
+        <p class="mission-card-text">
+          Learn skills you can use today. From parenting tips to job search strategies with AI tools.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Events Section #}
+<section id="events" class="events" aria-labelledby="events-heading">
+  <div class="container">
+    <h2 id="events-heading" class="section-heading">UPCOMING EVENTS</h2>
+    
+    {% if events.length > 0 %}
+      <div class="events-grid">
+        {% for event in events %}
+        <article class="event-card" aria-labelledby="event-{{ loop.index }}-title">
+          {% if event.imageUrl %}
+          <img 
+            src="{{ event.imageUrl }}?w=400&h=250&fit=crop&auto=format" 
+            alt="{{ event.imageAlt or event.title }}"
+            class="event-card-image"
+            loading="lazy"
+            width="400"
+            height="250">
+          {% endif %}
+          
+          <div class="event-card-content">
+            <div class="event-card-meta">
+              <time datetime="{{ event.date | dateISO }}">
+                {{ event.date | dateFormat }}
+              </time>
+              {% if event.difficultyLevel %}
+              <span class="badge badge-{{ event.difficultyLevel }}">
+                {{ event.difficultyLevel }}
+              </span>
+              {% endif %}
+            </div>
+            
+            <h3 id="event-{{ loop.index }}-title" class="event-card-title">
+              {{ event.title }}
+            </h3>
+            
+            <p class="event-card-description">
+              {{ event.description }}
+            </p>
+            
+            {% if event.location %}
+            <p class="event-card-location">
+              <svg width="16" height="16" fill="currentColor" aria-hidden="true">
+                <use href="/icons/sprite.svg#location"></use>
+              </svg>
+              {{ event.location }}
+            </p>
+            {% endif %}
+            
+            <a href="/events/{{ event.slug }}/" class="btn btn-outline">
+              Learn More<span class="sr-only"> about {{ event.title }}</span>
+            </a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="events-empty">
+        <p>No upcoming events scheduled yet. Check back soon or <a href="/volunteer/">volunteer to help organize</a>!</p>
+      </div>
+    {% endif %}
+    
+    <div class="events-footer">
+      <a href="/events/" class="btn btn-primary">View All Events</a>
+    </div>
+  </div>
+</section>
+
+{# CTA Section #}
+<section class="cta" aria-labelledby="cta-heading">
+  <div class="container cta-container">
+    <h2 id="cta-heading" class="cta-heading">READY TO LEARN?</h2>
+    <p class="cta-text">
+      Join Newark residents learning about AI in plain language. Free events, helpful resources, and supportive community.
+    </p>
+    <div class="cta-buttons">
+      <a href="#events" class="btn btn-primary-inverse">Register for Event</a>
+      <a href="/resources/" class="btn btn-outline-inverse">Explore Resources</a>
+    </div>
+  </div>
+</section>
+
+{# Testimonials Section #}
+<section class="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <h2 id="testimonials-heading" class="section-heading">WHAT PEOPLE SAY</h2>
+    <div class="testimonials-grid">
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Finally, someone explaining AI in a way I can understand! I thought this was only for tech people."
+        </p>
+        <footer class="testimonial-author">
+          — Angela, Newark parent
+        </footer>
+      </blockquote>
+      
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "These resources help me teach my students about AI responsibly. Great for middle school level."
+        </p>
+        <footer class="testimonial-author">
+          — James, Newark educator
+        </footer>
+      </blockquote>
+      
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Volunteering with Town Hall gave me real experience to put on college applications. Highly recommend!"
+        </p>
+        <footer class="testimonial-author">
+          — Aisha, high school volunteer
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
