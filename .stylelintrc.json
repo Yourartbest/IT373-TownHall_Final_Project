@@ -1,0 +1,16 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "no-descending-specificity": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["tailwind", "apply", "layer", "config"]
+      }
+    ]
+  },
+  "ignoreFiles": ["_site/**/*.css", "node_modules/**/*.css"]
+}

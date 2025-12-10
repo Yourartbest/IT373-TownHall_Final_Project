@@ -5,13 +5,30 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:md",
+    "lint:js": "eslint src/**/*.js",
+    "lint:css": "stylelint src/css/**/*.css",
+    "lint:md": "markdownlint docs/**/*.md reference/**/*.md",
+    "format": "prettier --write \"src/**/*.{js,njk,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,njk,css,md}\"",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "lighthouse": "lhci autorun"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "tailwindcss": "^3.4.1",
+    "@lhci/cli": "^0.13.0",
+    "@playwright/test": "^1.40.1",
     "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.33"
+    "eslint": "^8.56.0",
+    "markdownlint-cli": "^0.38.0",
+    "postcss": "^8.4.33",
+    "prettier": "^3.1.1",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
     "@sanity/client": "^6.10.0",

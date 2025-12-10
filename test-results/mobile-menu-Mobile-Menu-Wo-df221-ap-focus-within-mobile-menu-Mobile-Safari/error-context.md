@@ -1,0 +1,106 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e5]:
+      - link "Newark AI Town Hall Home" [ref=e7]:
+        - /url: /
+        - text: NEWARK AI
+      - button "Toggle navigation menu" [expanded] [ref=e8] [cursor=pointer]:
+        - img [ref=e9]
+        - generic [ref=e10]: Open menu
+  - dialog "Navigation Menu" [ref=e11]:
+    - generic [ref=e12]:
+      - heading "Navigation Menu" [level=2] [ref=e13]
+      - navigation "Mobile navigation" [ref=e14]:
+        - link "Events" [ref=e15]:
+          - /url: /#events
+        - link "Resources" [ref=e16]:
+          - /url: /resources/
+        - link "Volunteer" [ref=e17]:
+          - /url: /volunteer/
+        - link "About" [ref=e18]:
+          - /url: /about/
+  - main [ref=e19]:
+    - region "AI EDUCATION FOR EVERYONE" [ref=e20]:
+      - generic [ref=e22]:
+        - heading "AI EDUCATION FOR EVERYONE" [level=1] [ref=e23]:
+          - text: AI EDUCATION
+          - text: FOR EVERYONE
+        - paragraph [ref=e24]: Making artificial intelligence accessible, plain-language, and community-centered for Newark residents.
+        - generic [ref=e25]:
+          - link "View Upcoming Events" [ref=e26] [cursor=pointer]:
+            - /url: "#events"
+          - link "Get Involved" [ref=e27] [cursor=pointer]:
+            - /url: /volunteer/
+    - region "OUR MISSION" [ref=e32]:
+      - generic [ref=e33]:
+        - heading "OUR MISSION" [level=2] [ref=e34]
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - heading "ACCESSIBLE" [level=3] [ref=e38]
+            - paragraph [ref=e39]: No technical background required. We use plain language and real examples everyone can understand.
+          - generic [ref=e40]:
+            - heading "COMMUNITY-CENTERED" [level=3] [ref=e42]
+            - paragraph [ref=e43]: Led by Newark residents, for Newark residents. Local voices shape our content and events.
+          - generic [ref=e44]:
+            - heading "PRACTICAL" [level=3] [ref=e46]
+            - paragraph [ref=e47]: Learn skills you can use today. From parenting tips to job search strategies with AI tools.
+    - region "UPCOMING EVENTS" [ref=e48]:
+      - generic [ref=e49]:
+        - heading "UPCOMING EVENTS" [level=2] [ref=e50]
+        - paragraph [ref=e52]:
+          - text: No upcoming events scheduled yet. Check back soon or
+          - link "volunteer to help organize" [ref=e53]:
+            - /url: /volunteer/
+          - text: "!"
+        - link "View All Events" [ref=e55] [cursor=pointer]:
+          - /url: /events/
+    - region "READY TO LEARN?" [ref=e56]:
+      - generic [ref=e57]:
+        - heading "READY TO LEARN?" [level=2] [ref=e58]
+        - paragraph [ref=e59]: Join Newark residents learning about AI in plain language. Free events, helpful resources, and supportive community.
+        - generic [ref=e60]:
+          - link "Register for Event" [ref=e61] [cursor=pointer]:
+            - /url: "#events"
+          - link "Explore Resources" [ref=e62] [cursor=pointer]:
+            - /url: /resources/
+    - region "WHAT PEOPLE SAY" [ref=e63]:
+      - generic [ref=e64]:
+        - heading "WHAT PEOPLE SAY" [level=2] [ref=e65]
+        - generic [ref=e66]:
+          - blockquote [ref=e67]:
+            - paragraph [ref=e68]: "\"Finally, someone explaining AI in a way I can understand! I thought this was only for tech people.\""
+            - generic [ref=e69]: — Angela, Newark parent
+          - blockquote [ref=e70]:
+            - paragraph [ref=e71]: "\"These resources help me teach my students about AI responsibly. Great for middle school level.\""
+            - generic [ref=e72]: — James, Newark educator
+          - blockquote [ref=e73]:
+            - paragraph [ref=e74]: "\"Volunteering with Town Hall gave me real experience to put on college applications. Highly recommend!\""
+            - generic [ref=e75]: — Aisha, high school volunteer
+  - contentinfo [ref=e76]:
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - heading "Newark AI Town Hall" [level=3] [ref=e80]
+          - paragraph [ref=e81]: Making AI education accessible for everyone in Newark.
+        - generic [ref=e82]:
+          - heading "Quick Links" [level=3] [ref=e83]
+          - navigation "Footer navigation" [ref=e84]:
+            - link "Events" [ref=e85]:
+              - /url: /#events
+            - link "Resources" [ref=e86]:
+              - /url: /resources/
+            - link "Volunteer" [ref=e87]:
+              - /url: /volunteer/
+            - link "Privacy Policy" [ref=e88]:
+              - /url: /privacy/
+        - generic [ref=e89]:
+          - heading "Connect" [level=3] [ref=e90]
+          - link "Join Discord Community" [ref=e91]:
+            - /url: https://discord.gg/newark-ai
+      - paragraph [ref=e93]: © 2025 Newark AI Town Hall. All rights reserved.
+```
