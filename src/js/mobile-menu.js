@@ -32,6 +32,8 @@ class MobileMenu {
     const menuLinks = this.menu.querySelectorAll('a')
     menuLinks.forEach(link => {
       link.addEventListener('click', () => this.close())
+      // Initially disable focus on hidden menu items
+      link.setAttribute('tabindex', '-1')
     })
 
     // Close on outside click
@@ -57,16 +59,22 @@ class MobileMenu {
     this.menu.setAttribute('aria-hidden', 'false')
     this.menuButton.setAttribute('aria-expanded', 'true')
 
+    // Enable focusable elements
+    const menuLinks = this.menu.querySelectorAll('a')
+    menuLinks.forEach(link => link.removeAttribute('tabindex'))
+
     // Prevent body scroll with scrollbar compensation
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
     document.body.style.overflow = 'hidden'
     document.body.style.paddingRight = `${scrollbarWidth}px`
 
-    // Focus first link
+    // Focus first link with slight delay for Safari
     this.updateFocusableElements()
-    if (this.firstFocusable) {
-      this.firstFocusable.focus()
-    }
+    setTimeout(() => {
+      if (this.firstFocusable) {
+        this.firstFocusable.focus()
+      }
+    }, 50)
 
     // Setup focus trap
     this.menu.addEventListener('keydown', this.handleFocusTrap.bind(this))
@@ -79,6 +87,10 @@ class MobileMenu {
     this.menu.classList.add('hidden')
     this.menu.setAttribute('aria-hidden', 'true')
     this.menuButton.setAttribute('aria-expanded', 'false')
+
+    // Disable focusable elements when hidden
+    const menuLinks = this.menu.querySelectorAll('a')
+    menuLinks.forEach(link => link.setAttribute('tabindex', '-1'))
 
     // Restore body scroll
     document.body.style.overflow = ''
