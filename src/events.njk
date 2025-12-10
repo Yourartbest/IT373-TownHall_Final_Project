@@ -1,0 +1,109 @@
+---
+layout: layouts/base.njk
+title: Upcoming Events - Newark AI Town Hall
+description: Join us for AI education workshops, town halls, and community events in Newark, NJ. Free and open to all community members.
+permalink: /events/
+---
+
+<section class="hero-section bg-bauhaus-blue text-white py-20">
+  <div class="container">
+    <div class="max-w-4xl">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 uppercase tracking-tight">
+        UPCOMING EVENTS
+      </h1>
+      <p class="text-xl md:text-2xl leading-relaxed">
+        Join us for workshops, town halls, and community gatherings focused on making AI
+        accessible to everyone in Newark.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="container">
+    {% if events.length > 0 %}
+      <div class="events-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for event in events %}
+          <article class="event-card bg-white border-4 border-black p-6 hover:shadow-xl transition-shadow">
+            <div class="event-date bg-bauhaus-red text-white px-4 py-2 inline-block mb-4">
+              <time datetime="{{ event.date }}">
+                {{ event.date | dateFormat }}
+              </time>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-3 uppercase">
+              <a href="/events/{{ event.slug }}/" class="hover:text-bauhaus-blue">
+                {{ event.title }}
+              </a>
+            </h2>
+
+            <div class="event-meta mb-4 space-y-2">
+              <p class="flex items-center gap-2">
+                <span class="font-bold">📍</span>
+                <span>{{ event.location }}</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <span class="font-bold">🕐</span>
+                <span>{{ event.time }}</span>
+              </p>
+            </div>
+
+            <p class="text-gray-700 mb-4">{{ event.excerpt }}</p>
+
+            <div class="flex gap-2 flex-wrap mb-4">
+              {% for tag in event.tags %}
+                <span class="bg-bauhaus-yellow px-3 py-1 text-sm font-bold uppercase">
+                  {{ tag }}
+                </span>
+              {% endfor %}
+            </div>
+
+            <a
+              href="/events/{{ event.slug }}/"
+              class="inline-block bg-black text-white px-6 py-3 font-bold uppercase hover:bg-bauhaus-blue transition-colors"
+            >
+              Learn More →
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="events-empty text-center py-16">
+        <div class="max-w-2xl mx-auto">
+          <div class="text-6xl mb-6">📅</div>
+          <h2 class="text-3xl font-bold mb-4 uppercase">No Upcoming Events</h2>
+          <p class="text-xl text-gray-600 mb-8">
+            We're planning exciting new events! Check back soon or join our Discord to stay
+            updated.
+          </p>
+          <a
+            href="https://discord.gg/newark-ai"
+            class="inline-block bg-bauhaus-blue text-white px-8 py-4 font-bold uppercase hover:bg-black transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join Discord Community
+          </a>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="py-16 bg-bauhaus-yellow">
+  <div class="container">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6 uppercase">Want to Host an Event?</h2>
+      <p class="text-xl mb-8">
+        We're always looking for community partners and speakers to help make AI education
+        accessible.
+      </p>
+      <a
+        href="/volunteer/"
+        class="inline-block bg-black text-white px-8 py-4 font-bold uppercase hover:bg-bauhaus-blue transition-colors"
+      >
+        Get Involved
+      </a>
+    </div>
+  </div>
+</section>
