@@ -10,7 +10,8 @@ const client = createClient({
 export default {
   url: 'https://newark-ai-townhall.netlify.app',
   title: 'Newark AI Town Hall',
-  description: 'Making AI education accessible, plain-language, and community-centered for Newark residents.',
+  description:
+    'Making AI education accessible, plain-language, and community-centered for Newark residents.',
   author: 'Newark AI Community',
   sanity: client
 }

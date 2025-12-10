@@ -1,7 +1,7 @@
 import site from './site.js'
 
 // Fetch upcoming events from Sanity
-export default async function() {
+export default async function () {
   try {
     const events = await site.sanity.fetch(`
       *[_type == "event" && date >= now()] | order(date asc)[0...3] {
