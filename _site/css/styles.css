@@ -276,7 +276,9 @@
     text-decoration: none;
     cursor: pointer;
     border: var(--border-width) solid var(--color-black);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
     border-radius: 0; /* No rounded corners - pure geometry */
   }
 
