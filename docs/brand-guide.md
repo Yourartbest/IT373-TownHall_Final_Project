@@ -704,6 +704,675 @@ The implementation uses modern web technologies while honoring Bauhaus principle
 
 ---
 
+## Pages & Features
+
+This section documents the complete page structure, unique components, interactive features, and user flows across the Newark AI Town Hall website.
+
+---
+
+### Page Overview
+
+The website consists of five main pages:
+
+1. **Home** (`/pages/Home.tsx`) - Landing page with hero, about section, featured events
+2. **Events** (`/pages/Events.tsx`) - Searchable/filterable event listing
+3. **Event Detail** (`/pages/EventDetail.tsx`) - Individual event page with registration
+4. **Resources** (`/pages/Resources.tsx`) - Filterable resource library
+5. **Volunteer** (`/pages/Volunteer.tsx`) - Volunteer opportunities and onboarding flow
+
+---
+
+### 1. Home Page
+
+**Purpose:** Welcome visitors, communicate value proposition, showcase upcoming events
+
+**Layout Structure:**
+
+```
+Navigation (sticky)
+├── Hero Section (Bauhaus Blue background)
+│   ├── Decorative geometric shapes
+│   ├── Yellow accent bar
+│   ├── Main headline
+│   ├── Supporting copy
+│   └── CTA buttons (Browse Events, What Is AI?)
+│
+├── Upcoming Events Preview
+│   ├── Section header with red accent bar
+│   ├── 3-column event card grid
+│   └── "View All Events" button
+│
+├── Info Row (3 cards with colored shadows)
+│   ├── Who It's For (red shadow)
+│   ├── What You'll Learn (yellow shadow)
+│   └── Always Free (blue shadow)
+│
+├── About Us Section
+│   ├── 2-column layout (content + value cards)
+│   ├── Mission statement
+│   ├── Value proposition cards
+│   └── CTA buttons
+│
+└── Discord CTA Section
+Footer
+```
+
+**Key Components:**
+- **Hero with geometric shapes** - Red circle, yellow square, white circle outlines
+- **Event Cards** (3 featured) - Preview of upcoming events
+- **Info Cards** - Colored offset shadows (black/yellow/blue)
+- **Value Proposition Cards** - Stacked cards with icons (Community-Led, Accessible Learning, Always Free)
+- **DiscordCTA** - Full-width call-to-action section
+
+**Interactions:**
+- Click "Browse Events" → Navigate to Events page
+- Click "View All Events" → Navigate to Events page
+- Click Event Card → Navigate to Event Detail page
+- Click "Get Involved" → Navigate to Volunteer page
+
+---
+
+### 2. Events Page
+
+**Purpose:** Display all events with filtering capabilities
+
+**Layout Structure:**
+
+```
+Navigation (sticky)
+├── Page Header (gray background)
+│   ├── Red accent bar
+│   ├── Page title
+│   └── Description
+│
+├── Filter Bar (sticky, white background)
+│   ├── Filter icon (yellow square)
+│   ├── Filter chips (horizontal scroll on mobile)
+│   └── Active state highlighting
+│
+└── Event Grid
+    ├── Event count indicator
+    ├── 3-column grid (responsive)
+    └── Empty state (if no results)
+Footer
+```
+
+**Filters:**
+- All
+- Beginner-Friendly
+- Family-Friendly
+- Educators
+- Youth
+- Volunteer
+
+**Key Components:**
+- **Sticky Filter Bar** - Remains visible when scrolling
+- **Filter Chips** - Active state with red background and shadow
+- **Event Cards** - Hover effects with shadow
+- **Empty State** - Yellow circle + message + "View all events" link
+
+**Interactions:**
+- Click filter chip → Updates event list in real-time
+- Click Event Card "View Details" → Navigate to Event Detail page
+- Click Event Card "Register" → Open Registration Modal
+- Mobile: Horizontal scroll for filter chips
+
+**States:**
+- Active Filter: Red background, black border, black shadow
+- Inactive Filter: White background, black border, hover shadow
+- Empty State: No events found message with reset option
+
+---
+
+### 3. Event Detail Page
+
+**Purpose:** Show comprehensive event information and enable registration
+
+**Layout Structure:**
+
+```
+Navigation (sticky)
+├── Back Button Bar
+│   └── "Back to Events" link
+│
+├── Event Hero (Bauhaus Blue background)
+│   ├── Decorative shapes
+│   ├── Tags (difficulty, category)
+│   ├── Yellow accent bar
+│   ├── Event title
+│   ├── Date/time card
+│   ├── Location card
+│   └── "Register Now" button
+│
+├── Event Details (2-column on desktop)
+│   ├── Main Content
+│   │   ├── "What You'll Learn" section (gray box)
+│   │   │   └── Checklist with red square checkmarks
+│   │   └── "About This Event" section
+│   │       └── Event description (multi-paragraph)
+│   │
+│   └── Sidebar
+│       ├── Quick Info card
+│       │   ├── Duration
+│       │   ├── Cost
+│       │   └── Registration info
+│       └── Related Events
+│           └── 2 event cards
+│
+└── Discord CTA Section
+Footer
+```
+
+**Key Components:**
+- **Event Hero** - Tags + title + info cards + CTA
+- **Info Cards** - Date/time and location with icons
+- **What You'll Learn Box** - Gray background, checklist items with red checkmarks
+- **Quick Info Card** - Bordered card with event metadata
+- **Related Events** - Suggested similar events
+
+**Interactions:**
+- Click "Back to Events" → Navigate to Events page
+- Click "Register Now" → Open Registration Modal
+- Click Related Event Card → Navigate to that Event Detail page
+
+---
+
+### 4. Resources Page
+
+**Purpose:** Provide filterable library of educational resources
+
+**Layout Structure:**
+
+```
+Navigation (sticky)
+├── Page Header (gray background)
+│   ├── Blue accent bar
+│   ├── Page title
+│   └── Description
+│
+├── Filter Section
+│   ├── Category Filter
+│   │   ├── Red filter icon
+│   │   ├── Filter label
+│   │   └── Filter chips (All, Article, Educator Resource, Guide)
+│   │
+│   └── Audience Filter
+│       ├── Blue filter icon
+│       ├── Filter label
+│       └── Filter chips (All, Parents, Educators, Volunteers, General)
+│
+└── Resource Grid
+    ├── Resource count indicator
+    ├── 3-column grid (responsive)
+    └── Resource cards
+Footer
+```
+
+**Filters:**
+- **Category:** All, Article, Educator Resource, Guide
+- **Audience:** All, Parents, Educators, Volunteers, General
+
+**Key Components:**
+- **Dual Filter System** - Category + Audience filters work together
+- **Resource Cards** - Category badge, title, summary, download button
+- **Filter Chips** - Same style as Events page
+
+**Interactions:**
+- Click Category filter → Updates resource list
+- Click Audience filter → Updates resource list
+- Both filters work together (AND logic)
+- Click "Download" on card → Download resource (mock)
+
+**Card Variants:**
+- **Guide** - Blue accent
+- **Article** - Red accent
+- **Educator Resource** - Yellow accent
+
+---
+
+### 5. Volunteer Page
+
+**Purpose:** Showcase volunteer opportunities and facilitate sign-up
+
+**Layout Structure:**
+
+```
+Navigation (sticky)
+├── Hero Section (Bauhaus Blue background)
+│   ├── Decorative shapes
+│   ├── Yellow accent bar
+│   ├── Headline
+│   ├── Description
+│   └── "Start Volunteering" button
+│
+├── Why Volunteer Section (gray background)
+│   ├── Red accent bar
+│   ├── Section title
+│   └── 3-column benefit cards
+│       ├── Make an Impact (yellow circle icon)
+│       ├── Flexible Schedule (blue circle icon)
+│       └── Learn & Grow (red circle icon)
+│
+├── Volunteer Roles Section
+│   ├── Blue accent bar
+│   ├── Section title
+│   └── 3 role cards
+│       ├── Event Assistant (icon + details)
+│       ├── Community Helper (icon + details)
+│       └── Content Helper (icon + details)
+│
+└── Discord CTA Section
+Footer
+```
+
+**Volunteer Onboarding Flow:**
+
+When user clicks "Start Volunteering", a multi-step modal appears:
+
+**Step 1: Your Info**
+- Full Name input
+- Email input
+- Phone Number input
+- Cancel / Continue buttons
+
+**Step 2: Join Discord**
+- Explanation of Discord
+- Link to Discord server
+- "Join Discord" button
+- Back / Continue buttons
+
+**Step 3: Get Assigned**
+- Role selection checkboxes
+  - Event Assistant
+  - Community Helper
+  - Content Helper
+- Availability selection
+- Submit button
+
+**Success State:**
+- Green checkmark icon
+- "Thank you" message
+- Discord invite button
+- Close button
+
+**Key Components:**
+- **Progress Indicator** - 3-step progress bar with checkmarks
+- **Role Cards** - Icon, title, description, commitment, skills required
+- **Benefit Cards** - Icon containers with colored backgrounds
+- **Onboarding Modal** - Multi-step form with validation
+
+**Interactions:**
+- Click "Start Volunteering" → Open onboarding modal
+- Complete Step 1 → Advance to Step 2
+- Complete Step 2 → Advance to Step 3
+- Submit Step 3 → Show success message
+- Click Discord button → Open Discord invite (external)
+
+**Form Validation:**
+- All fields required on Step 1
+- Email validation
+- Phone number validation
+- At least one role must be selected on Step 3
+
+---
+
+### Shared Components
+
+These components appear across multiple pages:
+
+#### Navigation
+
+**Component:** `/components/Navigation.tsx`
+
+**Features:**
+- Sticky positioning
+- Bauhaus Blue background
+- Black bottom border
+- Logo (Newark AI)
+- Navigation items: Home, Events, Resources, Volunteer
+- Active state highlighting
+- Mobile hamburger menu
+
+**States:**
+- **Active Page:** Red background, black border
+- **Hover:** Yellow border, yellow text
+- **Mobile:** Hamburger menu with slide-out drawer
+
+---
+
+#### Footer
+
+**Component:** `/components/Footer.tsx`
+
+**Features:**
+- Black background
+- Multi-column layout (responsive)
+- Links to pages
+- Social media icons
+- Copyright notice
+
+---
+
+#### Event Card
+
+**Component:** `/components/EventCard.tsx`
+
+**Features:**
+- White background
+- 4px black border
+- Hover effect: lift + shadow
+- Difficulty tag (colored)
+- Event title
+- Date/time with calendar icon
+- Location with map pin icon
+- Summary text
+- Multiple tags
+- Two CTAs: "View Details" + "Register"
+
+**Tag Colors:**
+- Beginner-Friendly: Red
+- Family-Friendly: Yellow
+- Youth: Light Blue
+- Educators: Dark Blue
+- Business: Black
+
+**Hover Effect:**
+```css
+hover:-translate-y-1
+hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+```
+
+---
+
+#### Resource Card
+
+**Component:** `/components/ResourceCard.tsx`
+
+**Features:**
+- White background
+- 4px black border
+- Category badge (colored)
+- Resource title
+- Summary text
+- "Download" button
+- Hover effect: shadow
+
+**Category Colors:**
+- Guide: Blue
+- Article: Red
+- Educator Resource: Yellow
+
+---
+
+#### Registration Modal
+
+**Component:** `/components/RegistrationModal.tsx`
+
+**Features:**
+- Full-screen overlay (black, 80% opacity)
+- Centered modal with offset shadow
+- Bauhaus Blue header
+- Close button (X)
+- Event title display (yellow box)
+- Form fields:
+  - Full Name
+  - Email Address
+  - Neighborhood dropdown (Newark-specific)
+  - SMS opt-in toggle
+- Submit button
+- Success state with confirmation
+- Post-registration CTAs:
+  - Add to Calendar
+  - Join Discord
+  - Close
+
+**States:**
+- **Form State:** Input fields + submit button
+- **Success State:** Checkmark + confirmation + action buttons
+
+**Interactions:**
+- Click overlay → Close modal
+- Click X button → Close modal
+- Submit form → Show success state
+- Click "Add to Calendar" → Download .ics file (mock)
+- Click "Join Discord" → Open Discord invite
+- Click "Close" → Close modal
+
+---
+
+#### Discord CTA
+
+**Component:** `/components/DiscordCTA.tsx`
+
+**Features:**
+- Full-width section
+- Yellow background
+- Black borders (top + bottom)
+- Geometric decorative shapes
+- Discord logo/icon
+- Bold headline
+- Supporting copy
+- "Join Our Discord" button (black)
+- Appears on: Home, Event Detail, Volunteer pages
+
+**Purpose:** Drive community engagement through Discord platform
+
+---
+
+### User Flows
+
+#### Flow 1: Event Registration
+
+1. User lands on Home page
+2. Sees featured events → Clicks "Browse Events" OR "View All Events"
+3. Arrives at Events page
+4. (Optional) Filters by category (e.g., "Family-Friendly")
+5. Clicks "View Details" on event card
+6. Reads event details on Event Detail page
+7. Clicks "Register Now" button
+8. Registration modal appears
+9. Fills out form (name, email, neighborhood, SMS opt-in)
+10. Clicks "Submit"
+11. Success state appears with confirmation
+12. (Optional) Clicks "Add to Calendar" or "Join Discord"
+13. Closes modal
+14. Returns to Event Detail page
+
+---
+
+#### Flow 2: Resource Discovery
+
+1. User navigates to Resources page
+2. Sees all resources by default
+3. Filters by Category (e.g., "Guide")
+4. Filters by Audience (e.g., "Parents")
+5. Views filtered results (e.g., "AI Safety for Families")
+6. Clicks "Download" on resource card
+7. Resource downloads (mock)
+
+---
+
+#### Flow 3: Volunteer Sign-Up
+
+1. User clicks "Get Involved" from Home page OR navigates to Volunteer page
+2. Reads about volunteer opportunities
+3. Reviews volunteer roles (Event Assistant, Community Helper, Content Helper)
+4. Clicks "Start Volunteering" button
+5. Onboarding modal appears - Step 1
+6. Fills out personal information (name, email, phone)
+7. Clicks "Continue"
+8. Step 2: Discord explanation appears
+9. Clicks "Continue" (Discord join happens later)
+10. Step 3: Selects volunteer roles and availability
+11. Clicks "Submit"
+12. Success message appears
+13. Clicks "Join Discord" to complete onboarding
+14. Closes modal
+
+---
+
+### Page-Specific Patterns
+
+#### Hero Sections
+
+**Consistent across:** Home, Event Detail, Volunteer
+
+**Elements:**
+- Bauhaus Blue background (`#1D3557`)
+- Decorative geometric shapes (circles, squares, opacity 10-20%)
+- Yellow accent bar (24px wide, 12px tall)
+- Uppercase headline
+- Supporting copy (white text, 90% opacity)
+- CTA buttons
+
+---
+
+#### Section Headers
+
+**Consistent across:** All pages
+
+**Pattern:**
+```html
+<div class="mb-12">
+  <div class="w-20 h-3 bg-[#E63946] mb-6"></div>
+  <h2 class="uppercase tracking-tight mb-3">Section Title</h2>
+  <p class="text-gray-700 max-w-2xl">Section description</p>
+</div>
+```
+
+**Color coding:**
+- Red bar: Events, general sections
+- Blue bar: Resources, structural sections
+- Yellow bar: Hero sections, highlights
+
+---
+
+#### Card Grids
+
+**Responsive breakpoints:**
+- Mobile (< 768px): 1 column
+- Tablet (768px - 1023px): 2 columns
+- Desktop (≥ 1024px): 3 columns
+
+**Gap:** 24px (1.5rem)
+
+---
+
+### Interactive Elements
+
+#### Filter Chips
+
+**Visual States:**
+- **Default:** White background, black border
+- **Hover:** Black shadow appears
+- **Active:** Red background, white text, black shadow
+
+**Behavior:**
+- Click toggles active state
+- Only one filter can be active per category
+- Updates content in real-time (no page reload)
+
+---
+
+#### Sticky Elements
+
+**Navigation:** Always sticky at top (z-index: 50)
+
+**Filter Bar (Events/Resources):** Sticky below navigation when scrolling (z-index: 40)
+
+**Hierarchy:**
+```
+Navigation (z-50) - Always visible
+Filter Bar (z-40) - Sticky on Events/Resources
+Modals (z-50) - Overlay everything
+```
+
+---
+
+### Accessibility Features
+
+#### Keyboard Navigation
+
+- All buttons and links are keyboard accessible
+- Tab order follows visual hierarchy
+- Focus states visible on all interactive elements
+- Modal traps focus when open
+- ESC key closes modals
+
+#### Screen Reader Support
+
+- Semantic HTML (`<nav>`, `<section>`, `<article>`, `<button>`)
+- ARIA labels on icon-only buttons
+- Alt text on all images
+- Form labels properly associated with inputs
+- Error messages announced to screen readers
+
+#### Color Contrast
+
+All text meets WCAG AA standards:
+- White on Bauhaus Blue: AAA ✓
+- White on Bauhaus Red: AA ✓
+- Black on Bauhaus Yellow: AAA ✓
+- Black on White: AAA ✓
+
+#### Focus States
+
+```css
+focus:outline-none focus:border-[#E63946] /* Inputs */
+focus:ring-2 focus:ring-[#E63946] /* Checkboxes */
+```
+
+---
+
+### Mobile Optimizations
+
+#### Typography
+
+Headings scale down on mobile (see Typography section)
+
+#### Navigation
+
+Hamburger menu appears below 768px
+
+#### Filter Chips
+
+Horizontal scroll on mobile (< 768px) to prevent wrapping
+
+#### Grids
+
+All 3-column grids collapse to single column on mobile
+
+#### Spacing
+
+Container padding reduces from 32px to 16px on mobile
+
+#### Geometric Shapes
+
+Large decorative shapes resize or hide on mobile for performance
+
+---
+
+### Performance Considerations
+
+#### Component Structure
+
+- Pages split into multiple components
+- Shared components reused across pages
+- Lazy loading for modals (only render when open)
+
+#### State Management
+
+- Local state with React useState
+- No unnecessary re-renders
+- Filtered data computed client-side (no API calls)
+
+#### Image Optimization
+
+- Images from Unsplash CDN (optimized)
+- Placeholder component for missing images
+
+---
+
 ## Version
 
 **Style Guide Version:** 1.0  

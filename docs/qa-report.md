@@ -278,16 +278,23 @@ This report documents the quality assurance testing and continuous integration s
 
 ## 10. Deployment
 
-### Netlify Configuration
-- **Site URL:** https://newark-ai-townhall.netlify.app
-- **Deploy Trigger:** Push to main branch
-- **Build Command:** `npm run build`
-- **Publish Directory:** `_site`
+### Platform
+- **Hosting:** GitHub Pages
+- **Domain:** `https://[username].github.io/IT373-TownHall_Final_Project/`
+- **SSL:** Automatic HTTPS via GitHub Pages
 
-### Deploy Status
-- **Last Deploy:** [TBD]
-- **Build Time:** [TBD]
-- **Status:** [TBD]
+### Configuration
+- Build command: `npm run build`
+- Publish directory: `_site`
+- Environment variables: None required
+- Deploy previews: Available via GitHub Actions artifacts
+
+### Deployment Process
+1. Push to `main` branch
+2. GitHub Actions runs CI/CD pipeline
+3. If all checks pass, deploys to GitHub Pages
+4. GitHub Pages publishes site
+5. Site available at GitHub Pages URL within 1-2 minutes
 
 ---
 
