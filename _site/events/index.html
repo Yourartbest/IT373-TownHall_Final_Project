@@ -130,59 +130,43 @@
 
     
     <main id="main-content" role="main" tabindex="-1">
-<section class="hero-section bg-bauhaus-blue text-white py-20">
+<section class="hero" aria-labelledby="events-hero-heading">
   <div class="container">
-    <div class="max-w-4xl">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6 uppercase tracking-tight">
-        UPCOMING EVENTS
-      </h1>
-      <p class="text-xl md:text-2xl leading-relaxed">
-        Join us for workshops, town halls, and community gatherings focused on making AI
-        accessible to everyone in Newark.
-      </p>
+    <h1 id="events-hero-heading" class="hero-title">UPCOMING EVENTS</h1>
+    <p class="hero-text">
+      Join us for workshops, town halls, and community gatherings focused on making AI accessible to everyone in Newark.
+    </p>
+  </div>
+</section>
+
+<section class="events" aria-labelledby="events-heading">
+  <div class="container">
+    <h2 id="events-heading" class="section-heading">ALL EVENTS</h2>
+    
+      <div class="events-empty">
+        <p>
+          No upcoming events scheduled yet. Check back soon or
+          <a href="/volunteer/">volunteer to help organize</a>!
+        </p>
+      </div>
+    
+
+    <div class="events-footer">
+      <a href="https://discord.gg/newark-ai" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        Join Discord Community
+      </a>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-white">
+<section class="cta" aria-labelledby="host-cta-heading">
   <div class="container">
-    
-      <div class="events-empty text-center py-16">
-        <div class="max-w-2xl mx-auto">
-          <div class="text-6xl mb-6">📅</div>
-          <h2 class="text-3xl font-bold mb-4 uppercase">No Upcoming Events</h2>
-          <p class="text-xl text-gray-600 mb-8">
-            We're planning exciting new events! Check back soon or join our Discord to stay
-            updated.
-          </p>
-          <a
-            href="https://discord.gg/newark-ai"
-            class="inline-block bg-bauhaus-blue text-white px-8 py-4 font-bold uppercase hover:bg-black transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join Discord Community
-          </a>
-        </div>
-      </div>
-    
-  </div>
-</section>
-
-<section class="py-16 bg-bauhaus-yellow">
-  <div class="container">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-6 uppercase">Want to Host an Event?</h2>
-      <p class="text-xl mb-8">
-        We're always looking for community partners and speakers to help make AI education
-        accessible.
-      </p>
-      <a
-        href="/volunteer/"
-        class="inline-block bg-black text-white px-8 py-4 font-bold uppercase hover:bg-bauhaus-blue transition-colors"
-      >
-        Get Involved
-      </a>
+    <h2 id="host-cta-heading" class="cta-heading">WANT TO HOST AN EVENT?</h2>
+    <p class="cta-text">
+      We're always looking for community partners and speakers to help make AI education accessible.
+    </p>
+    <div class="cta-buttons">
+      <a href="/volunteer/" class="btn btn-primary-inverse">Get Involved</a>
     </div>
   </div>
 </section>
