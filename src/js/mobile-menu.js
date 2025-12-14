@@ -50,15 +50,17 @@ class MobileMenu {
   }
 
   open() {
-        // Global outside-click (capture) for reliability across browsers
-        this.boundDocumentClick = this.boundDocumentClick || (e => {
-          if (!this.isOpen) return
-          const content = this.menu.querySelector('.mobile-menu-content')
-          if (content && !content.contains(e.target)) {
-            this.close()
-          }
-        })
-        document.addEventListener('click', this.boundDocumentClick, true)
+    // Global outside-click (capture) for reliability across browsers
+    this.boundDocumentClick =
+      this.boundDocumentClick ||
+      (e => {
+        if (!this.isOpen) return
+        const content = this.menu.querySelector('.mobile-menu-content')
+        if (content && !content.contains(e.target)) {
+          this.close()
+        }
+      })
+    document.addEventListener('click', this.boundDocumentClick, true)
     this.isOpen = true
 
     // Update DOM
@@ -89,10 +91,10 @@ class MobileMenu {
   }
 
   close() {
-        // Remove global outside-click listener
-        if (this.boundDocumentClick) {
-          document.removeEventListener('click', this.boundDocumentClick, true)
-        }
+    // Remove global outside-click listener
+    if (this.boundDocumentClick) {
+      document.removeEventListener('click', this.boundDocumentClick, true)
+    }
     this.isOpen = false
 
     // Update DOM
@@ -158,7 +160,11 @@ class MobileMenu {
     setTimeout(() => {
       if (!e.shiftKey && document.activeElement === this.lastFocusable && this.firstFocusable) {
         this.firstFocusable.focus()
-      } else if (e.shiftKey && document.activeElement === this.firstFocusable && this.lastFocusable) {
+      } else if (
+        e.shiftKey &&
+        document.activeElement === this.firstFocusable &&
+        this.lastFocusable
+      ) {
         this.lastFocusable.focus()
       }
     }, 100)
