@@ -33,15 +33,15 @@
     />
 
     {# Favicon #}
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | url }}" />
+    <link rel="alternate icon" href="{{ '/favicon.ico' | url }}" />
 
     {# Preconnect for Performance #}
     <link rel="dns-prefetch" href="https://ajcjdayi.api.sanity.io" />
     <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
 
     {# Stylesheet #}
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
 
     {# Schema.org JSON-LD #}
     <script type="application/ld+json">
@@ -70,15 +70,15 @@
       <div class="container">
         <nav aria-label="Main navigation" class="nav">
           <div class="nav-brand">
-            <a href="/" class="nav-logo" aria-label="Newark AI Town Hall Home"> NEWARK AI </a>
+            <a href="{{ '/' | url }}" class="nav-logo" aria-label="Newark AI Town Hall Home"> NEWARK AI </a>
           </div>
 
           {# Desktop Navigation #}
           <div class="nav-links" id="nav-links">
-            <a href="/#events" class="nav-link">Events</a>
-            <a href="/resources/" class="nav-link">Resources</a>
-            <a href="/volunteer/" class="nav-link">Volunteer</a>
-            <a href="/about/" class="nav-link">About</a>
+            <a href="{{ '/#events' | url }}" class="nav-link">Events</a>
+            <a href="{{ '/resources/' | url }}" class="nav-link">Resources</a>
+            <a href="{{ '/volunteer/' | url }}" class="nav-link">Volunteer</a>
+            <a href="{{ '/about/' | url }}" class="nav-link">About</a>
           </div>
 
           {# Mobile Menu Button #}
@@ -120,10 +120,10 @@
       <div class="mobile-menu-content">
         <h2 id="mobile-menu-title" class="sr-only">Navigation Menu</h2>
         <nav aria-label="Mobile navigation">
-          <a href="/#events" class="mobile-menu-link">Events</a>
-          <a href="/resources/" class="mobile-menu-link">Resources</a>
-          <a href="/volunteer/" class="mobile-menu-link">Volunteer</a>
-          <a href="/about/" class="mobile-menu-link">About</a>
+          <a href="{{ '/#events' | url }}" class="mobile-menu-link">Events</a>
+          <a href="{{ '/resources/' | url }}" class="mobile-menu-link">Resources</a>
+          <a href="{{ '/volunteer/' | url }}" class="mobile-menu-link">Volunteer</a>
+          <a href="{{ '/about/' | url }}" class="mobile-menu-link">About</a>
         </nav>
       </div>
     </div>
@@ -143,10 +143,10 @@
           <div class="footer-section">
             <h3 class="footer-heading">Quick Links</h3>
             <nav aria-label="Footer navigation">
-              <a href="/#events" class="footer-link">Events</a>
-              <a href="/resources/" class="footer-link">Resources</a>
-              <a href="/volunteer/" class="footer-link">Volunteer</a>
-              <a href="/privacy/" class="footer-link">Privacy Policy</a>
+              <a href="{{ '/#events' | url }}" class="footer-link">Events</a>
+              <a href="{{ '/resources/' | url }}" class="footer-link">Resources</a>
+              <a href="{{ '/volunteer/' | url }}" class="footer-link">Volunteer</a>
+              <a href="{{ '/privacy/' | url }}" class="footer-link">Privacy Policy</a>
             </nav>
           </div>
 
@@ -170,6 +170,6 @@
     </footer>
 
     {# JavaScript #}
-    <script src="/js/mobile-menu.js"></script>
+    <script src="{{ '/js/mobile-menu.js' | url }}"></script>
   </body>
 </html>
