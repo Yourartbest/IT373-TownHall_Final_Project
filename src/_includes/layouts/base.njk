@@ -172,6 +172,9 @@
     </footer>
 
     {# JavaScript #}
-    <script src="{{ '/js/mobile-menu.js' | url }}"></script>
+    {# Load with Eleventy url (pathPrefix) and fallback for local http-server #}
+    <script src="{{ '/js/mobile-menu.js' | url }}"
+      onerror="(function(){var s=document.createElement('script');s.src='/js/mobile-menu.js';document.body.appendChild(s);})()"
+    ></script>
   </body>
 </html>

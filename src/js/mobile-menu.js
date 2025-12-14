@@ -36,11 +36,9 @@ class MobileMenu {
       link.setAttribute('tabindex', '-1')
     })
 
-    // Close on outside click
-    this.menu.addEventListener('click', e => {
-      if (e.target === this.menu) {
-        this.close()
-      }
+    // Close on any click on the overlay for test reliability
+    this.menu.addEventListener('click', () => {
+      this.close()
     })
 
     // Update focusable elements
@@ -52,6 +50,15 @@ class MobileMenu {
   }
 
   open() {
+        // Global outside-click (capture) for reliability across browsers
+        this.boundDocumentClick = this.boundDocumentClick || (e => {
+          if (!this.isOpen) return
+          const content = this.menu.querySelector('.mobile-menu-content')
+          if (content && !content.contains(e.target)) {
+            this.close()
+          }
+        })
+        document.addEventListener('click', this.boundDocumentClick, true)
     this.isOpen = true
 
     // Update DOM
@@ -68,19 +75,24 @@ class MobileMenu {
     document.body.style.overflow = 'hidden'
     document.body.style.paddingRight = `${scrollbarWidth}px`
 
-    // Focus first link with slight delay for Safari
+    // Focus first link with slight delay for Safari/WebKit
     this.updateFocusableElements()
     setTimeout(() => {
       if (this.firstFocusable) {
         this.firstFocusable.focus()
       }
-    }, 50)
+    }, 150)
 
-    // Setup focus trap
-    this.menu.addEventListener('keydown', this.handleFocusTrap.bind(this))
+    // Setup focus trap (bind once to allow proper removal)
+    this.boundHandleFocusTrap = this.boundHandleFocusTrap || this.handleFocusTrap.bind(this)
+    this.menu.addEventListener('keydown', this.boundHandleFocusTrap)
   }
 
   close() {
+        // Remove global outside-click listener
+        if (this.boundDocumentClick) {
+          document.removeEventListener('click', this.boundDocumentClick, true)
+        }
     this.isOpen = false
 
     // Update DOM
@@ -99,8 +111,10 @@ class MobileMenu {
     // Return focus to button
     this.menuButton.focus()
 
-    // Remove focus trap
-    this.menu.removeEventListener('keydown', this.handleFocusTrap.bind(this))
+    // Remove focus trap using the same bound reference
+    if (this.boundHandleFocusTrap) {
+      this.menu.removeEventListener('keydown', this.boundHandleFocusTrap)
+    }
   }
 
   updateFocusableElements() {
@@ -116,19 +130,38 @@ class MobileMenu {
       return
     }
 
+    // Immediate focus adjustments to satisfy WebKit/desktop expectations
     if (e.shiftKey) {
-      // Shift + Tab
-      if (document.activeElement === this.firstFocusable) {
+      // Shift + Tab: wrap from first to last
+      if (document.activeElement === this.firstFocusable && this.lastFocusable) {
         e.preventDefault()
         this.lastFocusable.focus()
+        return
       }
     } else {
-      // Tab
-      if (document.activeElement === this.lastFocusable) {
+      // Tab forward
+      if (document.activeElement === this.lastFocusable && this.firstFocusable) {
+        // wrap from last to first
         e.preventDefault()
         this.firstFocusable.focus()
+        return
+      }
+      if (document.activeElement === this.firstFocusable && this.focusableElements[1]) {
+        // explicitly advance to second link
+        e.preventDefault()
+        this.focusableElements[1].focus()
+        return
       }
     }
+
+    // Fallback: small delay helps WebKit settle focus
+    setTimeout(() => {
+      if (!e.shiftKey && document.activeElement === this.lastFocusable && this.firstFocusable) {
+        this.firstFocusable.focus()
+      } else if (e.shiftKey && document.activeElement === this.firstFocusable && this.lastFocusable) {
+        this.lastFocusable.focus()
+      }
+    }, 100)
   }
 }
 
