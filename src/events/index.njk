@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
-title: "Town Hall Events"
-description: "Register for upcoming Newark AI Town Hall events. Plain-language sessions for residents, educators, and volunteers."
+title: 'Town Hall Events'
+description: 'Register for upcoming Newark AI Town Hall events. Plain-language sessions for residents, educators, and volunteers.'
 ---
 
 <section class="events" aria-labelledby="events-heading">
@@ -9,80 +9,122 @@ description: "Register for upcoming Newark AI Town Hall events. Plain-language s
     <h1 id="events-heading" class="section-heading">Upcoming Town Halls</h1>
 
     {% if events.length > 0 %}
-      <div class="events-grid">
-        {% for event in events %}
-        <article class="event-card" aria-labelledby="event-{{ loop.index }}-title">
-          {% if event.imageUrl %}
-          <img 
-            src="{{ event.imageUrl }}?w=800&h=450&fit=crop&auto=format" 
-            alt="{{ event.imageAlt or event.title }}"
-            class="event-card-image"
-            loading="lazy"
-            width="800"
-            height="450">
-          {% endif %}
+    <div class="events-grid">
+      {% for event in events %}
+      <article class="event-card" aria-labelledby="event-{{ loop.index }}-title">
+        {% if event.imageUrl %}
+        <img
+          src="{{ event.imageUrl }}?w=800&h=450&fit=crop&auto=format"
+          alt="{{ event.imageAlt or event.title }}"
+          class="event-card-image"
+          loading="lazy"
+          width="800"
+          height="450"
+        />
+        {% endif %}
 
-          <div class="event-card-content">
-            <div class="event-card-meta">
-              <time datetime="{{ event.date | dateISO }}">{{ event.date | dateFormat }}</time>
-              {% if event.difficultyLevel %}
-                <span class="badge badge-{{ event.difficultyLevel }}">{{ event.difficultyLevel }}</span>
-              {% endif %}
-            </div>
-
-            <h2 id="event-{{ loop.index }}-title" class="event-card-title">{{ event.title }}</h2>
-            <p class="event-card-description">{{ event.description }}</p>
-            {% if event.location %}
-              <p class="event-card-location">Location: {{ event.location }}</p>
+        <div class="event-card-content">
+          <div class="event-card-meta">
+            <time datetime="{{ event.date | dateISO }}">{{ event.date | dateFormat }}</time>
+            {% if event.difficultyLevel %}
+            <span class="badge badge-{{ event.difficultyLevel }}">{{ event.difficultyLevel }}</span>
             {% endif %}
           </div>
-        </article>
-        {% endfor %}
-      </div>
+
+          <h2 id="event-{{ loop.index }}-title" class="event-card-title">{{ event.title }}</h2>
+          <p class="event-card-description">{{ event.description }}</p>
+          {% if event.location %}
+          <p class="event-card-location">Location: {{ event.location }}</p>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
     {% else %}
-      <div class="events-empty">
-        <p>No upcoming events scheduled yet. Check back soon or <a href="/volunteer/">volunteer to help organize</a>!</p>
-      </div>
+    <div class="events-empty">
+      <p>
+        No upcoming events scheduled yet. Check back soon or
+        <a href="/volunteer/">volunteer to help organize</a>!
+      </p>
+    </div>
     {% endif %}
 
-    <hr class="divider" aria-hidden="true">
+    <hr class="divider" aria-hidden="true" />
 
     <section aria-labelledby="register-heading">
       <h2 id="register-heading" class="section-heading">Register</h2>
-      <p class="helper-text">Fill out this form to register for one or more upcoming Town Halls. We use plain language and practical examples — no technical experience required.</p>
+      <p class="helper-text">
+        Fill out this form to register for one or more upcoming Town Halls. We use plain language
+        and practical examples — no technical experience required.
+      </p>
 
-      <form 
+      <form
         id="registration-form"
         class="form"
-        action="https://hook.us2.make.com/vn41m5vw3xu73monp6u3la4q9v7f91oy" 
+        action="https://hook.us2.make.com/vn41m5vw3xu73monp6u3la4q9v7f91oy"
         method="POST"
         novalidate
-        aria-describedby="registration-instructions">
-
-        <p id="registration-instructions" class="sr-only">All fields marked with * are required. Use Tab to move between fields. Press Submit to send your registration.</p>
+        aria-describedby="registration-instructions"
+      >
+        <p id="registration-instructions" class="sr-only">
+          All fields marked with * are required. Use Tab to move between fields. Press Submit to
+          send your registration.
+        </p>
 
         <fieldset class="form-fieldset">
           <legend class="form-legend">Your Info</legend>
 
           <label class="form-label" for="name">Name *</label>
-          <input class="form-input" type="text" id="name" name="name" required minlength="2" aria-required="true">
+          <input
+            class="form-input"
+            type="text"
+            id="name"
+            name="name"
+            required
+            minlength="2"
+            aria-required="true"
+          />
 
           <label class="form-label" for="email">Email *</label>
-          <input class="form-input" type="email" id="email" name="email" required aria-required="true">
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            name="email"
+            required
+            aria-required="true"
+          />
 
           <label class="form-label" for="neighborhood">Neighborhood</label>
-          <input class="form-input" type="text" id="neighborhood" name="neighborhood" placeholder="e.g., Ironbound, Vailsburg, Weequahic">
+          <input
+            class="form-input"
+            type="text"
+            id="neighborhood"
+            name="neighborhood"
+            placeholder="e.g., Ironbound, Vailsburg, Weequahic"
+          />
         </fieldset>
 
         <fieldset class="form-fieldset">
           <legend class="form-legend">Interests</legend>
 
           <div class="checkbox-group" role="group" aria-label="Interests">
-            <label class="form-checkbox"><input type="checkbox" name="interests" value="parents"> Parents</label>
-            <label class="form-checkbox"><input type="checkbox" name="interests" value="educators"> Educators</label>
-            <label class="form-checkbox"><input type="checkbox" name="interests" value="students"> Students</label>
-            <label class="form-checkbox"><input type="checkbox" name="interests" value="small-business"> Small Business</label>
-            <label class="form-checkbox"><input type="checkbox" name="interests" value="privacy"> AI & Privacy</label>
+            <label class="form-checkbox"
+              ><input type="checkbox" name="interests" value="parents" /> Parents</label
+            >
+            <label class="form-checkbox"
+              ><input type="checkbox" name="interests" value="educators" /> Educators</label
+            >
+            <label class="form-checkbox"
+              ><input type="checkbox" name="interests" value="students" /> Students</label
+            >
+            <label class="form-checkbox"
+              ><input type="checkbox" name="interests" value="small-business" /> Small
+              Business</label
+            >
+            <label class="form-checkbox"
+              ><input type="checkbox" name="interests" value="privacy" /> AI & Privacy</label
+            >
           </div>
         </fieldset>
 
@@ -92,20 +134,22 @@ description: "Register for upcoming Newark AI Town Hall events. Plain-language s
 
           <div class="checkbox-group" role="group" aria-label="Event selection">
             {% for event in events %}
-              <label class="form-checkbox">
-                <input type="checkbox" name="events" value="{{ event.slug }}">
-                {{ event.title }} — {{ event.date | dateFormat }}
-              </label>
+            <label class="form-checkbox">
+              <input type="checkbox" name="events" value="{{ event.slug }}" />
+              {{ event.title }} — {{ event.date | dateFormat }}
+            </label>
             {% endfor %}
           </div>
         </fieldset>
 
-        <input type="hidden" name="source" value="townhall-site">
-        <input type="hidden" name="type" value="event-registration">
+        <input type="hidden" name="source" value="townhall-site" />
+        <input type="hidden" name="type" value="event-registration" />
 
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Submit Registration</button>
-          <p class="form-disclaimer">By registering, you agree to receive event updates. You can opt out anytime.</p>
+          <p class="form-disclaimer">
+            By registering, you agree to receive event updates. You can opt out anytime.
+          </p>
         </div>
       </form>
 
@@ -115,42 +159,42 @@ description: "Register for upcoming Newark AI Town Hall events. Plain-language s
 </section>
 
 <script>
-(function() {
-  const form = document.getElementById('registration-form');
-  const statusEl = document.getElementById('form-status');
-  if (!form || !statusEl) return;
+  ;(function () {
+    const form = document.getElementById('registration-form')
+    const statusEl = document.getElementById('form-status')
+    if (!form || !statusEl) return
 
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault()
 
-    statusEl.textContent = 'Submitting…';
+      statusEl.textContent = 'Submitting…'
 
-    const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+      const formData = new FormData(form)
+      const payload = Object.fromEntries(formData.entries())
 
-    // Collect multi-value fields
-    payload.interests = formData.getAll('interests');
-    payload.events = formData.getAll('events');
+      // Collect multi-value fields
+      payload.interests = formData.getAll('interests')
+      payload.events = formData.getAll('events')
 
-    // Basic validation: require name and email; events optional
-    if (!payload.name || !payload.email) {
-      statusEl.textContent = 'Please complete required fields (name and email).';
-      return;
-    }
+      // Basic validation: require name and email; events optional
+      if (!payload.name || !payload.email) {
+        statusEl.textContent = 'Please complete required fields (name and email).'
+        return
+      }
 
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
 
-      if (!res.ok) throw new Error('Submission failed');
+        if (!res.ok) throw new Error('Submission failed')
 
-      window.location.href = '/events/thanks/';
-    } catch (err) {
-      statusEl.textContent = 'There was a problem submitting the form. Please try again.';
-    }
-  });
-})();
+        window.location.href = '/events/thanks/'
+      } catch (err) {
+        statusEl.textContent = 'There was a problem submitting the form. Please try again.'
+      }
+    })
+  })()
 </script>

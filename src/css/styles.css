@@ -942,13 +942,16 @@
     border: var(--border-width) solid var(--color-black);
     background: var(--color-white);
     box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--color-black);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
     margin-bottom: calc(var(--grid-unit) * 3);
   }
 
   .form-input:focus {
     transform: translate(4px, 4px);
-    box-shadow: calc(var(--shadow-offset) - 4px) calc(var(--shadow-offset) - 4px) 0 var(--color-black);
+    box-shadow: calc(var(--shadow-offset) - 4px) calc(var(--shadow-offset) - 4px) 0
+      var(--color-black);
   }
 
   .helper-text {
