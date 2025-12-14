@@ -905,4 +905,85 @@
   .section-padding-lg {
     padding: calc(var(--grid-12) * 1.5) 0;
   }
+
+  /* Form Styles */
+  .form {
+    display: grid;
+    gap: calc(var(--grid-unit) * 6);
+    padding: calc(var(--grid-unit) * 4);
+    background: var(--color-white);
+    border: var(--border-width) solid var(--color-black);
+  }
+
+  .form-fieldset {
+    border: var(--border-width) solid var(--color-black);
+    padding: calc(var(--grid-unit) * 4);
+    background: var(--color-gray-light);
+  }
+
+  .form-legend {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-heading);
+    padding: 0 calc(var(--grid-unit) * 2);
+  }
+
+  .form-label {
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: calc(var(--grid-unit) * 1);
+  }
+
+  .form-input {
+    width: 100%;
+    min-height: var(--touch-target-min);
+    padding: calc(var(--grid-unit) * 2);
+    border: var(--border-width) solid var(--color-black);
+    background: var(--color-white);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--color-black);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    margin-bottom: calc(var(--grid-unit) * 3);
+  }
+
+  .form-input:focus {
+    transform: translate(4px, 4px);
+    box-shadow: calc(var(--shadow-offset) - 4px) calc(var(--shadow-offset) - 4px) 0 var(--color-black);
+  }
+
+  .helper-text {
+    color: var(--color-gray-dark);
+    font-size: 14px;
+    margin-bottom: calc(var(--grid-unit) * 2);
+  }
+
+  .checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: calc(var(--grid-unit) * 2);
+  }
+
+  .form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--grid-unit) * 2);
+    padding: calc(var(--grid-unit) * 1) calc(var(--grid-unit) * 2);
+    border: 2px solid var(--color-black);
+    background: var(--color-white);
+    min-height: var(--touch-target-min);
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--grid-unit) * 3);
+    flex-wrap: wrap;
+  }
+
+  .form-status {
+    margin-top: calc(var(--grid-unit) * 2);
+    min-height: var(--touch-target-min);
+    display: flex;
+    align-items: center;
+  }
 }
