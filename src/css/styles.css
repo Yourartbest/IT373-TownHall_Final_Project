@@ -11,21 +11,26 @@
 
 @layer base {
   :root {
-    /* Neo-Minimalist Color Palette - Neutral with Soft Accents */
-    --color-primary: #2C3E50;
-    --color-primary-light: #4A6278;
-    --color-primary-dark: #1A252F;
-    --color-accent: #5D7A99;
-    --color-accent-light: #8BA5C1;
-    --color-accent-subtle: #E8EDF2;
+    /* Neo-Minimalist Color Palette - Warm Neutral with Soft Accents */
+    --color-primary: #1e3a5f;
+    --color-primary-light: #2d5a8a;
+    --color-primary-dark: #142840;
+    --color-accent: #3b82b8;
+    --color-accent-light: #60a5fa;
+    --color-accent-subtle: #e0f2fe;
+    
+    /* Warm accent for variety */
+    --color-warm: #f59e0b;
+    --color-warm-subtle: #fef3c7;
     
     --color-black: #0F1419;
     --color-white: #FFFFFF;
-    --color-bg: #FAFBFC;
+    --color-bg: #f8fafc;
     --color-surface: #FFFFFF;
     
-    --color-gray-50: #F9FAFB;
-    --color-gray-100: #F3F4F6;
+    /* Slightly warmer grays for less stark white feel */
+    --color-gray-50: #f8fafc;
+    --color-gray-100: #f1f5f9;
     --color-gray-200: #E5E7EB;
     --color-gray-300: #D1D5DB;
     --color-gray-400: #9CA3AF;
