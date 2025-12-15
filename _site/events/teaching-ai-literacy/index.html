@@ -209,7 +209,19 @@
 
 <section style="padding: var(--grid-16) 0; background: var(--color-white)">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--grid-8)">
+    <style>
+      .event-detail-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--grid-8);
+      }
+      @media (min-width: 1024px) {
+        .event-detail-grid {
+          grid-template-columns: 2fr 1fr;
+        }
+      }
+    </style>
+    <div class="event-detail-grid">
       
       <div>
         
