@@ -49,7 +49,7 @@ test.describe('Homepage', () => {
     
     // Check nav-link items specifically (excludes logo)
     const navLinks = nav.locator('.nav-link')
-    await expect(navLinks).toHaveCount(3) // Events, Resources, Volunteer
+    await expect(navLinks).toHaveCount(4) // About, Events, Resources, Volunteer
   })
 
   test('should have skip link for accessibility', async ({ page }) => {
