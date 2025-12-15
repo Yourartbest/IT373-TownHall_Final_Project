@@ -5,7 +5,7 @@
  * - Provides Accept/Reject/Preferences options
  */
 
-(function () {
+;(function () {
   'use strict'
 
   const CONSENT_KEY = 'newark_ai_cookie_consent'
@@ -50,7 +50,7 @@
     gtag('js', new Date())
     gtag('config', GA_MEASUREMENT_ID, {
       anonymize_ip: true,
-      cookie_flags: 'SameSite=None;Secure',
+      cookie_flags: 'SameSite=None;Secure'
     })
   }
 
