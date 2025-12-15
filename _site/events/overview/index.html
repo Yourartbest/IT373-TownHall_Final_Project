@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
     
     <link rel="stylesheet" href="/IT373-TownHall_Final_Project/css/styles.css" />
@@ -135,32 +135,27 @@
 
     
     <main id="main-content" role="main" tabindex="-1">
-<section style="padding: var(--grid-16) 0; background: linear-gradient(135deg, var(--color-bauhaus-blue) 0%, var(--color-bauhaus-blue-dark) 100%); position: relative; overflow: hidden;" aria-labelledby="events-hero-heading">
-  
-  <div style="position: absolute; top: 10%; right: 5%; width: 350px; height: 350px; background: var(--color-bauhaus-yellow); opacity: 0.1; border-radius: 50%;"></div>
-  <div style="position: absolute; bottom: 10%; left: 5%; width: 250px; height: 250px; background: var(--color-bauhaus-red); opacity: 0.15; transform: rotate(45deg);"></div>
-  
-  <div class="container" style="position: relative; z-index: 1;">
-    <div style="max-width: 800px;">
-      <div style="width: 100px; height: 5px; background: var(--color-bauhaus-red); margin-bottom: var(--grid-4);"></div>
-      <h1 id="events-hero-heading" style="font-size: clamp(48px, 7vw, 72px); margin-bottom: var(--grid-5); color: var(--color-white); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em;">
-        UPCOMING EVENTS
+<section style="padding: var(--grid-24) 0; background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);" aria-labelledby="events-hero-heading">
+  <div class="container">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+      <h1 id="events-hero-heading" style="font-size: clamp(40px, 6vw, 64px); margin-bottom: var(--grid-6); color: var(--color-gray-900); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em;">
+        Upcoming events
       </h1>
-      <p style="font-size: clamp(18px, 2.5vw, 22px); line-height: 1.7; max-width: 700px; color: rgba(255,255,255,0.95); margin-bottom: var(--grid-6);">
+      <p style="font-size: var(--text-lg); line-height: 1.6; max-width: 600px; margin: 0 auto var(--grid-10); color: var(--color-gray-600);">
         Join us for free, hands-on learning sessions about AI. All events are designed for beginners and community members—no tech background required.
       </p>
-      <div style="display: flex; gap: var(--grid-4); flex-wrap: wrap;">
+      <div style="display: flex; gap: var(--grid-6); flex-wrap: wrap; justify-content: center;">
         <div style="display: flex; align-items: center; gap: var(--grid-2);">
-          <div style="width: 40px; height: 40px; background: var(--color-bauhaus-yellow); border: 3px solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 20px;">✓</div>
-          <span style="color: var(--color-white); font-weight: 600;">100% Free</span>
+          <div style="width: 32px; height: 32px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: white;">✓</div>
+          <span style="color: var(--color-gray-700); font-weight: 500;">100% Free</span>
         </div>
         <div style="display: flex; align-items: center; gap: var(--grid-2);">
-          <div style="width: 40px; height: 40px; background: var(--color-bauhaus-red); color: white; border: 3px solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 20px;">✓</div>
-          <span style="color: var(--color-white); font-weight: 600;">All Skill Levels</span>
+          <div style="width: 32px; height: 32px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: white;">✓</div>
+          <span style="color: var(--color-gray-700); font-weight: 500;">All skill levels</span>
         </div>
         <div style="display: flex; align-items: center; gap: var(--grid-2);">
-          <div style="width: 40px; height: 40px; background: var(--color-bauhaus-yellow); border: 3px solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 20px;">✓</div>
-          <span style="color: var(--color-white); font-weight: 600;">In-Person & Virtual</span>
+          <div style="width: 32px; height: 32px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: white;">✓</div>
+          <span style="color: var(--color-gray-700); font-weight: 500;">In-person & virtual</span>
         </div>
       </div>
     </div>
@@ -170,37 +165,31 @@
 <section
   class="events"
   aria-labelledby="filter-heading"
-  style="padding: var(--grid-8) 0; background: var(--color-gray-50)"
+  style="padding: var(--grid-16) 0; background: var(--color-white)"
 >
   <div class="container">
     
-    <div style="background: var(--color-white); border: var(--border-width) solid var(--color-black); padding: var(--grid-5); margin-bottom: var(--grid-8); box-shadow: var(--shadow-strong);">
-      <div style="display: flex; align-items: center; gap: var(--grid-3); margin-bottom: var(--grid-4);">
-        <div style="width: 50px; height: 50px; background: var(--color-bauhaus-yellow); border: var(--border-width) solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 24px;">🔍</div>
-        <div>
-          <h3 style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--text-lg); margin-bottom: 4px;">FILTER EVENTS</h3>
-          <p style="font-size: var(--text-sm); color: var(--color-gray-600);">Find the perfect event for your interests and skill level</p>
-        </div>
+    <div style="background: var(--color-gray-50); border-radius: var(--radius-xl); padding: var(--grid-8); margin-bottom: var(--grid-12);">
+      <div style="margin-bottom: var(--grid-5);">
+        <h3 style="font-weight: 600; font-size: var(--text-xl); margin-bottom: var(--grid-2); color: var(--color-gray-900);">Filter events</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-gray-600);">Find the perfect event for your interests and skill level</p>
       </div>
       <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap;">
-        <button class="btn btn-primary btn-small" data-filter="all">ALL EVENTS</button>
-        <button class="btn btn-outline btn-small" data-filter="beginner">🌟 BEGINNER</button>
-        <button class="btn btn-outline btn-small" data-filter="family">👨‍👩‍👧 FAMILY</button>
-        <button class="btn btn-outline btn-small" data-filter="educators">🎓 EDUCATORS</button>
-        <button class="btn btn-outline btn-small" data-filter="youth">🧒 YOUTH</button>
-        <button class="btn btn-outline btn-small" data-filter="volunteer">❤️ VOLUNTEER</button>
+        <button class="btn btn-primary btn-small" data-filter="all">All events</button>
+        <button class="btn btn-accent btn-small" data-filter="beginner">🌟 Beginner</button>
+        <button class="btn btn-accent btn-small" data-filter="family">👨‍👩‍👧 Family</button>
+        <button class="btn btn-accent btn-small" data-filter="educators">🎓 Educators</button>
+        <button class="btn btn-accent btn-small" data-filter="youth">🧒 Youth</button>
+        <button class="btn btn-accent btn-small" data-filter="volunteer">❤️ Volunteer</button>
       </div>
     </div>
 
     
     <div
-      style="display: flex; align-items: center; gap: var(--grid-2); margin-bottom: var(--grid-6)"
+      style="display: flex; align-items: center; gap: var(--grid-2); margin-bottom: var(--grid-8)"
     >
-      <div
-        style="width: 12px; height: 12px; background: var(--color-bauhaus-red); border-radius: 50%"
-      ></div>
-      <span style="font-weight: 700; text-transform: uppercase; font-size: 14px"
-        >3 EVENTS</span
+      <span style="font-weight: 600; font-size: var(--text-lg); color: var(--color-gray-900)"
+        >3 events</span
       >
     </div>
     
@@ -213,19 +202,19 @@
     >
       
       <article
-        class="card"
         aria-labelledby="event-1-title"
-        style="padding: var(--grid-4); background: white; display: flex; flex-direction: column"
+        style="padding: var(--grid-6); background: white; display: flex; flex-direction: column; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); transition: all var(--transition-base);"
+        onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.transform='translateY(-4px)';"
+        onmouseout="this.style.boxShadow='var(--shadow-md)'; this.style.transform='';"
       >
         <h3
           id="event-1-title"
           style="
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
+            font-size: var(--text-xl);
+            font-weight: 600;
             margin-bottom: var(--grid-4);
             line-height: 1.3;
-            letter-spacing: 0.02em;
+            color: var(--color-gray-900);
           "
         >
           AI Basics for Parents: What You Need to Know
@@ -241,87 +230,64 @@
           "
         >
           <div style="display: flex; align-items: center; gap: var(--grid-2)">
-            <div
-              style="
-                width: 8px;
-                height: 8px;
-                background: var(--color-bauhaus-red);
-                border-radius: 50%;
-                flex-shrink: 0;
-              "
-            ></div>
             <svg
               width="14"
               height="14"
-              fill="currentColor"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
               aria-hidden="true"
-              style="opacity: 0.7; flex-shrink: 0"
+              style="color: var(--color-gray-500); flex-shrink: 0"
             >
-              <rect
-                x="2"
-                y="3"
-                width="10"
-                height="9"
-                rx="1"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              />
-              <line x1="2" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" />
+              <rect x="2" y="3" width="10" height="9" rx="1"/>
+              <line x1="2" y1="6" x2="12" y2="6"/>
             </svg>
-            <time datetime="2025-12-20T18:00:00.000-05:00" style="font-size: 13px"
+            <time datetime="2025-12-20T18:00:00.000-05:00" style="font-size: var(--text-sm); color: var(--color-gray-600);"
               >Dec 20, 2025 • 2:00 PM</time
             >
           </div>
           <div style="display: flex; align-items: center; gap: var(--grid-2)">
-            <div
-              style="
-                width: 8px;
-                height: 8px;
-                background: var(--color-bauhaus-red);
-                border-radius: 50%;
-                flex-shrink: 0;
-              "
-            ></div>
             <svg
               width="14"
               height="14"
-              fill="currentColor"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
               aria-hidden="true"
-              style="opacity: 0.7; flex-shrink: 0"
+              style="color: var(--color-gray-500); flex-shrink: 0"
             >
               <path
                 d="M7 1.5C5.5 1.5 4 2.5 4 4.5c0 2.5 3 6 3 6s3-3.5 3-6c0-2-1.5-3-3-3zm0 4.5c-.8 0-1.5-.7-1.5-1.5S6.2 3 7 3s1.5.7 1.5 1.5S7.8 6 7 6z"
               />
             </svg>
-            <span style="font-size: 13px">Newark Public Library, Main Branch</span>
+            <span style="font-size: var(--text-sm); color: var(--color-gray-600);">Newark Public Library, Main Branch</span>
           </div>
         </div>
 
          
-        <div style="margin-bottom: var(--grid-3)">
+        <div style="margin-bottom: var(--grid-4)">
           <span
             style="
-              background: var(--color-bauhaus-red);
-              color: white;
-              padding: 6px var(--grid-2);
-              text-transform: uppercase;
-              font-size: 11px;
-              font-weight: 700;
-              letter-spacing: 0.05em;
+              background: var(--color-accent-subtle);
+              color: var(--color-accent);
+              padding: 4px 12px;
+              border-radius: var(--radius-full);
+              font-size: var(--text-xs);
+              font-weight: 500;
               display: inline-block;
             "
           >
-            beginner-FRIENDLY
+            Beginner-friendly
           </span>
         </div>
-         
+        
+        
         <p
           style="
-            font-size: 14px;
+            font-size: var(--text-sm);
             line-height: 1.6;
-            margin-bottom: var(--grid-4);
-            color: #333;
+            margin-bottom: var(--grid-5);
+            color: var(--color-gray-600);
             flex-grow: 1;
           "
         >
@@ -330,80 +296,48 @@
 
         
         <div
-          style="display: flex; gap: var(--grid-2); flex-wrap: wrap; margin-bottom: var(--grid-4)"
-        >
-          
-          <span
-            style="
-              border: 2px solid var(--color-black);
-              padding: 4px var(--grid-2);
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.03em;
-            "
-            >beginner</span
-          >
-            
-          <span
-            style="
-              border: 2px solid var(--color-black);
-              padding: 4px var(--grid-2);
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.03em;
-            "
-            >parents</span
-          >
-           
-        </div>
-
-        
-        <div
           style="
             display: flex;
-            gap: var(--grid-2);
+            gap: var(--grid-3);
             align-items: center;
-            padding-top: var(--grid-3);
-            border-top: 2px solid #eee;
           "
         >
           <a
             href="/events/ai-basics-for-parents/"
-            style="
-              text-decoration: none;
-              color: var(--color-bauhaus-blue);
-              font-weight: 700;
-              font-size: 13px;
-              text-transform: uppercase;
-              letter-spacing: 0.05em;
-            "
-            >DETAILS →</a
+            class="btn btn-primary btn-small"
+            style="flex: 1; text-align: center;"
+            >Register</a
           >
           <a
             href="/events/ai-basics-for-parents/"
-            class="btn btn-primary"
-            style="margin-left: auto; padding: var(--grid-2) var(--grid-4); font-size: 13px"
-            >REGISTER</a
+            style="
+              text-decoration: none;
+              color: var(--color-accent);
+              font-weight: 500;
+              font-size: var(--text-sm);
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            "
+            >Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 10l3-3-3-3"/></svg></a
           >
         </div>
       </article>
       
       <article
-        class="card"
         aria-labelledby="event-2-title"
-        style="padding: var(--grid-4); background: white; display: flex; flex-direction: column"
+        style="padding: var(--grid-6); background: white; display: flex; flex-direction: column; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); transition: all var(--transition-base);"
+        onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.transform='translateY(-4px)';"
+        onmouseout="this.style.boxShadow='var(--shadow-md)'; this.style.transform='';"
       >
         <h3
           id="event-2-title"
           style="
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
+            font-size: var(--text-xl);
+            font-weight: 600;
             margin-bottom: var(--grid-4);
             line-height: 1.3;
-            letter-spacing: 0.02em;
+            color: var(--color-gray-900);
           "
         >
           Teaching AI Literacy in the Classroom
@@ -419,87 +353,64 @@
           "
         >
           <div style="display: flex; align-items: center; gap: var(--grid-2)">
-            <div
-              style="
-                width: 8px;
-                height: 8px;
-                background: var(--color-bauhaus-red);
-                border-radius: 50%;
-                flex-shrink: 0;
-              "
-            ></div>
             <svg
               width="14"
               height="14"
-              fill="currentColor"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
               aria-hidden="true"
-              style="opacity: 0.7; flex-shrink: 0"
+              style="color: var(--color-gray-500); flex-shrink: 0"
             >
-              <rect
-                x="2"
-                y="3"
-                width="10"
-                height="9"
-                rx="1"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              />
-              <line x1="2" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" />
+              <rect x="2" y="3" width="10" height="9" rx="1"/>
+              <line x1="2" y1="6" x2="12" y2="6"/>
             </svg>
-            <time datetime="2025-12-21T15:00:00.000-05:00" style="font-size: 13px"
+            <time datetime="2025-12-21T15:00:00.000-05:00" style="font-size: var(--text-sm); color: var(--color-gray-600);"
               >Dec 21, 2025 • 2:00 PM</time
             >
           </div>
           <div style="display: flex; align-items: center; gap: var(--grid-2)">
-            <div
-              style="
-                width: 8px;
-                height: 8px;
-                background: var(--color-bauhaus-red);
-                border-radius: 50%;
-                flex-shrink: 0;
-              "
-            ></div>
             <svg
               width="14"
               height="14"
-              fill="currentColor"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
               aria-hidden="true"
-              style="opacity: 0.7; flex-shrink: 0"
+              style="color: var(--color-gray-500); flex-shrink: 0"
             >
               <path
                 d="M7 1.5C5.5 1.5 4 2.5 4 4.5c0 2.5 3 6 3 6s3-3.5 3-6c0-2-1.5-3-3-3zm0 4.5c-.8 0-1.5-.7-1.5-1.5S6.2 3 7 3s1.5.7 1.5 1.5S7.8 6 7 6z"
               />
             </svg>
-            <span style="font-size: 13px">Newark Teachers Center, Room 201</span>
+            <span style="font-size: var(--text-sm); color: var(--color-gray-600);">Newark Teachers Center, Room 201</span>
           </div>
         </div>
 
          
-        <div style="margin-bottom: var(--grid-3)">
+        <div style="margin-bottom: var(--grid-4)">
           <span
             style="
-              background: var(--color-bauhaus-red);
-              color: white;
-              padding: 6px var(--grid-2);
-              text-transform: uppercase;
-              font-size: 11px;
-              font-weight: 700;
-              letter-spacing: 0.05em;
+              background: var(--color-accent-subtle);
+              color: var(--color-accent);
+              padding: 4px 12px;
+              border-radius: var(--radius-full);
+              font-size: var(--text-xs);
+              font-weight: 500;
               display: inline-block;
             "
           >
-            intermediate-FRIENDLY
+            Intermediate-friendly
           </span>
         </div>
-         
+        
+        
         <p
           style="
-            font-size: 14px;
+            font-size: var(--text-sm);
             line-height: 1.6;
-            margin-bottom: var(--grid-4);
-            color: #333;
+            margin-bottom: var(--grid-5);
+            color: var(--color-gray-600);
             flex-grow: 1;
           "
         >
@@ -508,80 +419,48 @@
 
         
         <div
-          style="display: flex; gap: var(--grid-2); flex-wrap: wrap; margin-bottom: var(--grid-4)"
-        >
-          
-          <span
-            style="
-              border: 2px solid var(--color-black);
-              padding: 4px var(--grid-2);
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.03em;
-            "
-            >intermediate</span
-          >
-            
-          <span
-            style="
-              border: 2px solid var(--color-black);
-              padding: 4px var(--grid-2);
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.03em;
-            "
-            >educators</span
-          >
-           
-        </div>
-
-        
-        <div
           style="
             display: flex;
-            gap: var(--grid-2);
+            gap: var(--grid-3);
             align-items: center;
-            padding-top: var(--grid-3);
-            border-top: 2px solid #eee;
           "
         >
           <a
             href="/events/teaching-ai-literacy/"
-            style="
-              text-decoration: none;
-              color: var(--color-bauhaus-blue);
-              font-weight: 700;
-              font-size: 13px;
-              text-transform: uppercase;
-              letter-spacing: 0.05em;
-            "
-            >DETAILS →</a
+            class="btn btn-primary btn-small"
+            style="flex: 1; text-align: center;"
+            >Register</a
           >
           <a
             href="/events/teaching-ai-literacy/"
-            class="btn btn-primary"
-            style="margin-left: auto; padding: var(--grid-2) var(--grid-4); font-size: 13px"
-            >REGISTER</a
+            style="
+              text-decoration: none;
+              color: var(--color-accent);
+              font-weight: 500;
+              font-size: var(--text-sm);
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            "
+            >Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 10l3-3-3-3"/></svg></a
           >
         </div>
       </article>
       
       <article
-        class="card"
         aria-labelledby="event-3-title"
-        style="padding: var(--grid-4); background: white; display: flex; flex-direction: column"
+        style="padding: var(--grid-6); background: white; display: flex; flex-direction: column; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); transition: all var(--transition-base);"
+        onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.transform='translateY(-4px)';"
+        onmouseout="this.style.boxShadow='var(--shadow-md)'; this.style.transform='';"
       >
         <h3
           id="event-3-title"
           style="
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
+            font-size: var(--text-xl);
+            font-weight: 600;
             margin-bottom: var(--grid-4);
             line-height: 1.3;
-            letter-spacing: 0.02em;
+            color: var(--color-gray-900);
           "
         >
           AI Town Hall: Community Discussion
@@ -597,87 +476,64 @@
           "
         >
           <div style="display: flex; align-items: center; gap: var(--grid-2)">
-            <div
-              style="
-                width: 8px;
-                height: 8px;
-                background: var(--color-bauhaus-red);
-                border-radius: 50%;
-                flex-shrink: 0;
-              "
-            ></div>
             <svg
               width="14"
               height="14"
-              fill="currentColor"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
               aria-hidden="true"
-              style="opacity: 0.7; flex-shrink: 0"
+              style="color: var(--color-gray-500); flex-shrink: 0"
             >
-              <rect
-                x="2"
-                y="3"
-                width="10"
-                height="9"
-                rx="1"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              />
-              <line x1="2" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" />
+              <rect x="2" y="3" width="10" height="9" rx="1"/>
+              <line x1="2" y1="6" x2="12" y2="6"/>
             </svg>
-            <time datetime="2025-12-22T13:00:00.000-05:00" style="font-size: 13px"
+            <time datetime="2025-12-22T13:00:00.000-05:00" style="font-size: var(--text-sm); color: var(--color-gray-600);"
               >Dec 22, 2025 • 2:00 PM</time
             >
           </div>
           <div style="display: flex; align-items: center; gap: var(--grid-2)">
-            <div
-              style="
-                width: 8px;
-                height: 8px;
-                background: var(--color-bauhaus-red);
-                border-radius: 50%;
-                flex-shrink: 0;
-              "
-            ></div>
             <svg
               width="14"
               height="14"
-              fill="currentColor"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
               aria-hidden="true"
-              style="opacity: 0.7; flex-shrink: 0"
+              style="color: var(--color-gray-500); flex-shrink: 0"
             >
               <path
                 d="M7 1.5C5.5 1.5 4 2.5 4 4.5c0 2.5 3 6 3 6s3-3.5 3-6c0-2-1.5-3-3-3zm0 4.5c-.8 0-1.5-.7-1.5-1.5S6.2 3 7 3s1.5.7 1.5 1.5S7.8 6 7 6z"
               />
             </svg>
-            <span style="font-size: 13px">Newark City Hall, Council Chambers</span>
+            <span style="font-size: var(--text-sm); color: var(--color-gray-600);">Newark City Hall, Council Chambers</span>
           </div>
         </div>
 
          
-        <div style="margin-bottom: var(--grid-3)">
+        <div style="margin-bottom: var(--grid-4)">
           <span
             style="
-              background: var(--color-bauhaus-red);
-              color: white;
-              padding: 6px var(--grid-2);
-              text-transform: uppercase;
-              font-size: 11px;
-              font-weight: 700;
-              letter-spacing: 0.05em;
+              background: var(--color-accent-subtle);
+              color: var(--color-accent);
+              padding: 4px 12px;
+              border-radius: var(--radius-full);
+              font-size: var(--text-xs);
+              font-weight: 500;
               display: inline-block;
             "
           >
-            beginner-FRIENDLY
+            Beginner-friendly
           </span>
         </div>
-         
+        
+        
         <p
           style="
-            font-size: 14px;
+            font-size: var(--text-sm);
             line-height: 1.6;
-            margin-bottom: var(--grid-4);
-            color: #333;
+            margin-bottom: var(--grid-5);
+            color: var(--color-gray-600);
             flex-grow: 1;
           "
         >
@@ -686,86 +542,30 @@
 
         
         <div
-          style="display: flex; gap: var(--grid-2); flex-wrap: wrap; margin-bottom: var(--grid-4)"
-        >
-          
-          <span
-            style="
-              border: 2px solid var(--color-black);
-              padding: 4px var(--grid-2);
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.03em;
-            "
-            >beginner</span
-          >
-            
-          <span
-            style="
-              border: 2px solid var(--color-black);
-              padding: 4px var(--grid-2);
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.03em;
-            "
-            >parents</span
-          >
-          
-          <span
-            style="
-              border: 2px solid var(--color-black);
-              padding: 4px var(--grid-2);
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.03em;
-            "
-            >educators</span
-          >
-          
-          <span
-            style="
-              border: 2px solid var(--color-black);
-              padding: 4px var(--grid-2);
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.03em;
-            "
-            >community-leaders</span
-          >
-           
-        </div>
-
-        
-        <div
           style="
             display: flex;
-            gap: var(--grid-2);
+            gap: var(--grid-3);
             align-items: center;
-            padding-top: var(--grid-3);
-            border-top: 2px solid #eee;
           "
         >
           <a
             href="/events/ai-town-hall-community/"
-            style="
-              text-decoration: none;
-              color: var(--color-bauhaus-blue);
-              font-weight: 700;
-              font-size: 13px;
-              text-transform: uppercase;
-              letter-spacing: 0.05em;
-            "
-            >DETAILS →</a
+            class="btn btn-primary btn-small"
+            style="flex: 1; text-align: center;"
+            >Register</a
           >
           <a
             href="/events/ai-town-hall-community/"
-            class="btn btn-primary"
-            style="margin-left: auto; padding: var(--grid-2) var(--grid-4); font-size: 13px"
-            >REGISTER</a
+            style="
+              text-decoration: none;
+              color: var(--color-accent);
+              font-weight: 500;
+              font-size: var(--text-sm);
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            "
+            >Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 10l3-3-3-3"/></svg></a
           >
         </div>
       </article>
