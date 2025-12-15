@@ -3,7 +3,7 @@ import { createClient } from '@sanity/client'
 const client = createClient({
   projectId: 'ajcjdayi',
   dataset: 'production',
-  useCdn: true,
+  useCdn: false,
   apiVersion: '2024-12-10'
 })
 
