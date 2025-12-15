@@ -5,106 +5,328 @@ description: Join us for AI education workshops, town halls, and community event
 permalink: /events/overview/
 ---
 
-<section class="hero" aria-labelledby="events-hero-heading" style="padding: var(--grid-6) 0; background: var(--color-white)">
+<section
+  class="hero"
+  aria-labelledby="events-hero-heading"
+  style="padding: var(--grid-6) 0; background: var(--color-white)"
+>
   <div class="container">
     <div class="accent-bar accent-bar-red" style="margin-bottom: var(--grid-3)"></div>
-    <h1 id="events-hero-heading" class="hero-title" style="font-size: clamp(32px, 5vw, 48px); margin-bottom: var(--grid-3)">
+    <h1
+      id="events-hero-heading"
+      class="hero-title"
+      style="font-size: clamp(32px, 5vw, 48px); margin-bottom: var(--grid-3)"
+    >
       UPCOMING EVENTS
     </h1>
     <p style="font-size: 18px; line-height: 1.6; max-width: 700px; color: var(--color-gray-700)">
-      Join us for free, friendly learning sessions about AI. All events are designed for beginners and low-tech community members.
+      Join us for free, friendly learning sessions about AI. All events are designed for beginners
+      and low-tech community members.
     </p>
   </div>
 </section>
 
-<section class="events" aria-labelledby="filter-heading" style="padding: var(--grid-8) 0; background: var(--color-gray-50)">
+<section
+  class="events"
+  aria-labelledby="filter-heading"
+  style="padding: var(--grid-8) 0; background: var(--color-gray-50)"
+>
   <div class="container">
     {# Filter Bar #}
-    <div style="background: var(--color-white); border: var(--border-width) solid var(--color-black); padding: var(--grid-3); margin-bottom: var(--grid-6); display: flex; align-items: center; gap: var(--grid-3); flex-wrap: wrap">
+    <div
+      style="
+        background: var(--color-white);
+        border: var(--border-width) solid var(--color-black);
+        padding: var(--grid-3);
+        margin-bottom: var(--grid-6);
+        display: flex;
+        align-items: center;
+        gap: var(--grid-3);
+        flex-wrap: wrap;
+      "
+    >
       <div style="display: flex; align-items: center; gap: var(--grid-2)">
-        <div style="width: 40px; height: 40px; background: var(--color-bauhaus-yellow); border: var(--border-width) solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 20px">▼</div>
-        <span style="font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em">FILTER EVENTS</span>
+        <div
+          style="
+            width: 40px;
+            height: 40px;
+            background: var(--color-bauhaus-yellow);
+            border: var(--border-width) solid var(--color-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+          "
+        >
+          ▼
+        </div>
+        <span style="font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em"
+          >FILTER EVENTS</span
+        >
       </div>
       <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap; flex: 1">
-        <button class="btn btn-primary" data-filter="all" style="padding: var(--grid-2) var(--grid-3); min-height: auto">ALL</button>
-        <button class="btn btn-outline" data-filter="beginner" style="padding: var(--grid-2) var(--grid-3); min-height: auto">BEGINNER-FRIENDLY</button>
-        <button class="btn btn-outline" data-filter="family" style="padding: var(--grid-2) var(--grid-3); min-height: auto">FAMILY-FRIENDLY</button>
-        <button class="btn btn-outline" data-filter="educators" style="padding: var(--grid-2) var(--grid-3); min-height: auto">EDUCATORS</button>
-        <button class="btn btn-outline" data-filter="youth" style="padding: var(--grid-2) var(--grid-3); min-height: auto">YOUTH</button>
-        <button class="btn btn-outline" data-filter="volunteer" style="padding: var(--grid-2) var(--grid-3); min-height: auto">VOLUNTEER</button>
+        <button
+          class="btn btn-primary"
+          data-filter="all"
+          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
+        >
+          ALL
+        </button>
+        <button
+          class="btn btn-outline"
+          data-filter="beginner"
+          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
+        >
+          BEGINNER-FRIENDLY
+        </button>
+        <button
+          class="btn btn-outline"
+          data-filter="family"
+          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
+        >
+          FAMILY-FRIENDLY
+        </button>
+        <button
+          class="btn btn-outline"
+          data-filter="educators"
+          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
+        >
+          EDUCATORS
+        </button>
+        <button
+          class="btn btn-outline"
+          data-filter="youth"
+          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
+        >
+          YOUTH
+        </button>
+        <button
+          class="btn btn-outline"
+          data-filter="volunteer"
+          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
+        >
+          VOLUNTEER
+        </button>
       </div>
     </div>
 
     {# Event Count #}
-    <div style="display: flex; align-items: center; gap: var(--grid-2); margin-bottom: var(--grid-6)">
-      <div style="width: 12px; height: 12px; background: var(--color-bauhaus-red); border-radius: 50%"></div>
-      <span style="font-weight: 700; text-transform: uppercase; font-size: 14px">{{ allEvents.length }} EVENTS</span>
+    <div
+      style="display: flex; align-items: center; gap: var(--grid-2); margin-bottom: var(--grid-6)"
+    >
+      <div
+        style="width: 12px; height: 12px; background: var(--color-bauhaus-red); border-radius: 50%"
+      ></div>
+      <span style="font-weight: 700; text-transform: uppercase; font-size: 14px"
+        >{{ allEvents.length }} EVENTS</span
+      >
     </div>
     {% if allEvents.length > 0 %}
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--grid-4)">
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: var(--grid-4);
+      "
+    >
       {% for event in allEvents %}
-      <article class="card" aria-labelledby="event-{{ loop.index }}-title" style="padding: var(--grid-4); background: white; display: flex; flex-direction: column">
-        <h3 id="event-{{ loop.index }}-title" style="font-size: 18px; font-weight: 700; text-transform: uppercase; margin-bottom: var(--grid-4); line-height: 1.3; letter-spacing: 0.02em">
+      <article
+        class="card"
+        aria-labelledby="event-{{ loop.index }}-title"
+        style="padding: var(--grid-4); background: white; display: flex; flex-direction: column"
+      >
+        <h3
+          id="event-{{ loop.index }}-title"
+          style="
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: var(--grid-4);
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+          "
+        >
           {{ event.title }}
         </h3>
 
         {# Date and Location #}
-        <div style="margin-bottom: var(--grid-4); display: flex; flex-direction: column; gap: var(--grid-2)">
+        <div
+          style="
+            margin-bottom: var(--grid-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--grid-2);
+          "
+        >
           <div style="display: flex; align-items: center; gap: var(--grid-2)">
-            <div style="width: 8px; height: 8px; background: var(--color-bauhaus-red); border-radius: 50%; flex-shrink: 0"></div>
-            <svg width="14" height="14" fill="currentColor" aria-hidden="true" style="opacity: 0.7; flex-shrink: 0">
-              <rect x="2" y="3" width="10" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="2" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5"/>
+            <div
+              style="
+                width: 8px;
+                height: 8px;
+                background: var(--color-bauhaus-red);
+                border-radius: 50%;
+                flex-shrink: 0;
+              "
+            ></div>
+            <svg
+              width="14"
+              height="14"
+              fill="currentColor"
+              aria-hidden="true"
+              style="opacity: 0.7; flex-shrink: 0"
+            >
+              <rect
+                x="2"
+                y="3"
+                width="10"
+                height="9"
+                rx="1"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <line x1="2" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" />
             </svg>
-            <time datetime="{{ event.date | dateISO }}" style="font-size: 13px">{{ event.date | dateFormat }} • 2:00 PM</time>
+            <time datetime="{{ event.date | dateISO }}" style="font-size: 13px"
+              >{{ event.date | dateFormat }} • 2:00 PM</time
+            >
           </div>
           <div style="display: flex; align-items: center; gap: var(--grid-2)">
-            <div style="width: 8px; height: 8px; background: var(--color-bauhaus-red); border-radius: 50%; flex-shrink: 0"></div>
-            <svg width="14" height="14" fill="currentColor" aria-hidden="true" style="opacity: 0.7; flex-shrink: 0">
-              <path d="M7 1.5C5.5 1.5 4 2.5 4 4.5c0 2.5 3 6 3 6s3-3.5 3-6c0-2-1.5-3-3-3zm0 4.5c-.8 0-1.5-.7-1.5-1.5S6.2 3 7 3s1.5.7 1.5 1.5S7.8 6 7 6z"/>
+            <div
+              style="
+                width: 8px;
+                height: 8px;
+                background: var(--color-bauhaus-red);
+                border-radius: 50%;
+                flex-shrink: 0;
+              "
+            ></div>
+            <svg
+              width="14"
+              height="14"
+              fill="currentColor"
+              aria-hidden="true"
+              style="opacity: 0.7; flex-shrink: 0"
+            >
+              <path
+                d="M7 1.5C5.5 1.5 4 2.5 4 4.5c0 2.5 3 6 3 6s3-3.5 3-6c0-2-1.5-3-3-3zm0 4.5c-.8 0-1.5-.7-1.5-1.5S6.2 3 7 3s1.5.7 1.5 1.5S7.8 6 7 6z"
+              />
             </svg>
             <span style="font-size: 13px">{{ event.location or "Newark Public Library" }}</span>
           </div>
         </div>
 
-        {# Difficulty Badge #}
-        {% if event.difficultyLevel %}
+        {# Difficulty Badge #} {% if event.difficultyLevel %}
         <div style="margin-bottom: var(--grid-3)">
-          <span style="background: var(--color-bauhaus-red); color: white; padding: 6px var(--grid-2); text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; display: inline-block">
+          <span
+            style="
+              background: var(--color-bauhaus-red);
+              color: white;
+              padding: 6px var(--grid-2);
+              text-transform: uppercase;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 0.05em;
+              display: inline-block;
+            "
+          >
             {{ event.difficultyLevel }}-FRIENDLY
           </span>
         </div>
-        {% endif %}
-
-        {# Description #}
-        <p style="font-size: 14px; line-height: 1.6; margin-bottom: var(--grid-4); color: #333; flex-grow: 1">
-          {{ event.description or "Learn what AI really is and how it affects your daily life. No technical background required." }}
+        {% endif %} {# Description #}
+        <p
+          style="
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: var(--grid-4);
+            color: #333;
+            flex-grow: 1;
+          "
+        >
+          {{ event.description or "Learn what AI really is and how it affects your daily life. No
+          technical background required." }}
         </p>
 
         {# Tags #}
-        <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap; margin-bottom: var(--grid-4)">
+        <div
+          style="display: flex; gap: var(--grid-2); flex-wrap: wrap; margin-bottom: var(--grid-4)"
+        >
           {% if event.difficultyLevel %}
-          <span style="border: 2px solid var(--color-black); padding: 4px var(--grid-2); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em">{{ event.difficultyLevel }}</span>
-          {% endif %}
-          {% if event.audienceTag and event.audienceTag.length > 0 %}
-            {% for tag in event.audienceTag %}
-            <span style="border: 2px solid var(--color-black); padding: 4px var(--grid-2); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em">{{ tag }}</span>
-            {% endfor %}
-          {% endif %}
+          <span
+            style="
+              border: 2px solid var(--color-black);
+              padding: 4px var(--grid-2);
+              font-size: 11px;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.03em;
+            "
+            >{{ event.difficultyLevel }}</span
+          >
+          {% endif %} {% if event.audienceTag and event.audienceTag.length > 0 %} {% for tag in
+          event.audienceTag %}
+          <span
+            style="
+              border: 2px solid var(--color-black);
+              padding: 4px var(--grid-2);
+              font-size: 11px;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.03em;
+            "
+            >{{ tag }}</span
+          >
+          {% endfor %} {% endif %}
         </div>
 
         {# CTAs #}
-        <div style="display: flex; gap: var(--grid-2); align-items: center; padding-top: var(--grid-3); border-top: 2px solid #eee">
-          <a href="/events/{{ event.slug }}/" style="text-decoration: none; color: var(--color-bauhaus-blue); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em">DETAILS →</a>
-          <a href="/events/{{ event.slug }}/" class="btn btn-primary" style="margin-left: auto; padding: var(--grid-2) var(--grid-4); font-size: 13px">REGISTER</a>
+        <div
+          style="
+            display: flex;
+            gap: var(--grid-2);
+            align-items: center;
+            padding-top: var(--grid-3);
+            border-top: 2px solid #eee;
+          "
+        >
+          <a
+            href="/events/{{ event.slug }}/"
+            style="
+              text-decoration: none;
+              color: var(--color-bauhaus-blue);
+              font-weight: 700;
+              font-size: 13px;
+              text-transform: uppercase;
+              letter-spacing: 0.05em;
+            "
+            >DETAILS →</a
+          >
+          <a
+            href="/events/{{ event.slug }}/"
+            class="btn btn-primary"
+            style="margin-left: auto; padding: var(--grid-2) var(--grid-4); font-size: 13px"
+            >REGISTER</a
+          >
         </div>
       </article>
       {% endfor %}
     </div>
     {% else %}
-    <div style="background: white; border: var(--border-width) solid var(--color-black); padding: var(--grid-8); text-align: center">
+    <div
+      style="
+        background: white;
+        border: var(--border-width) solid var(--color-black);
+        padding: var(--grid-8);
+        text-align: center;
+      "
+    >
       <p style="font-size: 18px; margin-bottom: var(--grid-3)">No upcoming events scheduled yet.</p>
-      <p>Check back soon or <a href="/volunteer/" style="color: var(--color-bauhaus-blue); font-weight: 700">volunteer to help organize</a>!</p>
+      <p>
+        Check back soon or
+        <a href="/volunteer/" style="color: var(--color-bauhaus-blue); font-weight: 700"
+          >volunteer to help organize</a
+        >!
+      </p>
     </div>
     {% endif %}
   </div>
