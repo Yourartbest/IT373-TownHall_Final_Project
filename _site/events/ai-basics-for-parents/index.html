@@ -1,208 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <title>AI Basics for Parents: What You Need to Know - Newark AI Town Hall</title>
+    <meta name="title" content="AI Basics for Parents: What You Need to Know - Newark AI Town Hall" />
+    <meta name="description" content="Learn how AI affects your children&amp;#39;s education and daily life. No tech experience needed - just bring your questions!" />
+    <meta name="author" content="Newark AI Community" />
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://newark-ai-townhall.netlify.app/IT373-TownHall_Final_Project/events/ai-basics-for-parents/" />
+    <meta property="og:title" content="AI Basics for Parents: What You Need to Know - Newark AI Town Hall" />
+    <meta property="og:description" content="Learn how AI affects your children&amp;#39;s education and daily life. No tech experience needed - just bring your questions!" />
+    <meta
+      property="og:image"
+      content="https://newark-ai-townhall.netlify.app/IT373-TownHall_Final_Project/images/og-default.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://newark-ai-townhall.netlify.app/IT373-TownHall_Final_Project/events/ai-basics-for-parents/" />
+    <meta property="twitter:title" content="AI Basics for Parents: What You Need to Know - Newark AI Town Hall" />
+    <meta property="twitter:description" content="Learn how AI affects your children&amp;#39;s education and daily life. No tech experience needed - just bring your questions!" />
+    <meta
+      property="twitter:image"
+      content="https://newark-ai-townhall.netlify.app/IT373-TownHall_Final_Project/images/og-default.jpg"
+    />
+
+    
+    <meta name="theme-color" content="#1e3a5f" />
+
+    
+    <link rel="icon" type="image/svg+xml" href="/IT373-TownHall_Final_Project/favicon.svg" />
+    <link rel="alternate icon" href="/IT373-TownHall_Final_Project/favicon.ico" />
+
+    
+    <link rel="dns-prefetch" href="https://ajcjdayi.api.sanity.io" />
+    <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    
+    <link rel="stylesheet" href="/IT373-TownHall_Final_Project/css/styles.css" />
+
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Newark AI Town Hall",
+        "url": "https://newark-ai-townhall.netlify.app",
+        "logo": "https://newark-ai-townhall.netlify.app/IT373-TownHall_Final_Project/favicon.svg",
+        "description": "Making AI education accessible, plain-language, and community-centered for Newark residents.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Newark",
+          "addressRegion": "NJ",
+          "addressCountry": "US"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-white text-black">
+    
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    
+    <header role="banner" class="header">
+      <div class="container">
+        <nav aria-label="Main navigation" class="nav">
+          <div class="nav-brand">
+            <a href="/IT373-TownHall_Final_Project/" class="nav-logo" aria-label="Newark AI Town Hall Home">
+              NEWARK AI
+            </a>
+          </div>
+
+          
+          <div class="nav-links" id="nav-links">
+            <a href="/IT373-TownHall_Final_Project/events/" class="nav-link">Events</a>
+            <a href="/IT373-TownHall_Final_Project/resources/" class="nav-link">Resources</a>
+            <a href="/IT373-TownHall_Final_Project/volunteer/" class="nav-link">Volunteer</a>
+          </div>
+
+          
+          <button
+            type="button"
+            class="mobile-menu-btn"
+            data-testid="mobile-menu-button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+          >
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              aria-hidden="true"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+            <span class="sr-only">Open menu</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    
+    <div
+      id="mobile-menu"
+      class="mobile-menu hidden"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobile-menu-title"
+    >
+      <div class="mobile-menu-content">
+        <h2 id="mobile-menu-title" class="sr-only">Navigation Menu</h2>
+        <nav aria-label="Mobile navigation">
+          <a href="/IT373-TownHall_Final_Project/events/" class="mobile-menu-link">Events</a>
+          <a href="/IT373-TownHall_Final_Project/resources/" class="mobile-menu-link">Resources</a>
+          <a href="/IT373-TownHall_Final_Project/volunteer/" class="mobile-menu-link">Volunteer</a>
+        </nav>
+      </div>
+    </div>
+
+    
+    <main id="main-content" role="main" tabindex="-1">
 
 <section
-  class="hero"
+  style="
+    padding: var(--grid-16) 0;
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  "
   aria-labelledby="event-hero-heading"
-  style="padding: var(--grid-6) 0; background: var(--color-white)"
 >
   <div class="container">
-    <div style="margin-bottom: var(--grid-4)">
+    
+    <div style="margin-bottom: var(--grid-8)">
       <a
         href="/events/"
         style="
-          color: var(--color-bauhaus-blue);
-          font-weight: 700;
+          color: var(--color-gray-600);
+          font-weight: 500;
           text-decoration: none;
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
+          font-size: var(--text-sm);
+          display: inline-flex;
+          align-items: center;
+          gap: var(--grid-2);
+          transition: color var(--transition-base);
         "
+        onmouseover="this.style.color = 'var(--color-primary)'"
+        onmouseout="this.style.color = 'var(--color-gray-600)'"
       >
-        ← BACK TO EVENTS
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 6H2M6 12l-4-6 4-6" />
+        </svg>
+        <span>Back to events</span>
       </a>
     </div>
 
-    <div class="accent-bar accent-bar-red" style="margin-bottom: var(--grid-3)"></div>
+    <div style="max-width: 800px; margin: 0 auto">
+      <h1
+        id="event-hero-heading"
+        style="
+          font-size: clamp(32px, 5vw, 56px);
+          line-height: 1.1;
+          margin-bottom: var(--grid-8);
+          color: var(--color-gray-900);
+          font-weight: 600;
+          letter-spacing: -0.02em;
+          text-align: center;
+        "
+      >
+        AI Basics for Parents: What You Need to Know
+      </h1>
 
-    <h1
-      id="event-hero-heading"
-      class="hero-title"
-      style="font-size: clamp(28px, 5vw, 42px); margin-bottom: var(--grid-4)"
-    >
-      AI Basics for Parents: What You Need to Know
-    </h1>
-
-    
-    <div style="display: flex; flex-wrap: wrap; gap: var(--grid-4); margin-bottom: var(--grid-4)">
-      <div style="display: flex; align-items: center; gap: var(--grid-2)">
-        <div
-          style="
-            width: 10px;
-            height: 10px;
-            background: var(--color-bauhaus-red);
-            border-radius: 50%;
-          "
-        ></div>
-        <svg width="16" height="16" fill="currentColor" aria-hidden="true" style="opacity: 0.7">
-          <rect
-            x="2"
-            y="3"
-            width="12"
-            height="11"
-            rx="1"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-          />
-          <line x1="2" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1.5" />
-        </svg>
-        <time datetime="2025-12-20T18:00:00.000-05:00" style="font-size: 15px; font-weight: 600">
-          Dec 20, 2025 • 2:00 PM
-        </time>
-      </div>
-
-      <div style="display: flex; align-items: center; gap: var(--grid-2)">
-        <div
-          style="
-            width: 10px;
-            height: 10px;
-            background: var(--color-bauhaus-red);
-            border-radius: 50%;
-          "
-        ></div>
-        <svg width="16" height="16" fill="currentColor" aria-hidden="true" style="opacity: 0.7">
-          <path
-            d="M8 2C6 2 4 3.5 4 6c0 3 4 8 4 8s4-5 4-8c0-2.5-2-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
-          />
-        </svg>
-        <span style="font-size: 15px; font-weight: 600"
-          >Newark Public Library, Main Branch</span
-        >
-      </div>
-    </div>
-
-    
-    <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap; margin-bottom: var(--grid-4)">
       
-      <span
+      <div
         style="
-          background: var(--color-bauhaus-red);
-          color: white;
-          padding: 8px var(--grid-3);
-          text-transform: uppercase;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-          display: inline-block;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: var(--grid-4);
+          margin-bottom: var(--grid-8);
         "
       >
-        beginner-FRIENDLY
-      </span>
+        <div
+          style="
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--grid-5);
+            display: flex;
+            align-items: center;
+            gap: var(--grid-3);
+          "
+        >
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: linear-gradient(
+                135deg,
+                var(--color-accent) 0%,
+                var(--color-accent-light) 100%
+              );
+              border-radius: var(--radius-md);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <svg width="20" height="20" fill="none" stroke="white" stroke-width="2">
+              <rect x="3" y="4" width="14" height="14" rx="2" />
+              <path d="M3 9h14M9 4v2M15 4v2" />
+            </svg>
+          </div>
+          <div>
+            <div
+              style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px"
+            >
+              Date & Time
+            </div>
+            <time
+              datetime="2025-12-20T18:00:00.000-05:00"
+              style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900)"
+              >Dec 20, 2025</time
+            >
+            <div style="font-size: var(--text-xs); color: var(--color-gray-600)">
+              2:00 PM - 4:00 PM
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--grid-5);
+            display: flex;
+            align-items: center;
+            gap: var(--grid-3);
+          "
+        >
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: linear-gradient(
+                135deg,
+                var(--color-primary) 0%,
+                var(--color-primary-light) 100%
+              );
+              border-radius: var(--radius-md);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <svg width="20" height="20" fill="none" stroke="white" stroke-width="2">
+              <path
+                d="M10 2C7.5 2 5 3.5 5 6c0 4 5 10 5 10s5-6 5-10c0-2.5-2.5-4-5-4zm0 6c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"
+              />
+            </svg>
+          </div>
+          <div>
+            <div
+              style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px"
+            >
+              Location
+            </div>
+            <div style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900)">
+              Newark Public Library, Main Branch
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--grid-5);
+            display: flex;
+            align-items: center;
+            gap: var(--grid-3);
+          "
+        >
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: linear-gradient(
+                135deg,
+                var(--color-accent) 0%,
+                var(--color-accent-light) 100%
+              );
+              border-radius: var(--radius-md);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: var(--text-xl);
+              font-weight: 600;
+              color: white;
+            "
+          >
+            $0
+          </div>
+          <div>
+            <div
+              style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px"
+            >
+              Cost
+            </div>
+            <div style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900)">
+              100% Free
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap; justify-content: center">
         
-      <span
-        style="
-          background: var(--color-bauhaus-blue);
-          color: white;
-          padding: 8px var(--grid-3);
-          text-transform: uppercase;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-          display: inline-block;
-        "
-      >
-        parents
-      </span>
-       
+        <span
+          style="
+            background: var(--color-accent-subtle);
+            color: var(--color-accent);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 500;
+          "
+        >
+          Beginner-friendly
+        </span>
+          
+        <span
+          style="
+            background: var(--color-gray-100);
+            color: var(--color-gray-700);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 500;
+          "
+        >
+          parents
+        </span>
+         
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding: var(--grid-8) 0; background: var(--color-gray-50)">
+<section style="padding: var(--grid-16) 0; background: var(--color-white)">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--grid-6)">
+    <style>
+      .event-detail-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--grid-8);
+      }
+      @media (min-width: 1024px) {
+        .event-detail-grid {
+          grid-template-columns: 2fr 1fr;
+        }
+      }
+    </style>
+    <div class="event-detail-grid">
       
       <div>
         
-        <div class="card" style="padding: var(--grid-6); margin-bottom: var(--grid-4)">
+        <div
+          style="
+            background: white;
+            padding: var(--grid-10);
+            margin-bottom: var(--grid-8);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+          "
+        >
           <h2
             style="
-              font-size: 24px;
-              font-weight: 700;
-              text-transform: uppercase;
-              margin-bottom: var(--grid-4);
-              letter-spacing: 0.02em;
+              font-size: var(--text-3xl);
+              font-weight: 600;
+              margin-bottom: var(--grid-6);
+              color: var(--color-gray-900);
             "
           >
-            ABOUT THIS EVENT
+            About this event
           </h2>
-          <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: var(--grid-4)">
+
+          <p
+            style="
+              font-size: var(--text-lg);
+              line-height: 1.6;
+              color: var(--color-gray-700);
+              margin-bottom: var(--grid-5);
+            "
+          >
             Learn how AI affects your children&#39;s education and daily life. No tech experience needed - just bring your questions!
           </p>
 
           
+          <div style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-600)">
+             
+            <p style="margin-bottom: var(--grid-4)">
+               This workshop is designed specifically for parents who want to understand AI technology and how it affects their children. We will cover the basics of artificial intelligence in plain language, discuss real-world AI applications your kids encounter daily, and provide practical strategies for having meaningful conversations about AI at home. 
+            </p>
+              
+            <p style="margin-bottom: var(--grid-4)">
+               Learn how AI is used in apps, games, and educational tools. Understand the privacy implications and how to guide your children in using AI responsibly. This is a judgment-free, beginner-friendly environment where all questions are welcome. 
+            </p>
+             
+          </div>
+          
         </div>
 
          
-        <div class="card" style="padding: var(--grid-6); background: var(--color-bauhaus-yellow)">
+        <div
+          style="
+            background: var(--color-gray-50);
+            padding: var(--grid-10);
+            border-radius: var(--radius-2xl);
+          "
+        >
           <h2
             style="
-              font-size: 24px;
-              font-weight: 700;
-              text-transform: uppercase;
-              margin-bottom: var(--grid-4);
-              letter-spacing: 0.02em;
+              font-size: var(--text-2xl);
+              font-weight: 600;
+              margin-bottom: var(--grid-6);
+              color: var(--color-gray-900);
             "
           >
-            WHAT YOU'LL LEARN
+            What you'll learn
           </h2>
-          <ul style="list-style: none; padding: 0; margin: 0">
+
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: var(--grid-4)">
             
             <li
               style="
                 display: flex;
                 align-items: start;
-                gap: var(--grid-2);
-                margin-bottom: var(--grid-3);
-                font-size: 16px;
-                line-height: 1.6;
+                gap: var(--grid-3);
+                background: white;
+                padding: var(--grid-5);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-sm);
               "
             >
-              <span style="color: var(--color-bauhaus-blue); font-weight: 700; font-size: 20px"
-                >✓</span
+              <div
+                style="
+                  width: 28px;
+                  height: 28px;
+                  min-width: 28px;
+                  background: var(--color-accent);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: white;
+                "
               >
-              <span>What AI is and how it works in simple terms</span>
+                ✓
+              </div>
+              <span
+                style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700)"
+                >What AI is and how it works in simple terms</span
+              >
             </li>
             
             <li
               style="
                 display: flex;
                 align-items: start;
-                gap: var(--grid-2);
-                margin-bottom: var(--grid-3);
-                font-size: 16px;
-                line-height: 1.6;
+                gap: var(--grid-3);
+                background: white;
+                padding: var(--grid-5);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-sm);
               "
             >
-              <span style="color: var(--color-bauhaus-blue); font-weight: 700; font-size: 20px"
-                >✓</span
+              <div
+                style="
+                  width: 28px;
+                  height: 28px;
+                  min-width: 28px;
+                  background: var(--color-accent);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: white;
+                "
               >
-              <span>How AI is used in schools and education</span>
+                ✓
+              </div>
+              <span
+                style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700)"
+                >Common AI tools children encounter in apps and games</span
+              >
             </li>
             
             <li
               style="
                 display: flex;
                 align-items: start;
-                gap: var(--grid-2);
-                margin-bottom: var(--grid-3);
-                font-size: 16px;
-                line-height: 1.6;
+                gap: var(--grid-3);
+                background: white;
+                padding: var(--grid-5);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-sm);
               "
             >
-              <span style="color: var(--color-bauhaus-blue); font-weight: 700; font-size: 20px"
-                >✓</span
+              <div
+                style="
+                  width: 28px;
+                  height: 28px;
+                  min-width: 28px;
+                  background: var(--color-accent);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: white;
+                "
               >
-              <span>How to talk to your kids about AI safely</span>
+                ✓
+              </div>
+              <span
+                style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700)"
+                >Privacy and safety considerations for families</span
+              >
+            </li>
+            
+            <li
+              style="
+                display: flex;
+                align-items: start;
+                gap: var(--grid-3);
+                background: white;
+                padding: var(--grid-5);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-sm);
+              "
+            >
+              <div
+                style="
+                  width: 28px;
+                  height: 28px;
+                  min-width: 28px;
+                  background: var(--color-accent);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: white;
+                "
+              >
+                ✓
+              </div>
+              <span
+                style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700)"
+                >How to talk to your kids about AI technology</span
+              >
+            </li>
+            
+            <li
+              style="
+                display: flex;
+                align-items: start;
+                gap: var(--grid-3);
+                background: white;
+                padding: var(--grid-5);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-sm);
+              "
+            >
+              <div
+                style="
+                  width: 28px;
+                  height: 28px;
+                  min-width: 28px;
+                  background: var(--color-accent);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: white;
+                "
+              >
+                ✓
+              </div>
+              <span
+                style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700)"
+                >Practical tips for setting healthy AI boundaries at home</span
+              >
             </li>
             
           </ul>
@@ -214,153 +633,264 @@
       <div>
         
         <div
-          class="card"
-          style="padding: var(--grid-5); background: white; position: sticky; top: var(--grid-4)"
+          style="
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-bottom: var(--grid-6);
+          "
         >
-          <h3
-            style="
-              font-size: 20px;
-              font-weight: 700;
-              text-transform: uppercase;
-              margin-bottom: var(--grid-3);
-              letter-spacing: 0.02em;
-            "
-          >
-            REGISTER NOW
-          </h3>
-
-          
-          <p style="font-size: 14px; line-height: 1.6; margin-bottom: var(--grid-4); color: #555">
-            This event is free and open to all Newark community members. No technical background
-            required.
-          </p>
-
-          
-
-          <a
-            href="#register-form"
-            class="btn btn-primary"
-            style="
-              width: 100%;
-              text-align: center;
-              display: block;
-              padding: var(--grid-3);
-              font-size: 15px;
-            "
-          >
-            REGISTER FOR THIS EVENT
-          </a>
-
           <div
             style="
-              margin-top: var(--grid-4);
-              padding-top: var(--grid-4);
-              border-top: 2px solid var(--color-gray-100);
+              background: linear-gradient(
+                135deg,
+                var(--color-primary) 0%,
+                var(--color-primary-dark) 100%
+              );
+              color: white;
+              padding: var(--grid-5);
             "
           >
-            <p style="font-size: 13px; color: #666; margin-bottom: var(--grid-2)">
-              <strong>Have questions?</strong>
-            </p>
-            <a
-              href="https://discord.gg/newark-ai"
-              target="_blank"
-              rel="noopener noreferrer"
+            <h3 style="font-size: var(--text-xl); font-weight: 600; margin: 0; text-align: center">
+              Register now
+            </h3>
+          </div>
+
+          <div style="padding: var(--grid-6)">
+            
+            <div
               style="
-                color: var(--color-bauhaus-blue);
-                font-weight: 700;
-                text-decoration: none;
-                font-size: 13px;
+                background: var(--color-gray-50);
+                border-radius: var(--radius-lg);
+                padding: var(--grid-4);
+                margin-bottom: var(--grid-5);
               "
             >
-              Ask in our Discord →
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  line-height: 1.6;
+                  margin: 0;
+                  color: var(--color-gray-700);
+                "
+              >
+                ✅ Free for all Newark residents<br />
+                ✅ No tech background needed<br />
+                ✅ All materials provided
+              </p>
+            </div>
+
+            
+            <div
+              style="
+                background: var(--color-accent-subtle);
+                border-radius: var(--radius-lg);
+                padding: var(--grid-4);
+                margin-bottom: var(--grid-5);
+                display: flex;
+                align-items: center;
+                gap: var(--grid-2);
+              "
+            >
+              <svg width="18" height="18" fill="currentColor" style="color: var(--color-accent)">
+                <path
+                  d="M10 2C5.6 2 2 5.6 2 10s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm1 13H9v-2h2v2zm0-4H9V6h2v5z"
+                />
+              </svg>
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  margin: 0;
+                  font-weight: 500;
+                  color: var(--color-accent);
+                "
+              >
+                Limited: 30 spots available
+              </p>
+            </div>
+            
+
+            <a
+              href="#register-form"
+              class="btn btn-primary btn-large"
+              style="
+                width: 100%;
+                text-align: center;
+                margin-bottom: var(--grid-5);
+                box-sizing: border-box;
+              "
+            >
+              Save my spot
             </a>
+
+            <div
+              style="
+                padding: var(--grid-4);
+                background: var(--color-gray-50);
+                border-radius: var(--radius-lg);
+              "
+            >
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  color: var(--color-gray-700);
+                  margin-bottom: var(--grid-3);
+                  font-weight: 500;
+                "
+              >
+                Have questions?
+              </p>
+              <a
+                href="https://discord.gg/newark-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-accent"
+                style="
+                  width: 100%;
+                  text-align: center;
+                  font-size: var(--text-sm);
+                  box-sizing: border-box;
+                "
+              >
+                Join Discord
+              </a>
+            </div>
+            
           </div>
-          
         </div>
 
         
         <div
-          class="card"
           style="
-            padding: var(--grid-5);
-            background: var(--color-bauhaus-blue);
-            color: white;
-            margin-top: var(--grid-4);
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
           "
         >
-          <h3
-            style="
-              font-size: 18px;
-              font-weight: 700;
-              text-transform: uppercase;
-              margin-bottom: var(--grid-3);
-              letter-spacing: 0.02em;
-            "
-          >
-            QUICK INFO
-          </h3>
+          <div style="padding: var(--grid-6)">
+            <h3
+              style="
+                font-size: var(--text-lg);
+                font-weight: 600;
+                margin-bottom: var(--grid-5);
+                color: var(--color-gray-900);
+              "
+            >
+              Quick info
+            </h3>
 
-          <div style="display: flex; flex-direction: column; gap: var(--grid-3); font-size: 14px">
-            <div>
-              <p
+            <div style="display: grid; gap: var(--grid-4)">
+              <div
                 style="
-                  opacity: 0.9;
-                  margin-bottom: 4px;
-                  font-size: 12px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.05em;
+                  padding-bottom: var(--grid-3);
+                  border-bottom: 1px solid var(--color-gray-200);
                 "
               >
-                Cost
-              </p>
-              <p style="font-weight: 700; margin: 0">100% FREE</p>
-            </div>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: var(--text-xs);
+                    color: var(--color-gray-500);
+                    margin-bottom: var(--grid-2);
+                  "
+                >
+                  Duration
+                </p>
+                <p
+                  style="
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: var(--text-base);
+                    color: var(--color-gray-900);
+                  "
+                >
+                  2 Hours
+                </p>
+              </div>
 
-            
-            <div>
-              <p
+              
+              <div
                 style="
-                  opacity: 0.9;
-                  margin-bottom: 4px;
-                  font-size: 12px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.05em;
+                  padding-bottom: var(--grid-3);
+                  border-bottom: 1px solid var(--color-gray-200);
                 "
               >
-                Level
-              </p>
-              <p style="font-weight: 700; margin: 0">Beginner</p>
-            </div>
-            
+                <p
+                  style="
+                    margin: 0;
+                    font-size: var(--text-xs);
+                    color: var(--color-gray-500);
+                    margin-bottom: var(--grid-2);
+                  "
+                >
+                  Level
+                </p>
+                <p
+                  style="
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: var(--text-base);
+                    color: var(--color-gray-900);
+                    text-transform: capitalize;
+                  "
+                >
+                  beginner
+                </p>
+              </div>
+              
 
-            <div>
-              <p
+              <div
                 style="
-                  opacity: 0.9;
-                  margin-bottom: 4px;
-                  font-size: 12px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.05em;
+                  padding-bottom: var(--grid-3);
+                  border-bottom: 1px solid var(--color-gray-200);
                 "
               >
-                Duration
-              </p>
-              <p style="font-weight: 700; margin: 0">2 hours</p>
-            </div>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: var(--text-xs);
+                    color: var(--color-gray-500);
+                    margin-bottom: var(--grid-2);
+                  "
+                >
+                  Language
+                </p>
+                <p
+                  style="
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: var(--text-base);
+                    color: var(--color-gray-900);
+                  "
+                >
+                  English
+                </p>
+              </div>
 
-            <div>
-              <p
-                style="
-                  opacity: 0.9;
-                  margin-bottom: 4px;
-                  font-size: 12px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.05em;
-                "
-              >
-                Language
-              </p>
-              <p style="font-weight: 700; margin: 0">English</p>
+              <div>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: var(--text-xs);
+                    color: var(--color-gray-500);
+                    margin-bottom: var(--grid-2);
+                  "
+                >
+                  Cost
+                </p>
+                <p
+                  style="
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: var(--text-base);
+                    color: var(--color-accent);
+                  "
+                >
+                  100% Free
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -368,143 +898,225 @@
     </div>
   </div>
 </section>
+</main>
 
- 
-<section id="register-form" style="padding: var(--grid-8) 0; background: white">
-  <div class="container">
-    <div style="max-width: 600px; margin: 0 auto">
-      <div class="accent-bar accent-bar-yellow" style="margin-bottom: var(--grid-3)"></div>
-      <h2
-        style="
-          font-size: 32px;
-          font-weight: 700;
-          text-transform: uppercase;
-          margin-bottom: var(--grid-3);
-          letter-spacing: 0.02em;
-        "
-      >
-        REGISTER FOR AI Basics for Parents: What You Need to Know
-      </h2>
-      <p style="font-size: 16px; line-height: 1.6; margin-bottom: var(--grid-6); color: #555">
-        Fill out the form below to reserve your spot. We'll send you a confirmation email with event
-        details and reminders.
-      </p>
-
-      <form class="card" style="padding: var(--grid-6)">
-        <div style="display: flex; flex-direction: column; gap: var(--grid-4)">
-          <div>
-            <label
-              for="name"
-              style="
-                display: block;
-                font-weight: 700;
-                margin-bottom: var(--grid-2);
-                text-transform: uppercase;
-                font-size: 13px;
-                letter-spacing: 0.05em;
-              "
-            >
-              Full Name *
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              style="
-                width: 100%;
-                border: 2px solid var(--color-black);
-                padding: var(--grid-3);
-                font-size: 15px;
-              "
-            />
-          </div>
-
-          <div>
-            <label
-              for="email"
-              style="
-                display: block;
-                font-weight: 700;
-                margin-bottom: var(--grid-2);
-                text-transform: uppercase;
-                font-size: 13px;
-                letter-spacing: 0.05em;
-              "
-            >
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              style="
-                width: 100%;
-                border: 2px solid var(--color-black);
-                padding: var(--grid-3);
-                font-size: 15px;
-              "
-            />
-          </div>
-
-          <div>
-            <label
-              for="phone"
-              style="
-                display: block;
-                font-weight: 700;
-                margin-bottom: var(--grid-2);
-                text-transform: uppercase;
-                font-size: 13px;
-                letter-spacing: 0.05em;
-              "
-            >
-              Phone Number (optional)
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              style="
-                width: 100%;
-                border: 2px solid var(--color-black);
-                padding: var(--grid-3);
-                font-size: 15px;
-              "
-            />
-          </div>
-
-          <div>
-            <label style="display: flex; align-items: start; gap: var(--grid-2); cursor: pointer">
-              <input type="checkbox" required style="margin-top: 4px" />
-              <span style="font-size: 14px; line-height: 1.6">
-                I understand this event is free and I will receive email reminders. I can
-                unsubscribe at any time.
-              </span>
-            </label>
-          </div>
-
-          <input type="hidden" name="event" value="AI Basics for Parents: What You Need to Know" />
-          <input type="hidden" name="event-date" value="2025-12-20T18:00:00.000-05:00" />
-
-          <button
-            type="submit"
-            class="btn btn-primary"
-            style="width: 100%; padding: var(--grid-4); font-size: 16px; margin-top: var(--grid-2)"
-          >
-            COMPLETE REGISTRATION
-          </button>
-        </div>
-      </form>
-
-      <p style="text-align: center; font-size: 13px; color: #666; margin-top: var(--grid-4)">
-        By registering, you agree to our
-        <a href="/privacy/" style="color: var(--color-bauhaus-blue); font-weight: 700"
-          >Privacy Policy</a
+    
+    <footer
+      role="contentinfo"
+      style="
+        background: var(--color-gray-900);
+        color: white;
+        padding: var(--grid-16) 0 var(--grid-8);
+      "
+    >
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--grid-12);
+            margin-bottom: var(--grid-12);
+          "
         >
-      </p>
-    </div>
-  </div>
-</section>
+          
+          <div>
+            <div
+              style="
+                font-size: var(--text-xl);
+                font-weight: 600;
+                margin-bottom: var(--grid-4);
+                color: white;
+              "
+            >
+              Newark AI
+            </div>
+            <p
+              style="
+                color: var(--color-gray-400);
+                font-size: var(--text-sm);
+                line-height: 1.6;
+                max-width: 280px;
+              "
+            >
+              Making AI education accessible, practical, and welcoming for every Newark resident.
+            </p>
+          </div>
 
+          
+          <div>
+            <h3
+              style="
+                font-size: var(--text-sm);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: var(--grid-4);
+                color: var(--color-gray-400);
+              "
+            >
+              Explore
+            </h3>
+            <nav
+              aria-label="Footer navigation"
+              style="display: flex; flex-direction: column; gap: var(--grid-3)"
+            >
+              <a
+                href="/IT373-TownHall_Final_Project/events/overview/"
+                style="
+                  color: var(--color-gray-300);
+                  text-decoration: none;
+                  font-size: var(--text-sm);
+                  transition: color var(--transition-base);
+                "
+                onmouseover="this.style.color = 'white'"
+                onmouseout="this.style.color = 'var(--color-gray-300)'"
+                >Events</a
+              >
+              <a
+                href="/IT373-TownHall_Final_Project/resources/"
+                style="
+                  color: var(--color-gray-300);
+                  text-decoration: none;
+                  font-size: var(--text-sm);
+                  transition: color var(--transition-base);
+                "
+                onmouseover="this.style.color = 'white'"
+                onmouseout="this.style.color = 'var(--color-gray-300)'"
+                >Resources</a
+              >
+              <a
+                href="/IT373-TownHall_Final_Project/resources/what-is-ai/"
+                style="
+                  color: var(--color-gray-300);
+                  text-decoration: none;
+                  font-size: var(--text-sm);
+                  transition: color var(--transition-base);
+                "
+                onmouseover="this.style.color = 'white'"
+                onmouseout="this.style.color = 'var(--color-gray-300)'"
+                >What is AI?</a
+              >
+              <a
+                href="/IT373-TownHall_Final_Project/volunteer/"
+                style="
+                  color: var(--color-gray-300);
+                  text-decoration: none;
+                  font-size: var(--text-sm);
+                  transition: color var(--transition-base);
+                "
+                onmouseover="this.style.color = 'white'"
+                onmouseout="this.style.color = 'var(--color-gray-300)'"
+                >Volunteer</a
+              >
+            </nav>
+          </div>
+
+          
+          <div>
+            <h3
+              style="
+                font-size: var(--text-sm);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: var(--grid-4);
+                color: var(--color-gray-400);
+              "
+            >
+              Legal
+            </h3>
+            <nav style="display: flex; flex-direction: column; gap: var(--grid-3)">
+              <a
+                href="/IT373-TownHall_Final_Project/privacy/"
+                style="
+                  color: var(--color-gray-300);
+                  text-decoration: none;
+                  font-size: var(--text-sm);
+                  transition: color var(--transition-base);
+                "
+                onmouseover="this.style.color = 'white'"
+                onmouseout="this.style.color = 'var(--color-gray-300)'"
+                >Privacy Policy</a
+              >
+            </nav>
+          </div>
+
+          
+          <div>
+            <h3
+              style="
+                font-size: var(--text-sm);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: var(--grid-4);
+                color: var(--color-gray-400);
+              "
+            >
+              Connect
+            </h3>
+            <a
+              href="https://discord.gg/newark-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: var(--grid-2);
+                background: var(--color-gray-800);
+                color: white;
+                padding: var(--grid-3) var(--grid-4);
+                border-radius: var(--radius-lg);
+                text-decoration: none;
+                font-size: var(--text-sm);
+                font-weight: 500;
+                transition: background var(--transition-base);
+              "
+              onmouseover="this.style.background = 'var(--color-gray-700)'"
+              onmouseout="this.style.background = 'var(--color-gray-800)'"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                />
+              </svg>
+              Join Discord
+            </a>
+          </div>
+        </div>
+
+        
+        <div
+          style="
+            border-top: 1px solid var(--color-gray-800);
+            padding-top: var(--grid-8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--grid-4);
+          "
+        >
+          <p style="color: var(--color-gray-500); font-size: var(--text-sm); margin: 0">
+            © 2025 Newark AI Town Hall. All rights reserved.
+          </p>
+          <p style="color: var(--color-gray-500); font-size: var(--text-sm); margin: 0">
+            Made with ❤️ for Newark
+          </p>
+        </div>
+      </div>
+    </footer>
+
+     
+    <script
+      src="/IT373-TownHall_Final_Project/js/mobile-menu.js"
+      onerror="
+        (function () {
+          var s = document.createElement('script')
+          s.src = '/js/mobile-menu.js'
+          document.body.appendChild(s)
+        })()
+      "
+    ></script>
+  </body>
+</html>
