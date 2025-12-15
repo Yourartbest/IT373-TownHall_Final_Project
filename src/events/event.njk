@@ -5,78 +5,235 @@ pagination:
   size: 1
   alias: event
 eleventyComputed:
-  permalink: "/events/{{ event.slug }}/"
+  permalink: '/events/{{ event.slug }}/'
   title: '{{ event.title }} - Newark AI Town Hall'
   description: '{{ event.description }}'
 ---
 
 {# Neo-Minimalist Hero Section #}
-<section style="padding: var(--grid-16) 0; background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);" aria-labelledby="event-hero-heading">
+<section
+  style="
+    padding: var(--grid-16) 0;
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  "
+  aria-labelledby="event-hero-heading"
+>
   <div class="container">
     {# Breadcrumb #}
-    <div style="margin-bottom: var(--grid-8);">
-      <a href="/events/" style="color: var(--color-gray-600); font-weight: 500; text-decoration: none; font-size: var(--text-sm); display: inline-flex; align-items: center; gap: var(--grid-2); transition: color var(--transition-base);" onmouseover="this.style.color='var(--color-primary)';" onmouseout="this.style.color='var(--color-gray-600)';">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6H2M6 12l-4-6 4-6"/></svg>
+    <div style="margin-bottom: var(--grid-8)">
+      <a
+        href="/events/"
+        style="
+          color: var(--color-gray-600);
+          font-weight: 500;
+          text-decoration: none;
+          font-size: var(--text-sm);
+          display: inline-flex;
+          align-items: center;
+          gap: var(--grid-2);
+          transition: color var(--transition-base);
+        "
+        onmouseover="this.style.color = 'var(--color-primary)'"
+        onmouseout="this.style.color = 'var(--color-gray-600)'"
+      >
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 6H2M6 12l-4-6 4-6" />
+        </svg>
         <span>Back to events</span>
       </a>
     </div>
 
-    <div style="max-width: 800px; margin: 0 auto;">
-      <h1 id="event-hero-heading" style="font-size: clamp(32px, 5vw, 56px); line-height: 1.1; margin-bottom: var(--grid-8); color: var(--color-gray-900); font-weight: 600; letter-spacing: -0.02em; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto">
+      <h1
+        id="event-hero-heading"
+        style="
+          font-size: clamp(32px, 5vw, 56px);
+          line-height: 1.1;
+          margin-bottom: var(--grid-8);
+          color: var(--color-gray-900);
+          font-weight: 600;
+          letter-spacing: -0.02em;
+          text-align: center;
+        "
+      >
         {{ event.title }}
       </h1>
 
       {# Event Meta - Neo-Minimalist Cards #}
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--grid-4); margin-bottom: var(--grid-8);">
-        <div style="background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: var(--grid-5); display: flex; align-items: center; gap: var(--grid-3);">
-          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: var(--grid-4);
+          margin-bottom: var(--grid-8);
+        "
+      >
+        <div
+          style="
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--grid-5);
+            display: flex;
+            align-items: center;
+            gap: var(--grid-3);
+          "
+        >
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: linear-gradient(
+                135deg,
+                var(--color-accent) 0%,
+                var(--color-accent-light) 100%
+              );
+              border-radius: var(--radius-md);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
             <svg width="20" height="20" fill="none" stroke="white" stroke-width="2">
-              <rect x="3" y="4" width="14" height="14" rx="2"/>
-              <path d="M3 9h14M9 4v2M15 4v2"/>
+              <rect x="3" y="4" width="14" height="14" rx="2" />
+              <path d="M3 9h14M9 4v2M15 4v2" />
             </svg>
           </div>
           <div>
-            <div style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px;">Date & Time</div>
-            <time datetime="{{ event.date | dateISO }}" style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900);">{{ event.date | dateFormat }}</time>
-            <div style="font-size: var(--text-xs); color: var(--color-gray-600);">2:00 PM - 4:00 PM</div>
+            <div
+              style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px"
+            >
+              Date & Time
+            </div>
+            <time
+              datetime="{{ event.date | dateISO }}"
+              style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900)"
+              >{{ event.date | dateFormat }}</time
+            >
+            <div style="font-size: var(--text-xs); color: var(--color-gray-600)">
+              2:00 PM - 4:00 PM
+            </div>
           </div>
         </div>
 
-        <div style="background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: var(--grid-5); display: flex; align-items: center; gap: var(--grid-3);">
-          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+        <div
+          style="
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--grid-5);
+            display: flex;
+            align-items: center;
+            gap: var(--grid-3);
+          "
+        >
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: linear-gradient(
+                135deg,
+                var(--color-primary) 0%,
+                var(--color-primary-light) 100%
+              );
+              border-radius: var(--radius-md);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
             <svg width="20" height="20" fill="none" stroke="white" stroke-width="2">
-              <path d="M10 2C7.5 2 5 3.5 5 6c0 4 5 10 5 10s5-6 5-10c0-2.5-2.5-4-5-4zm0 6c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"/>
+              <path
+                d="M10 2C7.5 2 5 3.5 5 6c0 4 5 10 5 10s5-6 5-10c0-2.5-2.5-4-5-4zm0 6c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"
+              />
             </svg>
           </div>
           <div>
-            <div style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px;">Location</div>
-            <div style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900);">{{ event.location or "Newark Public Library" }}</div>
+            <div
+              style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px"
+            >
+              Location
+            </div>
+            <div style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900)">
+              {{ event.location or "Newark Public Library" }}
+            </div>
           </div>
         </div>
 
-        <div style="background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: var(--grid-5); display: flex; align-items: center; gap: var(--grid-3);">
-          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: var(--text-xl); font-weight: 600; color: white;">$0</div>
+        <div
+          style="
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: var(--grid-5);
+            display: flex;
+            align-items: center;
+            gap: var(--grid-3);
+          "
+        >
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: linear-gradient(
+                135deg,
+                var(--color-accent) 0%,
+                var(--color-accent-light) 100%
+              );
+              border-radius: var(--radius-md);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: var(--text-xl);
+              font-weight: 600;
+              color: white;
+            "
+          >
+            $0
+          </div>
           <div>
-            <div style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px;">Cost</div>
-            <div style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900);">100% Free</div>
+            <div
+              style="font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: 2px"
+            >
+              Cost
+            </div>
+            <div style="font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-900)">
+              100% Free
+            </div>
           </div>
         </div>
       </div>
 
       {# Badges - Neo-Minimalist #}
-      <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap; justify-content: center;">
+      <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap; justify-content: center">
         {% if event.difficultyLevel %}
-        <span style="background: var(--color-accent-subtle); color: var(--color-accent); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">
+        <span
+          style="
+            background: var(--color-accent-subtle);
+            color: var(--color-accent);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 500;
+          "
+        >
           {{ event.difficultyLevel | capitalize }}-friendly
         </span>
-        {% endif %}
-        {% if event.audienceTag and event.audienceTag.length > 0 %}
-        {% for tag in event.audienceTag %}
-        <span style="background: var(--color-gray-100); color: var(--color-gray-700); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">
+        {% endif %} {% if event.audienceTag and event.audienceTag.length > 0 %} {% for tag in
+        event.audienceTag %}
+        <span
+          style="
+            background: var(--color-gray-100);
+            color: var(--color-gray-700);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 500;
+          "
+        >
           {{ tag }}
         </span>
-        {% endfor %}
-        {% endif %}
+        {% endfor %} {% endif %}
       </div>
     </div>
   </div>
@@ -100,42 +257,102 @@ eleventyComputed:
       {# Main Content #}
       <div>
         {# Description - Neo-Minimalist Card #}
-        <div style="background: white; padding: var(--grid-10); margin-bottom: var(--grid-8); border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg);">
-          <h2 style="font-size: var(--text-3xl); font-weight: 600; margin-bottom: var(--grid-6); color: var(--color-gray-900);">
+        <div
+          style="
+            background: white;
+            padding: var(--grid-10);
+            margin-bottom: var(--grid-8);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+          "
+        >
+          <h2
+            style="
+              font-size: var(--text-3xl);
+              font-weight: 600;
+              margin-bottom: var(--grid-6);
+              color: var(--color-gray-900);
+            "
+          >
             About this event
           </h2>
-          
-          <p style="font-size: var(--text-lg); line-height: 1.6; color: var(--color-gray-700); margin-bottom: var(--grid-5);">
+
+          <p
+            style="
+              font-size: var(--text-lg);
+              line-height: 1.6;
+              color: var(--color-gray-700);
+              margin-bottom: var(--grid-5);
+            "
+          >
             {{ event.description }}
           </p>
 
           {% if event.fullDescription %}
-          <div style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-600);">
-            {% for block in event.fullDescription %}
-            {% if block._type == 'block' %}
-            <p style="margin-bottom: var(--grid-4);">
+          <div style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-600)">
+            {% for block in event.fullDescription %} {% if block._type == 'block' %}
+            <p style="margin-bottom: var(--grid-4)">
               {% for child in block.children %} {{ child.text }} {% endfor %}
             </p>
-            {% endif %}
-            {% endfor %}
+            {% endif %} {% endfor %}
           </div>
           {% endif %}
         </div>
 
-        {# What You'll Learn - Neo-Minimalist #}
-        {% if event.whatYouWillLearn and event.whatYouWillLearn.length > 0 %}
-        <div style="background: var(--color-gray-50); padding: var(--grid-10); border-radius: var(--radius-2xl);">
-          <h2 style="font-size: var(--text-2xl); font-weight: 600; margin-bottom: var(--grid-6); color: var(--color-gray-900);">
+        {# What You'll Learn - Neo-Minimalist #} {% if event.whatYouWillLearn and
+        event.whatYouWillLearn.length > 0 %}
+        <div
+          style="
+            background: var(--color-gray-50);
+            padding: var(--grid-10);
+            border-radius: var(--radius-2xl);
+          "
+        >
+          <h2
+            style="
+              font-size: var(--text-2xl);
+              font-weight: 600;
+              margin-bottom: var(--grid-6);
+              color: var(--color-gray-900);
+            "
+          >
             What you'll learn
           </h2>
-          
-          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: var(--grid-4);">
+
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: var(--grid-4)">
             {% for item in event.whatYouWillLearn %}
-            <li style="display: flex; align-items: start; gap: var(--grid-3); background: white; padding: var(--grid-5); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
-              <div style="width: 28px; height: 28px; min-width: 28px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: white;">
+            <li
+              style="
+                display: flex;
+                align-items: start;
+                gap: var(--grid-3);
+                background: white;
+                padding: var(--grid-5);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-sm);
+              "
+            >
+              <div
+                style="
+                  width: 28px;
+                  height: 28px;
+                  min-width: 28px;
+                  background: var(--color-accent);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: white;
+                "
+              >
                 ✓
               </div>
-              <span style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700);">{{ item }}</span>
+              <span
+                style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700)"
+                >{{ item }}</span
+              >
             </li>
             {% endfor %}
           </ul>
@@ -146,47 +363,140 @@ eleventyComputed:
       {# Sidebar #}
       <div>
         {# Registration Card - Neo-Minimalist #}
-        <div style="background: white; border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg); overflow: hidden; margin-bottom: var(--grid-6);">
-          <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); color: white; padding: var(--grid-5);">
-            <h3 style="font-size: var(--text-xl); font-weight: 600; margin: 0; text-align: center;">
+        <div
+          style="
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-bottom: var(--grid-6);
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                var(--color-primary) 0%,
+                var(--color-primary-dark) 100%
+              );
+              color: white;
+              padding: var(--grid-5);
+            "
+          >
+            <h3 style="font-size: var(--text-xl); font-weight: 600; margin: 0; text-align: center">
               Register now
             </h3>
           </div>
 
-          <div style="padding: var(--grid-6);">
+          <div style="padding: var(--grid-6)">
             {% if event.registrationOpen %}
-            <div style="background: var(--color-gray-50); border-radius: var(--radius-lg); padding: var(--grid-4); margin-bottom: var(--grid-5);">
-              <p style="font-size: var(--text-sm); line-height: 1.6; margin: 0; color: var(--color-gray-700);">
-                ✅ Free for all Newark residents<br/>
-                ✅ No tech background needed<br/>
+            <div
+              style="
+                background: var(--color-gray-50);
+                border-radius: var(--radius-lg);
+                padding: var(--grid-4);
+                margin-bottom: var(--grid-5);
+              "
+            >
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  line-height: 1.6;
+                  margin: 0;
+                  color: var(--color-gray-700);
+                "
+              >
+                ✅ Free for all Newark residents<br />
+                ✅ No tech background needed<br />
                 ✅ All materials provided
               </p>
             </div>
 
             {% if event.maxAttendees %}
-            <div style="background: var(--color-accent-subtle); border-radius: var(--radius-lg); padding: var(--grid-4); margin-bottom: var(--grid-5); display: flex; align-items: center; gap: var(--grid-2);">
-              <svg width="18" height="18" fill="currentColor" style="color: var(--color-accent);"><path d="M10 2C5.6 2 2 5.6 2 10s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm1 13H9v-2h2v2zm0-4H9V6h2v5z"/></svg>
-              <p style="font-size: var(--text-sm); margin: 0; font-weight: 500; color: var(--color-accent);">
+            <div
+              style="
+                background: var(--color-accent-subtle);
+                border-radius: var(--radius-lg);
+                padding: var(--grid-4);
+                margin-bottom: var(--grid-5);
+                display: flex;
+                align-items: center;
+                gap: var(--grid-2);
+              "
+            >
+              <svg width="18" height="18" fill="currentColor" style="color: var(--color-accent)">
+                <path
+                  d="M10 2C5.6 2 2 5.6 2 10s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm1 13H9v-2h2v2zm0-4H9V6h2v5z"
+                />
+              </svg>
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  margin: 0;
+                  font-weight: 500;
+                  color: var(--color-accent);
+                "
+              >
                 Limited: {{ event.maxAttendees }} spots available
               </p>
             </div>
             {% endif %}
 
-            <a href="#register-form" class="btn btn-primary btn-large" style="width: 100%; text-align: center; margin-bottom: var(--grid-5); box-sizing: border-box;">
+            <a
+              href="#register-form"
+              class="btn btn-primary btn-large"
+              style="
+                width: 100%;
+                text-align: center;
+                margin-bottom: var(--grid-5);
+                box-sizing: border-box;
+              "
+            >
               Save my spot
             </a>
 
-            <div style="padding: var(--grid-4); background: var(--color-gray-50); border-radius: var(--radius-lg);">
-              <p style="font-size: var(--text-sm); color: var(--color-gray-700); margin-bottom: var(--grid-3); font-weight: 500;">
+            <div
+              style="
+                padding: var(--grid-4);
+                background: var(--color-gray-50);
+                border-radius: var(--radius-lg);
+              "
+            >
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  color: var(--color-gray-700);
+                  margin-bottom: var(--grid-3);
+                  font-weight: 500;
+                "
+              >
                 Have questions?
               </p>
-              <a href="https://discord.gg/newark-ai" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="width: 100%; text-align: center; font-size: var(--text-sm); box-sizing: border-box;">
+              <a
+                href="https://discord.gg/newark-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-accent"
+                style="
+                  width: 100%;
+                  text-align: center;
+                  font-size: var(--text-sm);
+                  box-sizing: border-box;
+                "
+              >
                 Join Discord
               </a>
             </div>
             {% else %}
-            <div style="background: var(--color-gray-100); border-radius: var(--radius-lg); padding: var(--grid-6); text-align: center;">
-              <p style="font-size: var(--text-base); margin: 0; color: var(--color-gray-700);">
+            <div
+              style="
+                background: var(--color-gray-100);
+                border-radius: var(--radius-lg);
+                padding: var(--grid-6);
+                text-align: center;
+              "
+            >
+              <p style="font-size: var(--text-base); margin: 0; color: var(--color-gray-700)">
                 Registration currently closed. Join Discord for updates.
               </p>
             </div>
@@ -195,33 +505,135 @@ eleventyComputed:
         </div>
 
         {# Quick Info Card - Neo-Minimalist #}
-        <div style="background: white; border-radius: var(--radius-2xl); box-shadow: var(--shadow-md); overflow: hidden;">
-          <div style="padding: var(--grid-6);">
-            <h3 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--grid-5); color: var(--color-gray-900);">
+        <div
+          style="
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+          "
+        >
+          <div style="padding: var(--grid-6)">
+            <h3
+              style="
+                font-size: var(--text-lg);
+                font-weight: 600;
+                margin-bottom: var(--grid-5);
+                color: var(--color-gray-900);
+              "
+            >
               Quick info
             </h3>
 
-            <div style="display: grid; gap: var(--grid-4);">
-              <div style="padding-bottom: var(--grid-3); border-bottom: 1px solid var(--color-gray-200);">
-                <p style="margin: 0; font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: var(--grid-2);">Duration</p>
-                <p style="font-weight: 600; margin: 0; font-size: var(--text-base); color: var(--color-gray-900);">2 Hours</p>
+            <div style="display: grid; gap: var(--grid-4)">
+              <div
+                style="
+                  padding-bottom: var(--grid-3);
+                  border-bottom: 1px solid var(--color-gray-200);
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-size: var(--text-xs);
+                    color: var(--color-gray-500);
+                    margin-bottom: var(--grid-2);
+                  "
+                >
+                  Duration
+                </p>
+                <p
+                  style="
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: var(--text-base);
+                    color: var(--color-gray-900);
+                  "
+                >
+                  2 Hours
+                </p>
               </div>
 
               {% if event.difficultyLevel %}
-              <div style="padding-bottom: var(--grid-3); border-bottom: 1px solid var(--color-gray-200);">
-                <p style="margin: 0; font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: var(--grid-2);">Level</p>
-                <p style="font-weight: 600; margin: 0; font-size: var(--text-base); color: var(--color-gray-900); text-transform: capitalize;">{{ event.difficultyLevel }}</p>
+              <div
+                style="
+                  padding-bottom: var(--grid-3);
+                  border-bottom: 1px solid var(--color-gray-200);
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-size: var(--text-xs);
+                    color: var(--color-gray-500);
+                    margin-bottom: var(--grid-2);
+                  "
+                >
+                  Level
+                </p>
+                <p
+                  style="
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: var(--text-base);
+                    color: var(--color-gray-900);
+                    text-transform: capitalize;
+                  "
+                >
+                  {{ event.difficultyLevel }}
+                </p>
               </div>
               {% endif %}
 
-              <div style="padding-bottom: var(--grid-3); border-bottom: 1px solid var(--color-gray-200);">
-                <p style="margin: 0; font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: var(--grid-2);">Language</p>
-                <p style="font-weight: 600; margin: 0; font-size: var(--text-base); color: var(--color-gray-900);">English</p>
+              <div
+                style="
+                  padding-bottom: var(--grid-3);
+                  border-bottom: 1px solid var(--color-gray-200);
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-size: var(--text-xs);
+                    color: var(--color-gray-500);
+                    margin-bottom: var(--grid-2);
+                  "
+                >
+                  Language
+                </p>
+                <p
+                  style="
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: var(--text-base);
+                    color: var(--color-gray-900);
+                  "
+                >
+                  English
+                </p>
               </div>
 
               <div>
-                <p style="margin: 0; font-size: var(--text-xs); color: var(--color-gray-500); margin-bottom: var(--grid-2);">Cost</p>
-                <p style="font-weight: 600; margin: 0; font-size: var(--text-base); color: var(--color-accent);">100% Free</p>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: var(--text-xs);
+                    color: var(--color-gray-500);
+                    margin-bottom: var(--grid-2);
+                  "
+                >
+                  Cost
+                </p>
+                <p
+                  style="
+                    font-weight: 600;
+                    margin: 0;
+                    font-size: var(--text-base);
+                    color: var(--color-accent);
+                  "
+                >
+                  100% Free
+                </p>
               </div>
             </div>
           </div>

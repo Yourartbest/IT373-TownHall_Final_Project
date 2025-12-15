@@ -5,186 +5,944 @@ description: Learn the basics of artificial intelligence without the jargon. A b
 permalink: /resources/what-is-ai/
 ---
 
-<section style="padding: var(--grid-24) 0; background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);" aria-labelledby="resource-hero-heading">
+<section
+  style="
+    padding: var(--grid-24) 0;
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  "
+  aria-labelledby="resource-hero-heading"
+>
   <div class="container">
-    <div style="max-width: 700px;">
-      <a href="{{ '/resources/' | url }}" style="display: inline-flex; align-items: center; gap: var(--grid-2); color: var(--color-accent); font-weight: 500; font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--grid-6);" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+    <div style="max-width: 700px">
+      <a
+        href="{{ '/resources/' | url }}"
+        style="
+          display: inline-flex;
+          align-items: center;
+          gap: var(--grid-2);
+          color: var(--color-accent);
+          font-weight: 500;
+          font-size: var(--text-sm);
+          text-decoration: none;
+          margin-bottom: var(--grid-6);
+        "
+        onmouseover="this.style.textDecoration = 'underline'"
+        onmouseout="this.style.textDecoration = 'none'"
+      >
         ← Back to resources
       </a>
-      <span style="background: var(--color-accent-subtle); color: var(--color-accent); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-xs); font-weight: 500; display: inline-block; margin-bottom: var(--grid-4);">Guide</span>
-      <h1 id="resource-hero-heading" style="font-size: clamp(36px, 5vw, 56px); margin-bottom: var(--grid-6); color: var(--color-gray-900); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em;">
+      <span
+        style="
+          background: var(--color-accent-subtle);
+          color: var(--color-accent);
+          padding: 4px 12px;
+          border-radius: var(--radius-full);
+          font-size: var(--text-xs);
+          font-weight: 500;
+          display: inline-block;
+          margin-bottom: var(--grid-4);
+        "
+        >Guide</span
+      >
+      <h1
+        id="resource-hero-heading"
+        style="
+          font-size: clamp(36px, 5vw, 56px);
+          margin-bottom: var(--grid-6);
+          color: var(--color-gray-900);
+          font-weight: 600;
+          line-height: 1.1;
+          letter-spacing: -0.02em;
+        "
+      >
         What is AI? A plain-language guide
       </h1>
-      <p style="font-size: var(--text-lg); line-height: 1.6; color: var(--color-gray-600);">
-        Learn the basics of artificial intelligence without the technical jargon. This guide is designed for anyone curious about AI—no computer science degree required.
+      <p style="font-size: var(--text-lg); line-height: 1.6; color: var(--color-gray-600)">
+        Learn the basics of artificial intelligence without the technical jargon. This guide is
+        designed for anyone curious about AI—no computer science degree required.
       </p>
     </div>
   </div>
 </section>
 
-<section style="padding: var(--grid-16) 0; background: var(--color-white);">
+<section style="padding: var(--grid-16) 0; background: var(--color-white)">
   <div class="container">
-    <article style="background: white;">
-        
-        <section style="margin-bottom: var(--grid-16); padding-bottom: var(--grid-16); border-bottom: 1px solid var(--color-gray-200);">
-          <h2 style="font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin-bottom: var(--grid-6); color: var(--color-gray-900);">What exactly is AI?</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--grid-8); align-items: center;">
-            <div>
-              <p style="color: var(--color-gray-700); line-height: 1.9; margin-bottom: var(--grid-4); font-size: var(--text-lg);">
-                <strong>Artificial Intelligence (AI)</strong> is a type of computer technology that can learn from information and make decisions or predictions—similar to how humans learn from experience.
-              </p>
-              <p style="color: var(--color-gray-700); line-height: 1.9; font-size: var(--text-lg);">
-                Think of it like this: when you teach a child to recognize a dog, you show them many pictures of dogs. Eventually, they can spot a dog they've never seen before. AI works in a similar way—it learns patterns from lots of examples.
-              </p>
-            </div>
-            <div style="background: linear-gradient(135deg, var(--color-accent-subtle) 0%, var(--color-gray-50) 100%); border-radius: var(--radius-2xl); padding: var(--grid-10); text-align: center;">
-              <div style="font-size: 80px; margin-bottom: var(--grid-4);">🤖</div>
-              <p style="color: var(--color-gray-600); font-size: var(--text-sm); font-style: italic;">AI learns patterns from data, just like humans learn from experience</p>
-            </div>
+    <article style="background: white">
+      <section
+        style="
+          margin-bottom: var(--grid-16);
+          padding-bottom: var(--grid-16);
+          border-bottom: 1px solid var(--color-gray-200);
+        "
+      >
+        <h2
+          style="
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 600;
+            margin-bottom: var(--grid-6);
+            color: var(--color-gray-900);
+          "
+        >
+          What exactly is AI?
+        </h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--grid-8);
+            align-items: center;
+          "
+        >
+          <div>
+            <p
+              style="
+                color: var(--color-gray-700);
+                line-height: 1.9;
+                margin-bottom: var(--grid-4);
+                font-size: var(--text-lg);
+              "
+            >
+              <strong>Artificial Intelligence (AI)</strong> is a type of computer technology that
+              can learn from information and make decisions or predictions—similar to how humans
+              learn from experience.
+            </p>
+            <p style="color: var(--color-gray-700); line-height: 1.9; font-size: var(--text-lg)">
+              Think of it like this: when you teach a child to recognize a dog, you show them many
+              pictures of dogs. Eventually, they can spot a dog they've never seen before. AI works
+              in a similar way—it learns patterns from lots of examples.
+            </p>
           </div>
-        </section>
-
-        <section style="margin-bottom: var(--grid-16); padding-bottom: var(--grid-16); border-bottom: 1px solid var(--color-gray-200);">
-          <h2 style="font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin-bottom: var(--grid-4); color: var(--color-gray-900);">AI you already use every day</h2>
-          <p style="color: var(--color-gray-700); line-height: 1.8; margin-bottom: var(--grid-8); font-size: var(--text-lg);">
-            You might not realize it, but you probably interact with AI multiple times a day:
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--grid-6);">
-            <div style="padding: var(--grid-6); background: var(--color-gray-50); border-radius: var(--radius-xl); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
-              <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4);">📱</span>
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">Voice assistants</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">Siri, Alexa, and Google Assistant use AI to understand your voice and respond to questions.</p>
-            </div>
-            <div style="padding: var(--grid-6); background: var(--color-gray-50); border-radius: var(--radius-xl); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
-              <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4);">📧</span>
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">Email spam filters</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">AI learns to recognize junk mail and keeps your inbox clean.</p>
-            </div>
-            <div style="padding: var(--grid-6); background: var(--color-gray-50); border-radius: var(--radius-xl); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
-              <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4);">🎬</span>
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">Netflix & Spotify</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">AI suggests shows and music based on what you've watched or listened to before.</p>
-            </div>
-            <div style="padding: var(--grid-6); background: var(--color-gray-50); border-radius: var(--radius-xl); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
-              <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4);">🗺️</span>
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">GPS navigation</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">Apps like Google Maps use AI to predict traffic and find the fastest route.</p>
-            </div>
-            <div style="padding: var(--grid-6); background: var(--color-gray-50); border-radius: var(--radius-xl); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
-              <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4);">📸</span>
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">Photo organization</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">Your phone uses AI to recognize faces and group photos of the same person together.</p>
-            </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                var(--color-accent-subtle) 0%,
+                var(--color-gray-50) 100%
+              );
+              border-radius: var(--radius-2xl);
+              padding: var(--grid-10);
+              text-align: center;
+            "
+          >
+            <div style="font-size: 80px; margin-bottom: var(--grid-4)">🤖</div>
+            <p style="color: var(--color-gray-600); font-size: var(--text-sm); font-style: italic">
+              AI learns patterns from data, just like humans learn from experience
+            </p>
           </div>
-        </section>
-
-        <section style="margin-bottom: var(--grid-16); padding-bottom: var(--grid-16); border-bottom: 1px solid var(--color-gray-200);">
-          <h2 style="font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin-bottom: var(--grid-4); color: var(--color-gray-900);">How does AI actually work?</h2>
-          <p style="color: var(--color-gray-700); line-height: 1.8; margin-bottom: var(--grid-8); font-size: var(--text-lg);">
-            AI systems learn through a process called <strong>machine learning</strong>. Here's a simple breakdown:
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--grid-6); margin-bottom: var(--grid-6);">
-            <div style="background: var(--color-gray-50); padding: var(--grid-6); border-radius: var(--radius-xl); text-align: center;">
-              <div style="width: 56px; height: 56px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: var(--text-xl); margin: 0 auto var(--grid-4);">1</div>
-              <strong style="color: var(--color-gray-900); display: block; margin-bottom: var(--grid-2);">Data collection</strong>
-              <p style="color: var(--color-gray-600); margin: 0; font-size: var(--text-sm);">The AI is given lots of examples to learn from (like thousands of photos of cats and dogs).</p>
-            </div>
-            <div style="background: var(--color-gray-50); padding: var(--grid-6); border-radius: var(--radius-xl); text-align: center;">
-              <div style="width: 56px; height: 56px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: var(--text-xl); margin: 0 auto var(--grid-4);">2</div>
-              <strong style="color: var(--color-gray-900); display: block; margin-bottom: var(--grid-2);">Pattern recognition</strong>
-              <p style="color: var(--color-gray-600); margin: 0; font-size: var(--text-sm);">The AI finds patterns in the data (cats have pointy ears, dogs have longer snouts).</p>
-            </div>
-            <div style="background: var(--color-gray-50); padding: var(--grid-6); border-radius: var(--radius-xl); text-align: center;">
-              <div style="width: 56px; height: 56px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: var(--text-xl); margin: 0 auto var(--grid-4);">3</div>
-              <strong style="color: var(--color-gray-900); display: block; margin-bottom: var(--grid-2);">Making predictions</strong>
-              <p style="color: var(--color-gray-600); margin: 0; font-size: var(--text-sm);">When shown a new image, the AI uses what it learned to guess if it's a cat or dog.</p>
-            </div>
-            <div style="background: var(--color-gray-50); padding: var(--grid-6); border-radius: var(--radius-xl); text-align: center;">
-              <div style="width: 56px; height: 56px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: var(--text-xl); margin: 0 auto var(--grid-4);">4</div>
-              <strong style="color: var(--color-gray-900); display: block; margin-bottom: var(--grid-2);">Getting better over time</strong>
-              <p style="color: var(--color-gray-600); margin: 0; font-size: var(--text-sm);">When the AI makes mistakes, it adjusts and improves its accuracy.</p>
-            </div>
-          </div>
-        </section>
-
-        <section style="margin-bottom: var(--grid-16); padding-bottom: var(--grid-16); border-bottom: 1px solid var(--color-gray-200);">
-          <h2 style="font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin-bottom: var(--grid-8); color: var(--color-gray-900);">What AI can and can't do</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--grid-8);">
-            <div style="padding: var(--grid-8); background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: var(--radius-2xl);">
-              <div style="font-size: 48px; margin-bottom: var(--grid-4);">✅</div>
-              <h3 style="font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--grid-4); color: #2e7d32;">AI is good at:</h3>
-              <ul style="list-style: none; padding: 0; color: var(--color-gray-700); margin: 0;">
-                <li style="margin-bottom: var(--grid-3); display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #2e7d32;">•</span> Finding patterns in large amounts of data</li>
-                <li style="margin-bottom: var(--grid-3); display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #2e7d32;">•</span> Repetitive tasks that follow rules</li>
-                <li style="margin-bottom: var(--grid-3); display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #2e7d32;">•</span> Processing information quickly</li>
-                <li style="margin-bottom: var(--grid-3); display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #2e7d32;">•</span> Making predictions based on past data</li>
-                <li style="display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #2e7d32;">•</span> Recognizing images, speech, and text</li>
-              </ul>
-            </div>
-            <div style="padding: var(--grid-8); background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-radius: var(--radius-2xl);">
-              <div style="font-size: 48px; margin-bottom: var(--grid-4);">⚠️</div>
-              <h3 style="font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--grid-4); color: #c62828;">AI struggles with:</h3>
-              <ul style="list-style: none; padding: 0; color: var(--color-gray-700); margin: 0;">
-                <li style="margin-bottom: var(--grid-3); display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #c62828;">•</span> Understanding context and nuance</li>
-                <li style="margin-bottom: var(--grid-3); display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #c62828;">•</span> Common sense reasoning</li>
-                <li style="margin-bottom: var(--grid-3); display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #c62828;">•</span> Creativity and original thinking</li>
-                <li style="margin-bottom: var(--grid-3); display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #c62828;">•</span> Emotional intelligence</li>
-                <li style="display: flex; gap: var(--grid-2); align-items: flex-start;"><span style="color: #c62828;">•</span> Tasks it wasn't trained for</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section style="margin-bottom: var(--grid-16); padding-bottom: var(--grid-16); border-bottom: 1px solid var(--color-gray-200);">
-          <h2 style="font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin-bottom: var(--grid-8); color: var(--color-gray-900);">Common AI terms explained</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--grid-6);">
-            <div style="padding: var(--grid-6); border-left: 4px solid var(--color-accent); background: var(--color-gray-50); border-radius: 0 var(--radius-xl) var(--radius-xl) 0;">
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">Machine Learning</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">A type of AI that learns from examples instead of being programmed with specific rules.</p>
-            </div>
-            <div style="padding: var(--grid-6); border-left: 4px solid var(--color-accent); background: var(--color-gray-50); border-radius: 0 var(--radius-xl) var(--radius-xl) 0;">
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">Algorithm</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">A set of step-by-step instructions that tells a computer how to solve a problem—like a recipe.</p>
-            </div>
-            <div style="padding: var(--grid-6); border-left: 4px solid var(--color-accent); background: var(--color-gray-50); border-radius: 0 var(--radius-xl) var(--radius-xl) 0;">
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">ChatGPT / LLM</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">AI that can understand and generate human-like text, trained on billions of words from the internet.</p>
-            </div>
-            <div style="padding: var(--grid-6); border-left: 4px solid var(--color-accent); background: var(--color-gray-50); border-radius: 0 var(--radius-xl) var(--radius-xl) 0;">
-              <strong style="color: var(--color-gray-900); font-size: var(--text-lg); display: block; margin-bottom: var(--grid-2);">Neural Network</strong>
-              <p style="color: var(--color-gray-600); margin: 0;">An AI system loosely inspired by how the human brain works, with layers of connected "neurons."</p>
-            </div>
-          </div>
-        </section>
-
-        <section style="background: linear-gradient(135deg, var(--color-accent-subtle) 0%, var(--color-gray-50) 100%); padding: var(--grid-12); border-radius: var(--radius-2xl); margin-bottom: var(--grid-12);">
-          <h2 style="font-size: clamp(24px, 3vw, 32px); font-weight: 600; margin-bottom: var(--grid-6); color: var(--color-gray-900); text-align: center;">Key takeaways</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--grid-6);">
-            <div style="display: flex; gap: var(--grid-4); align-items: flex-start; background: white; padding: var(--grid-5); border-radius: var(--radius-xl);">
-              <div style="width: 40px; height: 40px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">✓</div>
-              <p style="color: var(--color-gray-700); margin: 0;">AI is a tool that learns from data to make predictions and decisions.</p>
-            </div>
-            <div style="display: flex; gap: var(--grid-4); align-items: flex-start; background: white; padding: var(--grid-5); border-radius: var(--radius-xl);">
-              <div style="width: 40px; height: 40px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">✓</div>
-              <p style="color: var(--color-gray-700); margin: 0;">You already use AI every day in apps, phones, and online services.</p>
-            </div>
-            <div style="display: flex; gap: var(--grid-4); align-items: flex-start; background: white; padding: var(--grid-5); border-radius: var(--radius-xl);">
-              <div style="width: 40px; height: 40px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">✓</div>
-              <p style="color: var(--color-gray-700); margin: 0;">AI is powerful but has limitations—it's not magic or human-like intelligence.</p>
-            </div>
-            <div style="display: flex; gap: var(--grid-4); align-items: flex-start; background: white; padding: var(--grid-5); border-radius: var(--radius-xl);">
-              <div style="width: 40px; height: 40px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">✓</div>
-              <p style="color: var(--color-gray-700); margin: 0;">Understanding AI basics helps you make informed decisions about technology.</p>
-            </div>
-          </div>
-        </section>
-
-        <div style="text-align: center; background: var(--color-gray-900); padding: var(--grid-12); border-radius: var(--radius-2xl);">
-          <h3 style="color: white; font-size: var(--text-2xl); font-weight: 600; margin-bottom: var(--grid-4);">Want to learn more?</h3>
-          <p style="color: var(--color-gray-400); margin-bottom: var(--grid-6);">Join one of our free workshops and learn hands-on!</p>
-          <a href="{{ '/events/overview/' | url }}" class="btn btn-primary" style="background: white; color: var(--color-gray-900);">View upcoming events</a>
         </div>
+      </section>
 
-      </article>
+      <section
+        style="
+          margin-bottom: var(--grid-16);
+          padding-bottom: var(--grid-16);
+          border-bottom: 1px solid var(--color-gray-200);
+        "
+      >
+        <h2
+          style="
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 600;
+            margin-bottom: var(--grid-4);
+            color: var(--color-gray-900);
+          "
+        >
+          AI you already use every day
+        </h2>
+        <p
+          style="
+            color: var(--color-gray-700);
+            line-height: 1.8;
+            margin-bottom: var(--grid-8);
+            font-size: var(--text-lg);
+          "
+        >
+          You might not realize it, but you probably interact with AI multiple times a day:
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--grid-6);
+          "
+        >
+          <div
+            style="
+              padding: var(--grid-6);
+              background: var(--color-gray-50);
+              border-radius: var(--radius-xl);
+              transition: all var(--transition-base);
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-4px)'
+              this.style.boxShadow = 'var(--shadow-md)'
+            "
+            onmouseout="
+              this.style.transform = ''
+              this.style.boxShadow = ''
+            "
+          >
+            <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4)">📱</span>
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >Voice assistants</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              Siri, Alexa, and Google Assistant use AI to understand your voice and respond to
+              questions.
+            </p>
+          </div>
+          <div
+            style="
+              padding: var(--grid-6);
+              background: var(--color-gray-50);
+              border-radius: var(--radius-xl);
+              transition: all var(--transition-base);
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-4px)'
+              this.style.boxShadow = 'var(--shadow-md)'
+            "
+            onmouseout="
+              this.style.transform = ''
+              this.style.boxShadow = ''
+            "
+          >
+            <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4)">📧</span>
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >Email spam filters</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              AI learns to recognize junk mail and keeps your inbox clean.
+            </p>
+          </div>
+          <div
+            style="
+              padding: var(--grid-6);
+              background: var(--color-gray-50);
+              border-radius: var(--radius-xl);
+              transition: all var(--transition-base);
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-4px)'
+              this.style.boxShadow = 'var(--shadow-md)'
+            "
+            onmouseout="
+              this.style.transform = ''
+              this.style.boxShadow = ''
+            "
+          >
+            <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4)">🎬</span>
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >Netflix & Spotify</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              AI suggests shows and music based on what you've watched or listened to before.
+            </p>
+          </div>
+          <div
+            style="
+              padding: var(--grid-6);
+              background: var(--color-gray-50);
+              border-radius: var(--radius-xl);
+              transition: all var(--transition-base);
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-4px)'
+              this.style.boxShadow = 'var(--shadow-md)'
+            "
+            onmouseout="
+              this.style.transform = ''
+              this.style.boxShadow = ''
+            "
+          >
+            <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4)">🗺️</span>
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >GPS navigation</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              Apps like Google Maps use AI to predict traffic and find the fastest route.
+            </p>
+          </div>
+          <div
+            style="
+              padding: var(--grid-6);
+              background: var(--color-gray-50);
+              border-radius: var(--radius-xl);
+              transition: all var(--transition-base);
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-4px)'
+              this.style.boxShadow = 'var(--shadow-md)'
+            "
+            onmouseout="
+              this.style.transform = ''
+              this.style.boxShadow = ''
+            "
+          >
+            <span style="font-size: 48px; display: block; margin-bottom: var(--grid-4)">📸</span>
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >Photo organization</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              Your phone uses AI to recognize faces and group photos of the same person together.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        style="
+          margin-bottom: var(--grid-16);
+          padding-bottom: var(--grid-16);
+          border-bottom: 1px solid var(--color-gray-200);
+        "
+      >
+        <h2
+          style="
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 600;
+            margin-bottom: var(--grid-4);
+            color: var(--color-gray-900);
+          "
+        >
+          How does AI actually work?
+        </h2>
+        <p
+          style="
+            color: var(--color-gray-700);
+            line-height: 1.8;
+            margin-bottom: var(--grid-8);
+            font-size: var(--text-lg);
+          "
+        >
+          AI systems learn through a process called <strong>machine learning</strong>. Here's a
+          simple breakdown:
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--grid-6);
+            margin-bottom: var(--grid-6);
+          "
+        >
+          <div
+            style="
+              background: var(--color-gray-50);
+              padding: var(--grid-6);
+              border-radius: var(--radius-xl);
+              text-align: center;
+            "
+          >
+            <div
+              style="
+                width: 56px;
+                height: 56px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                font-size: var(--text-xl);
+                margin: 0 auto var(--grid-4);
+              "
+            >
+              1
+            </div>
+            <strong
+              style="color: var(--color-gray-900); display: block; margin-bottom: var(--grid-2)"
+              >Data collection</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0; font-size: var(--text-sm)">
+              The AI is given lots of examples to learn from (like thousands of photos of cats and
+              dogs).
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--color-gray-50);
+              padding: var(--grid-6);
+              border-radius: var(--radius-xl);
+              text-align: center;
+            "
+          >
+            <div
+              style="
+                width: 56px;
+                height: 56px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                font-size: var(--text-xl);
+                margin: 0 auto var(--grid-4);
+              "
+            >
+              2
+            </div>
+            <strong
+              style="color: var(--color-gray-900); display: block; margin-bottom: var(--grid-2)"
+              >Pattern recognition</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0; font-size: var(--text-sm)">
+              The AI finds patterns in the data (cats have pointy ears, dogs have longer snouts).
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--color-gray-50);
+              padding: var(--grid-6);
+              border-radius: var(--radius-xl);
+              text-align: center;
+            "
+          >
+            <div
+              style="
+                width: 56px;
+                height: 56px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                font-size: var(--text-xl);
+                margin: 0 auto var(--grid-4);
+              "
+            >
+              3
+            </div>
+            <strong
+              style="color: var(--color-gray-900); display: block; margin-bottom: var(--grid-2)"
+              >Making predictions</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0; font-size: var(--text-sm)">
+              When shown a new image, the AI uses what it learned to guess if it's a cat or dog.
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--color-gray-50);
+              padding: var(--grid-6);
+              border-radius: var(--radius-xl);
+              text-align: center;
+            "
+          >
+            <div
+              style="
+                width: 56px;
+                height: 56px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                font-size: var(--text-xl);
+                margin: 0 auto var(--grid-4);
+              "
+            >
+              4
+            </div>
+            <strong
+              style="color: var(--color-gray-900); display: block; margin-bottom: var(--grid-2)"
+              >Getting better over time</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0; font-size: var(--text-sm)">
+              When the AI makes mistakes, it adjusts and improves its accuracy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        style="
+          margin-bottom: var(--grid-16);
+          padding-bottom: var(--grid-16);
+          border-bottom: 1px solid var(--color-gray-200);
+        "
+      >
+        <h2
+          style="
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 600;
+            margin-bottom: var(--grid-8);
+            color: var(--color-gray-900);
+          "
+        >
+          What AI can and can't do
+        </h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--grid-8);
+          "
+        >
+          <div
+            style="
+              padding: var(--grid-8);
+              background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+              border-radius: var(--radius-2xl);
+            "
+          >
+            <div style="font-size: 48px; margin-bottom: var(--grid-4)">✅</div>
+            <h3
+              style="
+                font-size: var(--text-xl);
+                font-weight: 600;
+                margin-bottom: var(--grid-4);
+                color: #2e7d32;
+              "
+            >
+              AI is good at:
+            </h3>
+            <ul style="list-style: none; padding: 0; color: var(--color-gray-700); margin: 0">
+              <li
+                style="
+                  margin-bottom: var(--grid-3);
+                  display: flex;
+                  gap: var(--grid-2);
+                  align-items: flex-start;
+                "
+              >
+                <span style="color: #2e7d32">•</span> Finding patterns in large amounts of data
+              </li>
+              <li
+                style="
+                  margin-bottom: var(--grid-3);
+                  display: flex;
+                  gap: var(--grid-2);
+                  align-items: flex-start;
+                "
+              >
+                <span style="color: #2e7d32">•</span> Repetitive tasks that follow rules
+              </li>
+              <li
+                style="
+                  margin-bottom: var(--grid-3);
+                  display: flex;
+                  gap: var(--grid-2);
+                  align-items: flex-start;
+                "
+              >
+                <span style="color: #2e7d32">•</span> Processing information quickly
+              </li>
+              <li
+                style="
+                  margin-bottom: var(--grid-3);
+                  display: flex;
+                  gap: var(--grid-2);
+                  align-items: flex-start;
+                "
+              >
+                <span style="color: #2e7d32">•</span> Making predictions based on past data
+              </li>
+              <li style="display: flex; gap: var(--grid-2); align-items: flex-start">
+                <span style="color: #2e7d32">•</span> Recognizing images, speech, and text
+              </li>
+            </ul>
+          </div>
+          <div
+            style="
+              padding: var(--grid-8);
+              background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+              border-radius: var(--radius-2xl);
+            "
+          >
+            <div style="font-size: 48px; margin-bottom: var(--grid-4)">⚠️</div>
+            <h3
+              style="
+                font-size: var(--text-xl);
+                font-weight: 600;
+                margin-bottom: var(--grid-4);
+                color: #c62828;
+              "
+            >
+              AI struggles with:
+            </h3>
+            <ul style="list-style: none; padding: 0; color: var(--color-gray-700); margin: 0">
+              <li
+                style="
+                  margin-bottom: var(--grid-3);
+                  display: flex;
+                  gap: var(--grid-2);
+                  align-items: flex-start;
+                "
+              >
+                <span style="color: #c62828">•</span> Understanding context and nuance
+              </li>
+              <li
+                style="
+                  margin-bottom: var(--grid-3);
+                  display: flex;
+                  gap: var(--grid-2);
+                  align-items: flex-start;
+                "
+              >
+                <span style="color: #c62828">•</span> Common sense reasoning
+              </li>
+              <li
+                style="
+                  margin-bottom: var(--grid-3);
+                  display: flex;
+                  gap: var(--grid-2);
+                  align-items: flex-start;
+                "
+              >
+                <span style="color: #c62828">•</span> Creativity and original thinking
+              </li>
+              <li
+                style="
+                  margin-bottom: var(--grid-3);
+                  display: flex;
+                  gap: var(--grid-2);
+                  align-items: flex-start;
+                "
+              >
+                <span style="color: #c62828">•</span> Emotional intelligence
+              </li>
+              <li style="display: flex; gap: var(--grid-2); align-items: flex-start">
+                <span style="color: #c62828">•</span> Tasks it wasn't trained for
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        style="
+          margin-bottom: var(--grid-16);
+          padding-bottom: var(--grid-16);
+          border-bottom: 1px solid var(--color-gray-200);
+        "
+      >
+        <h2
+          style="
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 600;
+            margin-bottom: var(--grid-8);
+            color: var(--color-gray-900);
+          "
+        >
+          Common AI terms explained
+        </h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--grid-6);
+          "
+        >
+          <div
+            style="
+              padding: var(--grid-6);
+              border-left: 4px solid var(--color-accent);
+              background: var(--color-gray-50);
+              border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+            "
+          >
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >Machine Learning</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              A type of AI that learns from examples instead of being programmed with specific
+              rules.
+            </p>
+          </div>
+          <div
+            style="
+              padding: var(--grid-6);
+              border-left: 4px solid var(--color-accent);
+              background: var(--color-gray-50);
+              border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+            "
+          >
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >Algorithm</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              A set of step-by-step instructions that tells a computer how to solve a problem—like a
+              recipe.
+            </p>
+          </div>
+          <div
+            style="
+              padding: var(--grid-6);
+              border-left: 4px solid var(--color-accent);
+              background: var(--color-gray-50);
+              border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+            "
+          >
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >ChatGPT / LLM</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              AI that can understand and generate human-like text, trained on billions of words from
+              the internet.
+            </p>
+          </div>
+          <div
+            style="
+              padding: var(--grid-6);
+              border-left: 4px solid var(--color-accent);
+              background: var(--color-gray-50);
+              border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+            "
+          >
+            <strong
+              style="
+                color: var(--color-gray-900);
+                font-size: var(--text-lg);
+                display: block;
+                margin-bottom: var(--grid-2);
+              "
+              >Neural Network</strong
+            >
+            <p style="color: var(--color-gray-600); margin: 0">
+              An AI system loosely inspired by how the human brain works, with layers of connected
+              "neurons."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        style="
+          background: linear-gradient(
+            135deg,
+            var(--color-accent-subtle) 0%,
+            var(--color-gray-50) 100%
+          );
+          padding: var(--grid-12);
+          border-radius: var(--radius-2xl);
+          margin-bottom: var(--grid-12);
+        "
+      >
+        <h2
+          style="
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 600;
+            margin-bottom: var(--grid-6);
+            color: var(--color-gray-900);
+            text-align: center;
+          "
+        >
+          Key takeaways
+        </h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--grid-6);
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: var(--grid-4);
+              align-items: flex-start;
+              background: white;
+              padding: var(--grid-5);
+              border-radius: var(--radius-xl);
+            "
+          >
+            <div
+              style="
+                width: 40px;
+                height: 40px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                flex-shrink: 0;
+              "
+            >
+              ✓
+            </div>
+            <p style="color: var(--color-gray-700); margin: 0">
+              AI is a tool that learns from data to make predictions and decisions.
+            </p>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: var(--grid-4);
+              align-items: flex-start;
+              background: white;
+              padding: var(--grid-5);
+              border-radius: var(--radius-xl);
+            "
+          >
+            <div
+              style="
+                width: 40px;
+                height: 40px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                flex-shrink: 0;
+              "
+            >
+              ✓
+            </div>
+            <p style="color: var(--color-gray-700); margin: 0">
+              You already use AI every day in apps, phones, and online services.
+            </p>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: var(--grid-4);
+              align-items: flex-start;
+              background: white;
+              padding: var(--grid-5);
+              border-radius: var(--radius-xl);
+            "
+          >
+            <div
+              style="
+                width: 40px;
+                height: 40px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                flex-shrink: 0;
+              "
+            >
+              ✓
+            </div>
+            <p style="color: var(--color-gray-700); margin: 0">
+              AI is powerful but has limitations—it's not magic or human-like intelligence.
+            </p>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: var(--grid-4);
+              align-items: flex-start;
+              background: white;
+              padding: var(--grid-5);
+              border-radius: var(--radius-xl);
+            "
+          >
+            <div
+              style="
+                width: 40px;
+                height: 40px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                flex-shrink: 0;
+              "
+            >
+              ✓
+            </div>
+            <p style="color: var(--color-gray-700); margin: 0">
+              Understanding AI basics helps you make informed decisions about technology.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        style="
+          text-align: center;
+          background: var(--color-gray-900);
+          padding: var(--grid-12);
+          border-radius: var(--radius-2xl);
+        "
+      >
+        <h3
+          style="
+            color: white;
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            margin-bottom: var(--grid-4);
+          "
+        >
+          Want to learn more?
+        </h3>
+        <p style="color: var(--color-gray-400); margin-bottom: var(--grid-6)">
+          Join one of our free workshops and learn hands-on!
+        </p>
+        <a
+          href="{{ '/events/overview/' | url }}"
+          class="btn btn-primary"
+          style="background: white; color: var(--color-gray-900)"
+          >View upcoming events</a
+        >
+      </div>
+    </article>
   </div>
 </section>
