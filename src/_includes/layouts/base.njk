@@ -362,5 +362,17 @@
         })()
       "
     ></script>
+
+    {# Cookie Consent Banner - GDPR Compliant #}
+    <script
+      src="{{ '/js/cookie-consent.js' | url }}"
+      onerror="
+        (function () {
+          var s = document.createElement('script')
+          s.src = '/js/cookie-consent.js'
+          document.body.appendChild(s)
+        })()
+      "
+    ></script>
   </body>
 </html>
