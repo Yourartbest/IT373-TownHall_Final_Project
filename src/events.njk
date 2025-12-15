@@ -209,14 +209,14 @@ permalink: /events/overview/
             class="btn btn-outline"
             style="padding: var(--grid-unit) var(--grid-2); min-height: auto; font-size: 12px"
           >
-            {{ event.difficultyLevel | upper }}-FRIENDLY
+            {{ (event.difficultyLevel ~ '') | upper }}-FRIENDLY
           </button>
           {% endif %} {% if event.audienceTag %}
           <button
             class="btn btn-outline"
             style="padding: var(--grid-unit) var(--grid-2); min-height: auto; font-size: 12px"
           >
-            {{ event.audienceTag | upper }}
+            {{ (event.audienceTag ~ '') | upper }}
           </button>
           {% endif %}
         </div>
