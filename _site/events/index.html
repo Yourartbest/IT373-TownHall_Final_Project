@@ -203,6 +203,7 @@
 
      
     <div
+      id="events-grid"
       style="
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -210,7 +211,12 @@
       "
     >
       
-      <article class="card" style="padding: var(--grid-4); display: flex; flex-direction: column">
+      <article 
+        class="card event-card-item" 
+        style="padding: var(--grid-4); display: flex; flex-direction: column"
+        data-difficulty="beginner"
+        data-tags="parents"
+      >
         
         <div style="margin-bottom: var(--grid-3)">
           <div
@@ -350,7 +356,12 @@
         </div>
       </article>
       
-      <article class="card" style="padding: var(--grid-4); display: flex; flex-direction: column">
+      <article 
+        class="card event-card-item" 
+        style="padding: var(--grid-4); display: flex; flex-direction: column"
+        data-difficulty="intermediate"
+        data-tags="educators"
+      >
         
         <div style="margin-bottom: var(--grid-3)">
           <div
@@ -490,7 +501,12 @@
         </div>
       </article>
       
-      <article class="card" style="padding: var(--grid-4); display: flex; flex-direction: column">
+      <article 
+        class="card event-card-item" 
+        style="padding: var(--grid-4); display: flex; flex-direction: column"
+        data-difficulty="beginner"
+        data-tags="parents,educators,community-leaders"
+      >
         
         <div style="margin-bottom: var(--grid-3)">
           <div
@@ -658,6 +674,44 @@
     
   </div>
 </section>
+
+<script>
+  // Events page filtering
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const eventCards = document.querySelectorAll('.event-card-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+        
+        // Update button states
+        filterButtons.forEach(btn => {
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-outline');
+        });
+        this.classList.remove('btn-outline');
+        this.classList.add('btn-primary');
+        
+        // Filter events
+        eventCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else {
+            const difficulty = card.getAttribute('data-difficulty');
+            const tags = card.getAttribute('data-tags');
+            
+            if (difficulty === filter || (tags && tags.includes(filter))) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  });
+</script>
 
 
 <section class="cta" aria-labelledby="discord-heading">

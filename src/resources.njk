@@ -52,25 +52,29 @@ permalink: /resources/
       </div>
       <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap">
         <button
-          class="btn btn-primary"
+          class="btn btn-primary category-filter"
+          data-category="all"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           ALL
         </button>
         <button
-          class="btn btn-outline"
+          class="btn btn-outline category-filter"
+          data-category="article"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           ARTICLE
         </button>
         <button
-          class="btn btn-outline"
+          class="btn btn-outline category-filter"
+          data-category="educator"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           EDUCATOR RESOURCE
         </button>
         <button
-          class="btn btn-outline"
+          class="btn btn-outline category-filter"
+          data-category="more"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           MORE
@@ -103,31 +107,36 @@ permalink: /resources/
       </div>
       <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap">
         <button
-          class="btn btn-primary"
+          class="btn btn-primary audience-filter"
+          data-audience="all"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           ALL
         </button>
         <button
-          class="btn btn-outline"
+          class="btn btn-outline audience-filter"
+          data-audience="parents"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           PARENTS
         </button>
         <button
-          class="btn btn-outline"
+          class="btn btn-outline audience-filter"
+          data-audience="educators"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           EDUCATORS
         </button>
         <button
-          class="btn btn-outline"
+          class="btn btn-outline audience-filter"
+          data-audience="all"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           NO FILTERS
         </button>
         <button
-          class="btn btn-outline"
+          class="btn btn-outline audience-filter"
+          data-audience="general"
           style="padding: var(--grid-2) var(--grid-3); min-height: auto"
         >
           GENERAL
@@ -147,6 +156,7 @@ permalink: /resources/
 
     {# Resources Grid #}
     <div
+      id="resources-grid"
       style="
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -155,7 +165,9 @@ permalink: /resources/
     >
       {# Resource Card 1 - Yellow border #}
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="guide"
+        data-audience="general"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-yellow)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -210,7 +222,9 @@ permalink: /resources/
 
       {# Resource Card 2 - Red border #}
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="article"
+        data-audience="parents"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-red)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -265,7 +279,9 @@ permalink: /resources/
 
       {# Resource Card 3 - Blue border #}
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="educator"
+        data-audience="educators"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-blue)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -320,7 +336,9 @@ permalink: /resources/
 
       {# Additional cards following same pattern #}
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="guide"
+        data-audience="parents"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-yellow)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -374,7 +392,9 @@ permalink: /resources/
       </article>
 
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="article"
+        data-audience="general"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-red)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -428,7 +448,9 @@ permalink: /resources/
       </article>
 
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="educator"
+        data-audience="educators"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-blue)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -482,7 +504,9 @@ permalink: /resources/
       </article>
 
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="guide"
+        data-audience="general"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-yellow)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -536,7 +560,9 @@ permalink: /resources/
       </article>
 
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="article"
+        data-audience="general"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-red)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -590,7 +616,9 @@ permalink: /resources/
       </article>
 
       <article
-        class="card"
+        class="card resource-card-item"
+        data-category="article"
+        data-audience="educators"
         style="padding: var(--grid-4); border-top: 8px solid var(--color-bauhaus-red)"
       >
         <div style="display: flex; gap: var(--grid-2); margin-bottom: var(--grid-3)">
@@ -645,6 +673,78 @@ permalink: /resources/
     </div>
   </div>
 </section>
+
+<script>
+  // Resources page filtering
+  document.addEventListener('DOMContentLoaded', function() {
+    const categoryButtons = document.querySelectorAll('.category-filter');
+    const audienceButtons = document.querySelectorAll('.audience-filter');
+    const resourceCards = document.querySelectorAll('.resource-card-item');
+    
+    let activeCategory = 'all';
+    let activeAudience = 'all';
+    
+    // Category filter
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        activeCategory = this.getAttribute('data-category');
+        
+        // Update button states
+        categoryButtons.forEach(btn => {
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-outline');
+        });
+        this.classList.remove('btn-outline');
+        this.classList.add('btn-primary');
+        
+        filterResources();
+      });
+    });
+    
+    // Audience filter
+    audienceButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        activeAudience = this.getAttribute('data-audience');
+        
+        // Update button states
+        audienceButtons.forEach(btn => {
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-outline');
+        });
+        this.classList.remove('btn-outline');
+        this.classList.add('btn-primary');
+        
+        filterResources();
+      });
+    });
+    
+    // Filter function
+    function filterResources() {
+      let visibleCount = 0;
+      
+      resourceCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const audience = card.getAttribute('data-audience');
+        
+        const categoryMatch = activeCategory === 'all' || category === activeCategory;
+        const audienceMatch = activeAudience === 'all' || audience === activeAudience;
+        
+        if (categoryMatch && audienceMatch) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      // Update resource count
+      const countElement = document.querySelector('[style*="RESOURCES"]');
+      if (countElement) {
+        countElement.querySelector('span').textContent = visibleCount + ' RESOURCES';
+      }
+    }
+  });
+</script>
 
 {# JOIN THE DISCORD Section #}
 <section class="cta" aria-labelledby="discord-heading">
