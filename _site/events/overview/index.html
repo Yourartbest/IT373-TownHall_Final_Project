@@ -39,6 +39,11 @@
     
     <link rel="dns-prefetch" href="https://ajcjdayi.api.sanity.io" />
     <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet" />
 
     
     <link rel="stylesheet" href="/IT373-TownHall_Final_Project/css/styles.css" />
@@ -130,24 +135,35 @@
 
     
     <main id="main-content" role="main" tabindex="-1">
-<section
-  class="hero"
-  aria-labelledby="events-hero-heading"
-  style="padding: var(--grid-6) 0; background: var(--color-white)"
->
-  <div class="container">
-    <div class="accent-bar accent-bar-red" style="margin-bottom: var(--grid-3)"></div>
-    <h1
-      id="events-hero-heading"
-      class="hero-title"
-      style="font-size: clamp(32px, 5vw, 48px); margin-bottom: var(--grid-3)"
-    >
-      UPCOMING EVENTS
-    </h1>
-    <p style="font-size: 18px; line-height: 1.6; max-width: 700px; color: var(--color-gray-700)">
-      Join us for free, friendly learning sessions about AI. All events are designed for beginners
-      and low-tech community members.
-    </p>
+<section style="padding: var(--grid-16) 0; background: linear-gradient(135deg, var(--color-bauhaus-blue) 0%, var(--color-bauhaus-blue-dark) 100%); position: relative; overflow: hidden;" aria-labelledby="events-hero-heading">
+  
+  <div style="position: absolute; top: 10%; right: 5%; width: 350px; height: 350px; background: var(--color-bauhaus-yellow); opacity: 0.1; border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: 10%; left: 5%; width: 250px; height: 250px; background: var(--color-bauhaus-red); opacity: 0.15; transform: rotate(45deg);"></div>
+  
+  <div class="container" style="position: relative; z-index: 1;">
+    <div style="max-width: 800px;">
+      <div style="width: 100px; height: 5px; background: var(--color-bauhaus-red); margin-bottom: var(--grid-4);"></div>
+      <h1 id="events-hero-heading" style="font-size: clamp(48px, 7vw, 72px); margin-bottom: var(--grid-5); color: var(--color-white); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em;">
+        UPCOMING EVENTS
+      </h1>
+      <p style="font-size: clamp(18px, 2.5vw, 22px); line-height: 1.7; max-width: 700px; color: rgba(255,255,255,0.95); margin-bottom: var(--grid-6);">
+        Join us for free, hands-on learning sessions about AI. All events are designed for beginners and community members—no tech background required.
+      </p>
+      <div style="display: flex; gap: var(--grid-4); flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: var(--grid-2);">
+          <div style="width: 40px; height: 40px; background: var(--color-bauhaus-yellow); border: 3px solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 20px;">✓</div>
+          <span style="color: var(--color-white); font-weight: 600;">100% Free</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: var(--grid-2);">
+          <div style="width: 40px; height: 40px; background: var(--color-bauhaus-red); color: white; border: 3px solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 20px;">✓</div>
+          <span style="color: var(--color-white); font-weight: 600;">All Skill Levels</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: var(--grid-2);">
+          <div style="width: 40px; height: 40px; background: var(--color-bauhaus-yellow); border: 3px solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 20px;">✓</div>
+          <span style="color: var(--color-white); font-weight: 600;">In-Person & Virtual</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -158,80 +174,21 @@
 >
   <div class="container">
     
-    <div
-      style="
-        background: var(--color-white);
-        border: var(--border-width) solid var(--color-black);
-        padding: var(--grid-3);
-        margin-bottom: var(--grid-6);
-        display: flex;
-        align-items: center;
-        gap: var(--grid-3);
-        flex-wrap: wrap;
-      "
-    >
-      <div style="display: flex; align-items: center; gap: var(--grid-2)">
-        <div
-          style="
-            width: 40px;
-            height: 40px;
-            background: var(--color-bauhaus-yellow);
-            border: var(--border-width) solid var(--color-black);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-          "
-        >
-          ▼
+    <div style="background: var(--color-white); border: var(--border-width) solid var(--color-black); padding: var(--grid-5); margin-bottom: var(--grid-8); box-shadow: var(--shadow-strong);">
+      <div style="display: flex; align-items: center; gap: var(--grid-3); margin-bottom: var(--grid-4);">
+        <div style="width: 50px; height: 50px; background: var(--color-bauhaus-yellow); border: var(--border-width) solid var(--color-black); display: flex; align-items: center; justify-content: center; font-size: 24px;">🔍</div>
+        <div>
+          <h3 style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--text-lg); margin-bottom: 4px;">FILTER EVENTS</h3>
+          <p style="font-size: var(--text-sm); color: var(--color-gray-600);">Find the perfect event for your interests and skill level</p>
         </div>
-        <span style="font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em"
-          >FILTER EVENTS</span
-        >
       </div>
-      <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap; flex: 1">
-        <button
-          class="btn btn-primary"
-          data-filter="all"
-          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
-        >
-          ALL
-        </button>
-        <button
-          class="btn btn-outline"
-          data-filter="beginner"
-          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
-        >
-          BEGINNER-FRIENDLY
-        </button>
-        <button
-          class="btn btn-outline"
-          data-filter="family"
-          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
-        >
-          FAMILY-FRIENDLY
-        </button>
-        <button
-          class="btn btn-outline"
-          data-filter="educators"
-          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
-        >
-          EDUCATORS
-        </button>
-        <button
-          class="btn btn-outline"
-          data-filter="youth"
-          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
-        >
-          YOUTH
-        </button>
-        <button
-          class="btn btn-outline"
-          data-filter="volunteer"
-          style="padding: var(--grid-2) var(--grid-3); min-height: auto"
-        >
-          VOLUNTEER
-        </button>
+      <div style="display: flex; gap: var(--grid-2); flex-wrap: wrap;">
+        <button class="btn btn-primary btn-small" data-filter="all">ALL EVENTS</button>
+        <button class="btn btn-outline btn-small" data-filter="beginner">🌟 BEGINNER</button>
+        <button class="btn btn-outline btn-small" data-filter="family">👨‍👩‍👧 FAMILY</button>
+        <button class="btn btn-outline btn-small" data-filter="educators">🎓 EDUCATORS</button>
+        <button class="btn btn-outline btn-small" data-filter="youth">🧒 YOUTH</button>
+        <button class="btn btn-outline btn-small" data-filter="volunteer">❤️ VOLUNTEER</button>
       </div>
     </div>
 

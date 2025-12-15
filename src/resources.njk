@@ -5,23 +5,37 @@ description: Free AI learning resources, tutorials, and guides for Newark commun
 permalink: /resources/
 ---
 
-<section
-  class="hero"
-  aria-labelledby="resources-hero-heading"
-  style="padding: var(--grid-6) 0; background: var(--color-gray-50)"
->
-  <div class="container">
-    <h1
-      id="resources-hero-heading"
-      class="hero-title"
-      style="font-size: clamp(32px, 5vw, 48px); margin-bottom: var(--grid-3)"
-    >
-      LEARNING RESOURCES
-    </h1>
-    <p style="font-size: 18px; line-height: 1.6; max-width: 700px">
-      Explore guides, articles, and tools to help you understand AI in your own pace. All resources
-      are written in plain-language for community members.
-    </p>
+<section style="padding: var(--grid-16) 0; background: linear-gradient(135deg, var(--color-bauhaus-yellow) 0%, var(--color-bauhaus-yellow-dark) 100%); position: relative; overflow: hidden;" aria-labelledby="resources-hero-heading">
+  {# Geometric background #}
+  <div style="position: absolute; top: 5%; right: 8%; width: 300px; height: 300px; background: var(--color-black); opacity: 0.05; border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: 5%; left: 5%; width: 200px; height: 200px; border: 8px solid rgba(0,0,0,0.1); transform: rotate(45deg);"></div>
+  
+  <div class="container" style="position: relative; z-index: 1;">
+    <div style="max-width: 850px;">
+      <div style="width: 100px; height: 5px; background: var(--color-black); margin-bottom: var(--grid-4);"></div>
+      <h1 id="resources-hero-heading" style="font-size: clamp(48px, 7vw, 72px); margin-bottom: var(--grid-5); color: var(--color-black); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em;">
+        LEARNING<br/>RESOURCES
+      </h1>
+      <p style="font-size: clamp(18px, 2.5vw, 22px); line-height: 1.7; max-width: 700px; color: var(--color-gray-800); margin-bottom: var(--grid-8);">
+        Explore curated guides, articles, and tools to help you understand AI at your own pace. Everything is written in plain language for our community.
+      </p>
+      <div style="display: flex; gap: var(--grid-4); flex-wrap: wrap;">
+        <div style="background: var(--color-black); color: white; padding: var(--grid-3) var(--grid-5); border: var(--border-width) solid var(--color-black); display: flex; align-items: center; gap: var(--grid-2);">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div>
+            <div style="font-size: var(--text-xl); font-weight: 900;">9+</div>
+            <div style="font-size: var(--text-xs); text-transform: uppercase; opacity: 0.9;">Free Resources</div>
+          </div>
+        </div>
+        <div style="background: var(--color-bauhaus-red); color: white; padding: var(--grid-3) var(--grid-5); border: var(--border-width) solid var(--color-black); display: flex; align-items: center; gap: var(--grid-2);">
+          <svg width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <div>
+            <div style="font-size: var(--text-xl); font-weight: 900;">100%</div>
+            <div style="font-size: var(--text-xs); text-transform: uppercase; opacity: 0.95;">Plain Language</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

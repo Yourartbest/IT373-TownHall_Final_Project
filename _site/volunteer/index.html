@@ -39,6 +39,11 @@
     
     <link rel="dns-prefetch" href="https://ajcjdayi.api.sanity.io" />
     <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet" />
 
     
     <link rel="stylesheet" href="/IT373-TownHall_Final_Project/css/styles.css" />
@@ -131,24 +136,50 @@
     
     <main id="main-content" role="main" tabindex="-1">
 
-<section class="hero" aria-labelledby="volunteer-hero-heading">
-  <div class="container">
-    <div class="accent-bar accent-bar-yellow"></div>
-    <h1
-      id="volunteer-hero-heading"
-      class="hero-title"
-      style="font-size: clamp(32px, 5vw, 48px); margin-bottom: var(--grid-3)"
-    >
-      BECOME A TOWN HALL<br />VOLUNTEER
-    </h1>
-    <p
-      class="hero-text"
-      style="font-size: 18px; line-height: 1.6; max-width: 700px; margin-bottom: var(--grid-4)"
-    >
-      Help your neighbors learn about AI in a welcoming, judgment-free environment. No special tech
-      skills required—just a desire to support your community.
-    </p>
-    <a href="#volunteer-roles" class="btn btn-primary">START ONBOARDING</a>
+<section style="min-height: 70vh; display: flex; align-items: center; padding: var(--grid-16) 0; background: linear-gradient(135deg, var(--color-bauhaus-blue) 0%, var(--color-bauhaus-blue-dark) 100%); position: relative; overflow: hidden;" aria-labelledby="volunteer-hero-heading">
+  
+  <div style="position: absolute; top: 15%; right: 10%; width: 350px; height: 350px; background: var(--color-bauhaus-yellow); opacity: 0.12; border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: 10%; left: 8%; width: 280px; height: 280px; border: 10px solid rgba(255,255,255,0.1); transform: rotate(45deg);"></div>
+  <div style="position: absolute; top: 40%; left: 50%; width: 180px; height: 180px; background: var(--color-bauhaus-red); opacity: 0.1;"></div>
+  
+  <div class="container" style="position: relative; z-index: 1;">
+    <div style="max-width: 900px;">
+      <div style="width: 120px; height: 6px; background: var(--color-bauhaus-yellow); margin-bottom: var(--grid-5);"></div>
+      
+      <h1 id="volunteer-hero-heading" style="font-size: clamp(48px, 7vw, 80px); line-height: 1.05; margin-bottom: var(--grid-6); color: var(--color-white); font-weight: 900; letter-spacing: -0.02em;">
+        MAKE AN IMPACT<br/>
+        <span style="color: var(--color-bauhaus-yellow);">VOLUNTEER WITH US</span>
+      </h1>
+      
+      <p style="font-size: clamp(18px, 2.5vw, 24px); line-height: 1.7; margin-bottom: var(--grid-8); color: rgba(255,255,255,0.95); max-width: 750px;">
+        Help your Newark neighbors learn about AI in a welcoming, judgment-free environment. No special tech skills required—just bring your passion for community.
+      </p>
+      
+      <div style="display: flex; gap: var(--grid-4); flex-wrap: wrap; align-items: center; margin-bottom: var(--grid-10);">
+        <a href="#volunteer-roles" class="btn btn-large" style="background: var(--color-bauhaus-yellow); color: var(--color-black); border: var(--border-width) solid var(--color-black); box-shadow: var(--shadow-brutal);">
+          START VOLUNTEERING
+        </a>
+        <a href="/events/" class="btn btn-outline btn-large" style="color: white; border-color: white;">
+          SEE UPCOMING EVENTS
+        </a>
+      </div>
+      
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--grid-6); max-width: 700px;">
+        <div style="text-align: center;">
+          <div style="font-size: var(--text-5xl); font-weight: 900; color: var(--color-bauhaus-yellow); margin-bottom: var(--grid-2);">30+</div>
+          <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.05em;">Active Volunteers</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: var(--text-5xl); font-weight: 900; color: var(--color-bauhaus-yellow); margin-bottom: var(--grid-2);">3</div>
+          <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.05em;">Flexible Roles</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: var(--text-5xl); font-weight: 900; color: var(--color-bauhaus-yellow); margin-bottom: var(--grid-2);">2-4h</div>
+          <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.05em;">Per Week (Min)</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
