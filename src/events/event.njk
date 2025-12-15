@@ -236,6 +236,282 @@ eleventyComputed:
         {% endfor %} {% endif %}
       </div>
     </div>
+
+    {# Registration Modal: accessible dialog with focus trap #}
+    <div
+      id="register-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="register-modal-title"
+      hidden
+      style="
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: grid;
+        place-items: center;
+        background: rgba(17, 24, 39, 0.5);
+        padding: var(--grid-6);
+      "
+    >
+      <div
+        class="modal-panel"
+        style="
+          width: min(720px, 100%);
+          background: white;
+          border-radius: var(--radius-2xl);
+          box-shadow: var(--shadow-lg);
+          overflow: hidden;
+        "
+      >
+        <div style="padding: var(--grid-6); border-bottom: 1px solid var(--color-gray-200)">
+          <div style="display: flex; align-items: center; gap: var(--grid-3)">
+            <h2
+              id="register-modal-title"
+              style="font-size: var(--text-xl); font-weight: 600; margin: 0"
+            >
+              Save your spot
+            </h2>
+            <span style="margin-left: auto"></span>
+            <button
+              type="button"
+              id="close-register-modal"
+              class="btn btn-outline btn-small"
+              aria-label="Close registration form"
+            >
+              Close
+            </button>
+          </div>
+          <p style="color: var(--color-gray-600); margin-top: var(--grid-2)">
+            {{ event.title }} — {{ event.date | dateFormat }} at {{ event.location or "Newark Public
+            Library" }}
+          </p>
+        </div>
+        <div style="padding: var(--grid-6)">
+          <form id="event-register-form" novalidate>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--grid-4);
+                margin-bottom: var(--grid-4);
+              "
+            >
+              <div>
+                <label
+                  for="reg-name"
+                  style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+                  >Full name</label
+                >
+                <input
+                  id="reg-name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Jane Doe"
+                  class="input"
+                  style="width: 100%"
+                />
+              </div>
+              <div>
+                <label
+                  for="reg-email"
+                  style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+                  >Email</label
+                >
+                <input
+                  id="reg-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="jane@example.com"
+                  class="input"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--grid-4);
+                margin-bottom: var(--grid-4);
+              "
+            >
+              <div>
+                <label
+                  for="reg-attendees"
+                  style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+                  >Attendees</label
+                >
+                <input
+                  id="reg-attendees"
+                  name="attendees"
+                  type="number"
+                  min="1"
+                  value="1"
+                  class="input"
+                  style="width: 100%"
+                />
+              </div>
+              <div>
+                <label
+                  for="reg-notes"
+                  style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+                  >Notes (optional)</label
+                >
+                <input
+                  id="reg-notes"
+                  name="notes"
+                  type="text"
+                  placeholder="Accessibility needs, etc."
+                  class="input"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+            <div style="margin-bottom: var(--grid-4)">
+              <p style="font-weight: 600; margin-bottom: var(--grid-2)">Interests (optional)</p>
+              <div style="display: flex; gap: var(--grid-3); flex-wrap: wrap">
+                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
+                  ><input type="checkbox" name="interests" value="beginner" /> Beginner</label
+                >
+                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
+                  ><input type="checkbox" name="interests" value="family" /> Family</label
+                >
+                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
+                  ><input type="checkbox" name="interests" value="educators" /> Educators</label
+                >
+                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
+                  ><input type="checkbox" name="interests" value="youth" /> Youth</label
+                >
+                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
+                  ><input type="checkbox" name="interests" value="volunteer" /> Volunteer</label
+                >
+              </div>
+            </div>
+            <div style="display: flex; gap: var(--grid-3); align-items: center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-outline" id="cancel-register">Cancel</button>
+              <span
+                id="register-status"
+                style="color: var(--color-gray-600); font-size: var(--text-sm)"
+              ></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Registration modal behavior (open/close, focus trap, ESC, outside click)
+      document.addEventListener('DOMContentLoaded', function () {
+        const openBtn = document.getElementById('open-register-modal')
+        const modal = document.getElementById('register-modal')
+        const closeBtn = document.getElementById('close-register-modal')
+        const cancelBtn = document.getElementById('cancel-register')
+        const form = document.getElementById('event-register-form')
+        const statusEl = document.getElementById('register-status')
+
+        if (!modal) return
+
+        const focusableSelectors =
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        let previousActive = null
+
+        function openModal() {
+          previousActive = document.activeElement
+          modal.hidden = false
+          modal.style.display = 'grid'
+          document.body.style.overflow = 'hidden'
+          const focusables = modal.querySelectorAll(focusableSelectors)
+          if (focusables.length) focusables[0].focus()
+        }
+
+        function closeModal(e) {
+          if (e && typeof e.preventDefault === 'function') e.preventDefault()
+          modal.hidden = true
+          modal.style.display = 'none'
+          document.body.style.overflow = ''
+          statusEl && (statusEl.textContent = '')
+          previousActive && previousActive.focus()
+          // Clean up URL so live reload or refresh does not re-open
+          try {
+            const url = new URL(window.location.href)
+            url.searchParams.delete('register')
+            url.hash = ''
+            window.history.replaceState(
+              {},
+              document.title,
+              url.pathname + (url.search ? '?' + url.searchParams.toString() : '') + url.hash
+            )
+          } catch {}
+        }
+
+        if (openBtn) {
+          openBtn.addEventListener('click', openModal)
+        }
+        closeBtn && closeBtn.addEventListener('click', closeModal)
+        cancelBtn && cancelBtn.addEventListener('click', closeModal)
+
+        // ESC key to close
+        document.addEventListener('keydown', function (e) {
+          if (!modal.hidden && e.key === 'Escape') {
+            closeModal()
+          }
+        })
+        // Auto-open if URL indicates registration intent
+        const params = new URLSearchParams(window.location.search)
+        const shouldOpen =
+          params.has('register') || window.location.hash.toLowerCase() === '#register'
+        if (shouldOpen) {
+          openModal()
+        }
+
+        // Click outside panel to close
+        modal.addEventListener('click', function (e) {
+          const panel = modal.querySelector('.modal-panel')
+          if (panel && !panel.contains(e.target)) {
+            closeModal()
+          }
+        })
+
+        // Basic form submission placeholder (redirect to thanks page)
+        form &&
+          form.addEventListener('submit', function (e) {
+            e.preventDefault()
+            statusEl && (statusEl.textContent = 'Submitting...')
+            // Placeholder: simulate success and redirect. Replace with webhook POST as needed.
+            setTimeout(function () {
+              statusEl && (statusEl.textContent = '')
+              closeModal()
+              window.location.href = '/events/thanks/'
+            }, 600)
+          })
+
+        // Focus trap
+        modal.addEventListener('keydown', function (e) {
+          if (e.key !== 'Tab') return
+          const focusables = Array.from(modal.querySelectorAll(focusableSelectors)).filter(
+            el => !el.hasAttribute('disabled')
+          )
+          if (focusables.length === 0) return
+          const first = focusables[0]
+          const last = focusables[focusables.length - 1]
+          if (e.shiftKey) {
+            if (document.activeElement === first) {
+              e.preventDefault()
+              last.focus()
+            }
+          } else {
+            if (document.activeElement === last) {
+              e.preventDefault()
+              first.focus()
+            }
+          }
+        })
+      })
+    </script>
   </div>
 </section>
 
@@ -442,8 +718,9 @@ eleventyComputed:
             </div>
             {% endif %}
 
-            <a
-              href="#register-form"
+            <button
+              type="button"
+              id="open-register-modal"
               class="btn btn-primary btn-large"
               style="
                 width: 100%;
@@ -451,9 +728,11 @@ eleventyComputed:
                 margin-bottom: var(--grid-5);
                 box-sizing: border-box;
               "
+              aria-haspopup="dialog"
+              aria-controls="register-modal"
             >
               Save my spot
-            </a>
+            </button>
 
             <div
               style="
