@@ -10,7 +10,7 @@ test.describe('Homepage', () => {
     await page.goto('/')
     
     const heroHeading = page.locator('h1')
-    await expect(heroHeading).toContainText('AI education')
+    await expect(heroHeading).toContainText('Learn AI')
     
     const heroCTA = page.locator('section').first().locator('a').first()
     await expect(heroCTA).toBeVisible()
@@ -19,13 +19,13 @@ test.describe('Homepage', () => {
   test('should display mission section', async ({ page }) => {
     await page.goto('/')
     
-    // Check for About section with cards
-    const aboutHeading = page.locator('h2:has-text("About us")')
-    await expect(aboutHeading).toBeVisible()
+    // Check for How It Works section (consolidated About/Why sections)
+    const howHeading = page.locator('h2:has-text("AI learning made simple")')
+    await expect(howHeading).toBeVisible()
     
-    // Verify the about section has cards with expected content
-    const communityLed = page.locator('h3:has-text("Community-led")')
-    await expect(communityLed).toBeVisible()
+    // Verify the section has expected content
+    const forEveryone = page.locator('text=For everyone')
+    await expect(forEveryone).toBeVisible()
   })
 
   test('should display events section', async ({ page }) => {
