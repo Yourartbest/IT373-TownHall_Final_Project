@@ -203,7 +203,7 @@
     
 
     <div class="events-footer">
-      <a href="/events/" class="btn btn-outline">VIEW ALL EVENTS</a>
+      <a href="/IT373-TownHall_Final_Project/events/" class="btn btn-outline">VIEW ALL EVENTS</a>
     </div>
   </div>
 </section>
@@ -383,7 +383,16 @@
       </div>
     </footer>
 
-    
-    <script src="/IT373-TownHall_Final_Project/js/mobile-menu.js"></script>
+     
+    <script
+      src="/IT373-TownHall_Final_Project/js/mobile-menu.js"
+      onerror="
+        (function () {
+          var s = document.createElement('script')
+          s.src = '/js/mobile-menu.js'
+          document.body.appendChild(s)
+        })()
+      "
+    ></script>
   </body>
 </html>

@@ -268,6 +268,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative; /* ensure buttons sit above decorative shapes */
+    z-index: 2;
     padding: var(--grid-2) var(--grid-4);
     min-height: var(--touch-target-min);
     font-weight: 700;
@@ -317,6 +319,15 @@
   .btn-primary-inverse:hover {
     transform: translate(var(--shadow-offset-sm), var(--shadow-offset-sm));
     box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 var(--color-white);
+  }
+
+  /* Ensure decorative shapes never overlay interactive controls */
+  .accent-bar,
+  .mission-icon,
+  .hero-shape,
+  .decorative-shape {
+    pointer-events: none;
+    z-index: 0;
   }
 
   .btn-outline-inverse {
