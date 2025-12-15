@@ -63,10 +63,10 @@ test.describe('Mobile Menu Workflow', () => {
     
     // Check navigation links
     const navLinks = page.locator('.mobile-menu-link')
-    await expect(navLinks).toHaveCount(3) // Events, Resources, Volunteer
+    await expect(navLinks).toHaveCount(4) // About, Events, Resources, Volunteer
     
     // All links should be visible and have text
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       const link = navLinks.nth(i)
       await expect(link).toBeVisible()
       const text = await link.textContent()
