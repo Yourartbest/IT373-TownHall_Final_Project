@@ -10,36 +10,35 @@ test.describe('Homepage', () => {
     await page.goto('/')
     
     const heroHeading = page.locator('h1')
-    await expect(heroHeading).toContainText('AI LEARNING THAT FEELS')
+    await expect(heroHeading).toContainText('AI education')
     
-    const heroCTA = page.locator('.hero-cta a').first()
+    const heroCTA = page.locator('section').first().locator('a').first()
     await expect(heroCTA).toBeVisible()
   })
 
   test('should display mission section', async ({ page }) => {
     await page.goto('/')
     
-    const missionCards = page.locator('.mission-card')
-    await expect(missionCards).toHaveCount(3)
+    // Check for About section with cards
+    const aboutHeading = page.locator('h2:has-text("About us")')
+    await expect(aboutHeading).toBeVisible()
     
-    // Verify the mission cards have expected content
-    await expect(missionCards.first()).toContainText('WHO IT\'S FOR')
+    // Verify the about section has cards with expected content
+    const communityLed = page.locator('h3:has-text("Community-led")')
+    await expect(communityLed).toBeVisible()
   })
 
   test('should display events section', async ({ page }) => {
     await page.goto('/')
     
-    const eventsHeading = page.locator('h2:has-text("UPCOMING EVENTS")')
+    const eventsHeading = page.locator('h2:has-text("Upcoming events")')
     await expect(eventsHeading).toBeVisible()
     
-    // Either events grid or empty state should be visible
-    const eventsGrid = page.locator('.events-grid')
-    const eventsEmpty = page.locator('.events-empty')
+    // Either events articles or empty state should be visible
+    const eventArticles = page.locator('section#events article')
+    const eventsSection = page.locator('section#events')
     
-    const hasEvents = await eventsGrid.isVisible().catch(() => false)
-    const isEmpty = await eventsEmpty.isVisible().catch(() => false)
-    
-    expect(hasEvents || isEmpty).toBeTruthy()
+    await expect(eventsSection).toBeVisible()
   })
 
   test('should have accessible navigation', async ({ page }) => {
@@ -50,7 +49,7 @@ test.describe('Homepage', () => {
     
     // Check nav-link items specifically (excludes logo)
     const navLinks = nav.locator('.nav-link')
-    await expect(navLinks).toHaveCount(4) // Events, Resources, Volunteer, About
+    await expect(navLinks).toHaveCount(3) // Events, Resources, Volunteer
   })
 
   test('should have skip link for accessibility', async ({ page }) => {

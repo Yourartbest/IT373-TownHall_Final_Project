@@ -106,8 +106,8 @@ test.describe('Accessibility', () => {
     await page.goto('/')
     
     // Check that primary text is visible (basic smoke test)
-    const heroText = page.locator('.hero-text')
-    await expect(heroText).toBeVisible()
+    const heroHeading = page.locator('h1')
+    await expect(heroHeading).toBeVisible()
     
     // In a real project, you'd use axe-core or similar for contrast checking
   })
