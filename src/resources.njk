@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
-title: AI Learning Resources - Newark AI Town Hall
-description: Free AI learning resources, tutorials, and guides for Newark community members. Start your AI education journey today.
-permalink: /resources/
+title: Blog - Newark AI Town Hall
+description: Read articles and insights about AI education, community perspectives, and technology trends. Written in plain language for everyone.
+permalink: /blog/
 ---
 
 <section
@@ -12,7 +12,7 @@ permalink: /resources/
   <div class="container">
     <div style="text-align: center; max-width: 600px; margin: 0 auto">
       <h1
-        id="resources-hero-heading"
+        id="blog-hero-heading"
         style="
           font-size: clamp(32px, 5vw, 48px);
           margin-bottom: var(--grid-4);
@@ -21,11 +21,11 @@ permalink: /resources/
           line-height: 1.2;
         "
       >
-        Learning Resources
+        Blog
       </h1>
       <p style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-600)">
-        Explore curated guides, articles, and tools to help you understand AI at your own pace.
-        Everything is written in plain language.
+        Read stories, insights, and perspectives on AI in our community. Written in plain language
+        for everyone.
       </p>
     </div>
   </div>
@@ -64,25 +64,25 @@ permalink: /resources/
       </div>
     </div>
 
-    {# Resource Count #}
+    {# Article Count #}
     <div style="margin-bottom: var(--grid-6)">
       <span style="font-weight: 600; font-size: var(--text-lg); color: var(--color-gray-900)"
-        >9 resources</span
+        >9 articles</span
       >
     </div>
 
-    {# Resources Grid #}
+    {# Blog Grid #}
     <div
-      id="resources-grid"
+      id="blog-grid"
       style="
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: var(--grid-6);
       "
     >
-      {# Resource Card 1 - Neo-Minimalist #}
+      {# Blog Article Card 1 - Neo-Minimalist #}
       <article
-        class="card resource-card-item"
+        class="card blog-card-item"
         data-category="guide"
         data-audience="general"
         style="
@@ -704,11 +704,11 @@ permalink: /resources/
 </section>
 
 <script>
-  // Resources page filtering
+  // Blog page filtering
   document.addEventListener('DOMContentLoaded', function () {
     const categoryButtons = document.querySelectorAll('.category-filter')
     const audienceButtons = document.querySelectorAll('.audience-filter')
-    const resourceCards = document.querySelectorAll('.resource-card-item')
+    const blogCards = document.querySelectorAll('.blog-card-item')
 
     let activeCategory = 'all'
     let activeAudience = 'all'
@@ -726,7 +726,7 @@ permalink: /resources/
         this.classList.remove('btn-outline')
         this.classList.add('btn-primary')
 
-        filterResources()
+        filterArticles()
       })
     })
 
@@ -743,15 +743,15 @@ permalink: /resources/
         this.classList.remove('btn-outline')
         this.classList.add('btn-primary')
 
-        filterResources()
+        filterArticles()
       })
     })
 
     // Filter function
-    function filterResources() {
+    function filterArticles() {
       let visibleCount = 0
 
-      resourceCards.forEach(card => {
+      blogCards.forEach(card => {
         const category = card.getAttribute('data-category')
         const audience = card.getAttribute('data-audience')
 
@@ -766,10 +766,10 @@ permalink: /resources/
         }
       })
 
-      // Update resource count
-      const countElement = document.querySelector('[style*="RESOURCES"]')
+      // Update article count
+      const countElement = document.querySelector('[style*="articles"]')
       if (countElement) {
-        countElement.querySelector('span').textContent = visibleCount + ' RESOURCES'
+        countElement.querySelector('span').textContent = visibleCount + ' articles'
       }
     }
   })
