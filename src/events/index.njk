@@ -219,15 +219,17 @@ description: Join us for AI education workshops, town halls, and community event
               font-size: var(--text-sm);
               text-decoration: none;
             "
+            onclick="try{sessionStorage.removeItem('registerIntent');sessionStorage.removeItem('registerDismissed')}catch(e){}"
             onmouseover="this.style.textDecoration = 'underline'"
             onmouseout="this.style.textDecoration = 'none'"
           >
             View details →
           </a>
           <a
-            href="{{ ('/events/' ~ event.slug ~ '/') | url }}"
+            href="{{ ('/events/' ~ event.slug ~ '/?register=1') | url }}"
             class="btn btn-primary btn-small"
             style="margin-left: auto"
+            onclick="try{sessionStorage.setItem('registerIntent','1')}catch(e){}"
           >
             Register
           </a>
