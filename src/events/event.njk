@@ -237,283 +237,283 @@ eleventyComputed:
       </div>
     </div>
 
-    {# Registration Modal: accessible dialog with focus trap #}
-    <div
-      id="register-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="register-modal-title"
-      hidden
-      style="
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
-        display: grid;
-        place-items: center;
-        background: rgba(17, 24, 39, 0.5);
-        padding: var(--grid-6);
-      "
-    >
-      <div
-        class="modal-panel"
-        style="
-          width: min(720px, 100%);
-          background: white;
-          border-radius: var(--radius-2xl);
-          box-shadow: var(--shadow-lg);
-          overflow: hidden;
-        "
-      >
-        <div style="padding: var(--grid-6); border-bottom: 1px solid var(--color-gray-200)">
-          <div style="display: flex; align-items: center; gap: var(--grid-3)">
-            <h2
-              id="register-modal-title"
-              style="font-size: var(--text-xl); font-weight: 600; margin: 0"
-            >
-              Save your spot
-            </h2>
-            <span style="margin-left: auto"></span>
-            <button
-              type="button"
-              id="close-register-modal"
-              class="btn btn-outline btn-small"
-              aria-label="Close registration form"
-            >
-              Close
-            </button>
-          </div>
-          <p style="color: var(--color-gray-600); margin-top: var(--grid-2)">
-            {{ event.title }} — {{ event.date | dateFormat }} at {{ event.location or "Newark Public
-            Library" }}
-          </p>
-        </div>
-        <div style="padding: var(--grid-6)">
-          <form id="event-register-form" novalidate>
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: var(--grid-4);
-                margin-bottom: var(--grid-4);
-              "
-            >
-              <div>
-                <label
-                  for="reg-name"
-                  style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
-                  >Full name</label
-                >
-                <input
-                  id="reg-name"
-                  name="name"
-                  type="text"
-                  required
-                  placeholder="Jane Doe"
-                  class="input"
-                  style="width: 100%"
-                />
-              </div>
-              <div>
-                <label
-                  for="reg-email"
-                  style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
-                  >Email</label
-                >
-                <input
-                  id="reg-email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="jane@example.com"
-                  class="input"
-                  style="width: 100%"
-                />
-              </div>
-            </div>
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: var(--grid-4);
-                margin-bottom: var(--grid-4);
-              "
-            >
-              <div>
-                <label
-                  for="reg-attendees"
-                  style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
-                  >Attendees</label
-                >
-                <input
-                  id="reg-attendees"
-                  name="attendees"
-                  type="number"
-                  min="1"
-                  value="1"
-                  class="input"
-                  style="width: 100%"
-                />
-              </div>
-              <div>
-                <label
-                  for="reg-notes"
-                  style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
-                  >Notes (optional)</label
-                >
-                <input
-                  id="reg-notes"
-                  name="notes"
-                  type="text"
-                  placeholder="Accessibility needs, etc."
-                  class="input"
-                  style="width: 100%"
-                />
-              </div>
-            </div>
-            <div style="margin-bottom: var(--grid-4)">
-              <p style="font-weight: 600; margin-bottom: var(--grid-2)">Interests (optional)</p>
-              <div style="display: flex; gap: var(--grid-3); flex-wrap: wrap">
-                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
-                  ><input type="checkbox" name="interests" value="beginner" /> Beginner</label
-                >
-                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
-                  ><input type="checkbox" name="interests" value="family" /> Family</label
-                >
-                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
-                  ><input type="checkbox" name="interests" value="educators" /> Educators</label
-                >
-                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
-                  ><input type="checkbox" name="interests" value="youth" /> Youth</label
-                >
-                <label style="display: inline-flex; align-items: center; gap: var(--grid-2)"
-                  ><input type="checkbox" name="interests" value="volunteer" /> Volunteer</label
-                >
-              </div>
-            </div>
-            <div style="display: flex; gap: var(--grid-3); align-items: center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-              <button type="button" class="btn btn-outline" id="cancel-register">Cancel</button>
-              <span
-                id="register-status"
-                style="color: var(--color-gray-600); font-size: var(--text-sm)"
-              ></span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      // Registration modal behavior (open/close, focus trap, ESC, outside click)
-      document.addEventListener('DOMContentLoaded', function () {
-        const openBtn = document.getElementById('open-register-modal')
-        const modal = document.getElementById('register-modal')
-        const closeBtn = document.getElementById('close-register-modal')
-        const cancelBtn = document.getElementById('cancel-register')
-        const form = document.getElementById('event-register-form')
-        const statusEl = document.getElementById('register-status')
-
-        if (!modal) return
-
-        const focusableSelectors =
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        let previousActive = null
-
-        function openModal() {
-          previousActive = document.activeElement
-          modal.hidden = false
-          modal.style.display = 'grid'
-          document.body.style.overflow = 'hidden'
-          const focusables = modal.querySelectorAll(focusableSelectors)
-          if (focusables.length) focusables[0].focus()
-        }
-
-        function closeModal(e) {
-          if (e && typeof e.preventDefault === 'function') e.preventDefault()
-          modal.hidden = true
-          modal.style.display = 'none'
-          document.body.style.overflow = ''
-          statusEl && (statusEl.textContent = '')
-          previousActive && previousActive.focus()
-          // Clean up URL so live reload or refresh does not re-open
-          try {
-            const url = new URL(window.location.href)
-            url.searchParams.delete('register')
-            url.hash = ''
-            window.history.replaceState(
-              {},
-              document.title,
-              url.pathname + (url.search ? '?' + url.searchParams.toString() : '') + url.hash
-            )
-          } catch {}
-        }
-
-        if (openBtn) {
-          openBtn.addEventListener('click', openModal)
-        }
-        closeBtn && closeBtn.addEventListener('click', closeModal)
-        cancelBtn && cancelBtn.addEventListener('click', closeModal)
-
-        // ESC key to close
-        document.addEventListener('keydown', function (e) {
-          if (!modal.hidden && e.key === 'Escape') {
-            closeModal()
-          }
-        })
-        // Auto-open if URL indicates registration intent
-        const params = new URLSearchParams(window.location.search)
-        const shouldOpen =
-          params.has('register') || window.location.hash.toLowerCase() === '#register'
-        if (shouldOpen) {
-          openModal()
-        }
-
-        // Click outside panel to close
-        modal.addEventListener('click', function (e) {
-          const panel = modal.querySelector('.modal-panel')
-          if (panel && !panel.contains(e.target)) {
-            closeModal()
-          }
-        })
-
-        // Basic form submission placeholder (redirect to thanks page)
-        form &&
-          form.addEventListener('submit', function (e) {
-            e.preventDefault()
-            statusEl && (statusEl.textContent = 'Submitting...')
-            // Placeholder: simulate success and redirect. Replace with webhook POST as needed.
-            setTimeout(function () {
-              statusEl && (statusEl.textContent = '')
-              closeModal()
-              window.location.href = '/events/thanks/'
-            }, 600)
-          })
-
-        // Focus trap
-        modal.addEventListener('keydown', function (e) {
-          if (e.key !== 'Tab') return
-          const focusables = Array.from(modal.querySelectorAll(focusableSelectors)).filter(
-            el => !el.hasAttribute('disabled')
-          )
-          if (focusables.length === 0) return
-          const first = focusables[0]
-          const last = focusables[focusables.length - 1]
-          if (e.shiftKey) {
-            if (document.activeElement === first) {
-              e.preventDefault()
-              last.focus()
-            }
-          } else {
-            if (document.activeElement === last) {
-              e.preventDefault()
-              first.focus()
-            }
-          }
-        })
-      })
-    </script>
   </div>
 </section>
+
+{# Registration Modal: accessible dialog with focus trap and webhook submit #}
+<div
+  id="register-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="register-modal-title"
+  hidden
+  style="
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    background: rgba(17, 24, 39, 0.5);
+    padding: var(--grid-6);
+  "
+>
+  <div class="modal-panel" style="width: min(720px, 100%); background: white; border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg); overflow: hidden;">
+    <div style="padding: var(--grid-6); border-bottom: 1px solid var(--color-gray-200)">
+      <div style="display: flex; align-items: center; gap: var(--grid-3)">
+        <h2 id="register-modal-title" style="font-size: var(--text-xl); font-weight: 600; margin: 0">Save your spot</h2>
+        <span style="margin-left: auto"></span>
+        <button type="button" id="close-register-modal" class="btn btn-outline btn-small" aria-label="Close registration form">Close</button>
+      </div>
+      <p style="color: var(--color-gray-600); margin-top: var(--grid-2)">{{ event.title }} — {{ event.date | dateFormat }} at {{ event.location or "Newark Public Library" }}</p>
+    </div>
+    <div style="padding: var(--grid-6)">
+      <form id="event-register-form" novalidate>
+        <style>
+          /* Minimal styled inputs and chips */
+          .form-grid { display: grid; grid-template-columns: 1fr; gap: var(--grid-4); }
+          @media (min-width: 768px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+          .form-section { margin-bottom: var(--grid-6); }
+          /* Prevent grid children from forcing horizontal overflow */
+          .form-grid > div { min-width: 0; }
+
+          .input {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            padding: 12px 14px;
+            font-size: var(--text-sm);
+            background: var(--color-white);
+            color: var(--color-gray-900);
+            transition: border-color var(--transition-base), box-shadow var(--transition-base);
+            outline: none;
+            box-sizing: border-box;
+            min-width: 0; /* allow shrink in grid/flex */
+            max-width: 100%;
+          }
+          .input::placeholder { color: var(--color-gray-500); }
+          .input:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px var(--color-primary-subtle);
+          }
+
+          .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--color-gray-300);
+            background: var(--color-gray-50);
+            color: var(--color-gray-800);
+            white-space: nowrap;
+            transition: border-color var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+          }
+          .chip input { margin: 0; }
+          .chip:focus-within { box-shadow: 0 0 0 3px var(--color-primary-subtle); border-color: var(--color-primary); }
+          .chip.active { background: var(--color-primary-subtle); border-color: var(--color-primary); color: var(--color-primary-dark); }
+
+          .h-scroll { display: flex; gap: 10px; overflow-x: auto; overflow-y: hidden; padding-bottom: 6px; max-width: 100%; min-width: 0; }
+          .h-scroll::-webkit-scrollbar { height: 8px; }
+          .h-scroll::-webkit-scrollbar-thumb { background: var(--color-gray-300); border-radius: 8px; }
+
+          .check-row { display: flex; gap: var(--grid-3); flex-wrap: wrap; align-items: center; }
+          .check-row label { display: inline-flex; align-items: center; gap: var(--grid-2); font-size: var(--text-sm); color: var(--color-gray-800); }
+        </style>
+        <div class="form-grid form-section">
+          <div>
+            <label for="reg-name" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Full name</label>
+            <input id="reg-name" name="name" type="text" required placeholder="Jane Doe" class="input" style="width: 100%" />
+          </div>
+          <div>
+            <label for="reg-email" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Email</label>
+            <input id="reg-email" name="email" type="email" required placeholder="jane@example.com" class="input" style="width: 100%" />
+          </div>
+        </div>
+        <div class="form-section" style="display: grid; grid-template-columns: 1fr; gap: var(--grid-4)">
+          <div>
+            <label for="reg-neighborhood" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Neighborhood</label>
+            <input id="reg-neighborhood" name="neighborhood" type="text" placeholder="e.g. Ironbound" class="input" style="width: 100%" />
+          </div>
+        </div>
+        <div class="form-section">
+          <p style="font-weight: 600; margin-bottom: var(--grid-2)">Include events</p>
+          <div class="h-scroll" id="events-selector">
+            {% for e in allEvents %}
+              {% set eTitle = e.title %}
+              {% set isCurrent = e.slug == event.slug %}
+              <label class="chip{% if isCurrent %} active{% endif %}">
+                <input type="checkbox" name="eventsSel" value="{{ eTitle | replace("'", "") }}" {% if isCurrent %}checked{% endif %} onchange="this.parentElement.classList.toggle('active', this.checked)" />
+                {{ eTitle }}
+              </label>
+            {% endfor %}
+          </div>
+          <p style="font-size: var(--text-xs); color: var(--color-gray-600); margin-top: 6px">The current event is preselected. Add or remove others as you like.</p>
+        </div>
+        
+        <div class="form-section">
+          <p style="font-weight: 600; margin-bottom: var(--grid-2)">Interests (optional)</p>
+          <div class="check-row">
+            <label><input type="checkbox" name="interests" value="beginner" /> Beginner</label>
+            <label><input type="checkbox" name="interests" value="family" /> Family</label>
+            <label><input type="checkbox" name="interests" value="educators" /> Educators</label>
+            <label><input type="checkbox" name="interests" value="youth" /> Youth</label>
+            <label><input type="checkbox" name="interests" value="volunteer" /> Volunteer</label>
+          </div>
+        </div>
+        <div style="display: flex; gap: var(--grid-3); align-items: center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-outline" id="cancel-register">Cancel</button>
+          <span id="register-status" style="color: var(--color-gray-600); font-size: var(--text-sm)"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const openBtn = document.getElementById('open-register-modal')
+    const modal = document.getElementById('register-modal')
+    const closeBtn = document.getElementById('close-register-modal')
+    const cancelBtn = document.getElementById('cancel-register')
+    const form = document.getElementById('event-register-form')
+    const statusEl = document.getElementById('register-status')
+
+    if (!modal) return
+
+    const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    let previousActive = null
+
+    function openModal () {
+      previousActive = document.activeElement
+      modal.hidden = false
+      modal.style.display = 'grid'
+      modal.style.pointerEvents = 'auto'
+      document.body.style.overflow = 'hidden'
+      const focusables = modal.querySelectorAll(focusableSelectors)
+      if (focusables.length) focusables[0].focus()
+    }
+
+    function closeModal (e) {
+      if (e && typeof e.preventDefault === 'function') e.preventDefault()
+      modal.hidden = true
+      modal.style.display = 'none'
+      modal.style.pointerEvents = 'none'
+      document.body.style.overflow = ''
+      statusEl && (statusEl.textContent = '')
+      previousActive && previousActive.focus()
+      // Mark dismissed to prevent auto-open on live-reload/refresh
+      try { sessionStorage.setItem('registerDismissed', '1') } catch {}
+      try {
+        const url = new URL(window.location.href)
+        url.searchParams.delete('register')
+        url.hash = ''
+        const newSearch = url.searchParams.toString()
+        const newUrl = url.pathname + (newSearch ? '?' + newSearch : '')
+        window.history.replaceState({}, document.title, newUrl)
+      } catch {}
+    }
+
+    if (openBtn) {
+      openBtn.addEventListener('click', openModal)
+    }
+    closeBtn && closeBtn.addEventListener('click', closeModal)
+    cancelBtn && cancelBtn.addEventListener('click', closeModal)
+
+    document.addEventListener('keydown', function (e) {
+      if (!modal.hidden && e.key === 'Escape') {
+        closeModal(e)
+      }
+    })
+
+    modal.addEventListener('click', function (e) {
+      const panel = modal.querySelector('.modal-panel')
+      if (panel && !panel.contains(e.target)) {
+        closeModal(e)
+      }
+    })
+
+    // Submit to Make webhook with properties expected by your scenario
+    form && form.addEventListener('submit', async function (e) {
+      e.preventDefault()
+      statusEl && (statusEl.textContent = 'Submitting...')
+      const name = document.getElementById('reg-name').value.trim()
+      const email = document.getElementById('reg-email').value.trim()
+      // Collect selected events from the horizontal selector
+      const selectedEvents = Array.from(document.querySelectorAll('input[name="eventsSel"]:checked')).map(el => el.value)
+      const neighborhood = document.getElementById('reg-neighborhood').value.trim()
+      
+      const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(el => el.value)
+      // Ensure current event is included even if user deselects accidentally
+      const currentEventTitle = '{{ event.title | replace("'", "") }}'
+      const eventsList = Array.from(new Set([currentEventTitle, ...selectedEvents]))
+
+      // Split full name to firstname/lastname
+      const parts = name.split(' ').filter(Boolean)
+      const firstname = parts[0] || ''
+      const lastname = parts.length > 1 ? parts.slice(1).join(' ') : ''
+
+      const payload = {
+        email,
+        name,
+        firstname,
+        lastname,
+        neighborhood,
+        interests,
+        events: eventsList,
+        member_type: 'Community Member',
+        send_confirmation: true
+      }
+
+      try {
+        const webhookUrl = '{{ site.webhookUrl }}'
+        if (webhookUrl) {
+          const res = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+          if (!res.ok) throw new Error('Webhook error ' + res.status)
+        }
+        statusEl && (statusEl.textContent = '')
+        closeModal(e)
+        window.location.href = '/events/thanks/'
+      } catch (err) {
+        statusEl && (statusEl.textContent = 'Something went wrong. Please try again.')
+      }
+    })
+
+    // Focus trap
+    modal.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return
+      const focusables = Array.from(modal.querySelectorAll(focusableSelectors)).filter(el => !el.hasAttribute('disabled'))
+      if (focusables.length === 0) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
+    })
+
+    // Auto-open based on URL
+    const dismissed = (() => { try { return sessionStorage.getItem('registerDismissed') === '1' } catch { return false } })()
+    const wantsOpen = window.location.search === '?register=1'
+    const hasIntent = (() => { try { return sessionStorage.getItem('registerIntent') === '1' } catch { return false } })()
+    if (wantsOpen && hasIntent && !dismissed) {
+      openModal()
+      try { sessionStorage.removeItem('registerIntent') } catch {}
+    }
+  })
+</script>
 
 <section style="padding: var(--grid-16) 0; background: var(--color-white)">
   <div class="container">
