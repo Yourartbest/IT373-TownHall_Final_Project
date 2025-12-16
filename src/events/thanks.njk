@@ -182,11 +182,11 @@ description: 'Thank you for registering for Newark AI Town Hall events.'
               style="font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700)"
               >Explore our plain-language
               <a
-                href="/resources/"
+                href="{{ '/blog/' | url }}"
                 style="color: var(--color-accent); font-weight: 500; text-decoration: none"
                 onmouseover="this.style.textDecoration = 'underline'"
                 onmouseout="this.style.textDecoration = 'none'"
-                >resources</a
+                >blog</a
               ></span
             >
           </li>
@@ -194,8 +194,8 @@ description: 'Thank you for registering for Newark AI Town Hall events.'
       </div>
 
       <div style="display: flex; gap: var(--grid-4); justify-content: center; flex-wrap: wrap">
-        <a href="/events/" class="btn btn-outline btn-large">Back to events</a>
-        <a href="/" class="btn btn-primary btn-large">Return home</a>
+        <a href="{{ '/events/' | url }}" class="btn btn-outline btn-large">Back to events</a>
+        <a href="{{ '/' | url }}" class="btn btn-primary btn-large">Return home</a>
       </div>
     </div>
   </div>
