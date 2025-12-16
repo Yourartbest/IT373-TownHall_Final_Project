@@ -54,7 +54,9 @@ class MobileMenu {
     this.boundDocumentClick =
       this.boundDocumentClick ||
       (e => {
-        if (!this.isOpen) return
+        if (!this.isOpen) {
+          return
+        }
         const content = this.menu.querySelector('.mobile-menu-content')
         if (content && !content.contains(e.target)) {
           this.close()
