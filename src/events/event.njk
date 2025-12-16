@@ -256,24 +256,60 @@ eleventyComputed:
     padding: var(--grid-6);
   "
 >
-  <div class="modal-panel" style="width: min(720px, 100%); background: white; border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg); overflow: hidden;">
+  <div
+    class="modal-panel"
+    style="
+      width: min(720px, 100%);
+      background: white;
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    "
+  >
     <div style="padding: var(--grid-6); border-bottom: 1px solid var(--color-gray-200)">
       <div style="display: flex; align-items: center; gap: var(--grid-3)">
-        <h2 id="register-modal-title" style="font-size: var(--text-xl); font-weight: 600; margin: 0">Save your spot</h2>
+        <h2
+          id="register-modal-title"
+          style="font-size: var(--text-xl); font-weight: 600; margin: 0"
+        >
+          Save your spot
+        </h2>
         <span style="margin-left: auto"></span>
-        <button type="button" id="close-register-modal" class="btn btn-outline btn-small" aria-label="Close registration form">Close</button>
+        <button
+          type="button"
+          id="close-register-modal"
+          class="btn btn-outline btn-small"
+          aria-label="Close registration form"
+        >
+          Close
+        </button>
       </div>
-      <p style="color: var(--color-gray-600); margin-top: var(--grid-2)">{{ event.title }} — {{ event.date | dateFormat }} at {{ event.location or "Newark Public Library" }}</p>
+      <p style="color: var(--color-gray-600); margin-top: var(--grid-2)">
+        {{ event.title }} — {{ event.date | dateFormat }} at {{ event.location or "Newark Public
+        Library" }}
+      </p>
     </div>
     <div style="padding: var(--grid-6)">
       <form id="event-register-form" novalidate>
         <style>
           /* Minimal styled inputs and chips */
-          .form-grid { display: grid; grid-template-columns: 1fr; gap: var(--grid-4); }
-          @media (min-width: 768px) { .form-grid { grid-template-columns: 1fr 1fr; } }
-          .form-section { margin-bottom: var(--grid-6); }
+          .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--grid-4);
+          }
+          @media (min-width: 768px) {
+            .form-grid {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+          .form-section {
+            margin-bottom: var(--grid-6);
+          }
           /* Prevent grid children from forcing horizontal overflow */
-          .form-grid > div { min-width: 0; }
+          .form-grid > div {
+            min-width: 0;
+          }
 
           .input {
             width: 100%;
@@ -284,13 +320,17 @@ eleventyComputed:
             font-size: var(--text-sm);
             background: var(--color-white);
             color: var(--color-gray-900);
-            transition: border-color var(--transition-base), box-shadow var(--transition-base);
+            transition:
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
             outline: none;
             box-sizing: border-box;
             min-width: 0; /* allow shrink in grid/flex */
             max-width: 100%;
           }
-          .input::placeholder { color: var(--color-gray-500); }
+          .input::placeholder {
+            color: var(--color-gray-500);
+          }
           .input:focus {
             border-color: var(--color-primary);
             box-shadow: 0 0 0 3px var(--color-primary-subtle);
@@ -306,49 +346,134 @@ eleventyComputed:
             background: var(--color-gray-50);
             color: var(--color-gray-800);
             white-space: nowrap;
-            transition: border-color var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+            transition:
+              border-color var(--transition-base),
+              box-shadow var(--transition-base),
+              background var(--transition-base);
           }
-          .chip input { margin: 0; }
-          .chip:focus-within { box-shadow: 0 0 0 3px var(--color-primary-subtle); border-color: var(--color-primary); }
-          .chip.active { background: var(--color-primary-subtle); border-color: var(--color-primary); color: var(--color-primary-dark); }
+          .chip input {
+            margin: 0;
+          }
+          .chip:focus-within {
+            box-shadow: 0 0 0 3px var(--color-primary-subtle);
+            border-color: var(--color-primary);
+          }
+          .chip.active {
+            background: var(--color-primary-subtle);
+            border-color: var(--color-primary);
+            color: var(--color-primary-dark);
+          }
 
-          .h-scroll { display: flex; gap: 10px; overflow-x: auto; overflow-y: hidden; padding-bottom: 6px; max-width: 100%; min-width: 0; }
-          .h-scroll::-webkit-scrollbar { height: 8px; }
-          .h-scroll::-webkit-scrollbar-thumb { background: var(--color-gray-300); border-radius: 8px; }
+          .h-scroll {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 6px;
+            max-width: 100%;
+            min-width: 0;
+          }
+          .h-scroll::-webkit-scrollbar {
+            height: 8px;
+          }
+          .h-scroll::-webkit-scrollbar-thumb {
+            background: var(--color-gray-300);
+            border-radius: 8px;
+          }
 
-          .check-row { display: flex; gap: var(--grid-3); flex-wrap: wrap; align-items: center; }
-          .check-row label { display: inline-flex; align-items: center; gap: var(--grid-2); font-size: var(--text-sm); color: var(--color-gray-800); }
+          .check-row {
+            display: flex;
+            gap: var(--grid-3);
+            flex-wrap: wrap;
+            align-items: center;
+          }
+          .check-row label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--grid-2);
+            font-size: var(--text-sm);
+            color: var(--color-gray-800);
+          }
         </style>
         <div class="form-grid form-section">
           <div>
-            <label for="reg-name" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Full name</label>
-            <input id="reg-name" name="name" type="text" required placeholder="Jane Doe" class="input" style="width: 100%" />
+            <label
+              for="reg-name"
+              style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+              >Full name</label
+            >
+            <input
+              id="reg-name"
+              name="name"
+              type="text"
+              required
+              placeholder="Jane Doe"
+              class="input"
+              style="width: 100%"
+            />
           </div>
           <div>
-            <label for="reg-email" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Email</label>
-            <input id="reg-email" name="email" type="email" required placeholder="jane@example.com" class="input" style="width: 100%" />
+            <label
+              for="reg-email"
+              style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+              >Email</label
+            >
+            <input
+              id="reg-email"
+              name="email"
+              type="email"
+              required
+              placeholder="jane@example.com"
+              class="input"
+              style="width: 100%"
+            />
           </div>
         </div>
-        <div class="form-section" style="display: grid; grid-template-columns: 1fr; gap: var(--grid-4)">
+        <div
+          class="form-section"
+          style="display: grid; grid-template-columns: 1fr; gap: var(--grid-4)"
+        >
           <div>
-            <label for="reg-neighborhood" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Neighborhood</label>
-            <input id="reg-neighborhood" name="neighborhood" type="text" placeholder="e.g. Ironbound" class="input" style="width: 100%" />
+            <label
+              for="reg-neighborhood"
+              style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+              >Neighborhood</label
+            >
+            <input
+              id="reg-neighborhood"
+              name="neighborhood"
+              type="text"
+              placeholder="e.g. Ironbound"
+              class="input"
+              style="width: 100%"
+            />
           </div>
         </div>
         <div class="form-section">
           <p style="font-weight: 600; margin-bottom: var(--grid-2)">Include events</p>
           <div class="h-scroll" id="events-selector">
-            {% for e in allEvents %}
-              {% set eTitle = e.title %}
-              {% set eVal = eTitle | replace("'", '') %}
-              {% set isCurrent = e.slug == event.slug %}
-              <label class="chip{% if isCurrent %} active{% endif %}">
-                <input type="checkbox" name="eventsSel" value="{{ eVal }}" {% if isCurrent %}checked{% endif %} onchange="this.parentElement.classList.toggle('active', this.checked)" />
-                {{ eTitle }}
-              </label>
+            {% for e in allEvents %} {% set eTitle = e.title %} {% set eVal = eTitle | replace("'",
+            '') %} {% set isCurrent = e.slug == event.slug %}
+            <label class="chip{% if isCurrent %} active{% endif %}">
+              <input
+                type="checkbox"
+                name="eventsSel"
+                value="{{ eVal }}"
+                {%
+                if
+                isCurrent
+                %}checked{%
+                endif
+                %}
+                onchange="this.parentElement.classList.toggle('active', this.checked)"
+              />
+              {{ eTitle }}
+            </label>
             {% endfor %}
           </div>
-          <p style="font-size: var(--text-xs); color: var(--color-gray-600); margin-top: 6px">The current event is preselected. Add or remove others as you like.</p>
+          <p style="font-size: var(--text-xs); color: var(--color-gray-600); margin-top: 6px">
+            The current event is preselected. Add or remove others as you like.
+          </p>
         </div>
         <div class="form-section">
           <p style="font-weight: 600; margin-bottom: var(--grid-2)">Interests (optional)</p>
@@ -363,7 +488,10 @@ eleventyComputed:
         <div style="display: flex; gap: var(--grid-3); align-items: center">
           <button type="submit" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-outline" id="cancel-register">Cancel</button>
-          <span id="register-status" style="color: var(--color-gray-600); font-size: var(--text-sm)"></span>
+          <span
+            id="register-status"
+            style="color: var(--color-gray-600); font-size: var(--text-sm)"
+          ></span>
         </div>
       </form>
     </div>
