@@ -39,7 +39,8 @@ export default function(eleventyConfig) {
     // Use a path prefix for GitHub Pages project sites so absolute URLs work
     // Example: https://yourusername.github.io/IT373-TownHall_Final_Project/
     // This ensures `{{ '/css/styles.css' | url }}` becomes `/IT373-TownHall_Final_Project/css/styles.css`
-    pathPrefix: "/IT373-TownHall_Final_Project",
+    // IMPORTANT: Comment out pathPrefix for LOCAL DEVELOPMENT, uncomment for GitHub Pages deployment
+    // pathPrefix: "/IT373-TownHall_Final_Project",
     dir: {
       input: 'src',
       output: '_site',
