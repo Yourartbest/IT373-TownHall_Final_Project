@@ -35,6 +35,9 @@
     if (window.gaLoaded) return
     window.gaLoaded = true
 
+    const params = new URLSearchParams(window.location.search)
+    const debugMode = params.get('ga_debug') === '1'
+
     // Load gtag.js script
     const script = document.createElement('script')
     script.async = true
@@ -50,12 +53,31 @@
     gtag('js', new Date())
     gtag('config', GA_MEASUREMENT_ID, {
       anonymize_ip: true,
-      cookie_flags: 'SameSite=None;Secure'
+      cookie_flags: 'SameSite=None;Secure',
+      ...(debugMode ? { debug_mode: true } : {})
     })
   }
 
   // Create and show the consent banner
   function showConsentBanner() {
+    const pathPrefix = (function () {
+      const cssLink = document.querySelector('link[rel="stylesheet"][href]')
+      if (cssLink) {
+        try {
+          const hrefPath = new URL(cssLink.getAttribute('href'), window.location.origin).pathname
+          const cssIndex = hrefPath.indexOf('/css/')
+          if (cssIndex > 0) return hrefPath.slice(0, cssIndex)
+        } catch (e) {
+          // ignore
+        }
+      }
+
+      const parts = window.location.pathname.split('/').filter(Boolean)
+      if (parts.length > 0) return `/${parts[0]}`
+      return ''
+    })()
+    const privacyUrl = `${pathPrefix}/privacy/`
+
     const banner = document.createElement('div')
     banner.id = 'cookie-consent-banner'
     banner.setAttribute('role', 'dialog')
@@ -68,7 +90,7 @@
           <p id="cookie-consent-description" class="cookie-consent-text">
             We use cookies to analyze site traffic and improve your experience. 
             Analytics cookies help us understand how visitors use our site.
-            <a href="/privacy/" class="cookie-consent-link">Learn more in our Privacy Policy</a>
+            <a href="${privacyUrl}" class="cookie-consent-link">Learn more in our Privacy Policy</a>
           </p>
         </div>
         <div class="cookie-consent-actions">
