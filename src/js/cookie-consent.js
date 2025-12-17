@@ -32,7 +32,9 @@
 
   // Load Google Analytics
   function loadGoogleAnalytics() {
-    if (window.gaLoaded) return
+    if (window.gaLoaded) {
+      return
+    }
     window.gaLoaded = true
 
     // Load gtag.js script

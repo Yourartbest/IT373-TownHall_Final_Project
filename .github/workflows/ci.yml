@@ -29,15 +29,13 @@ jobs:
       
       - name: Lint JavaScript
         run: npm run lint:js
-        continue-on-error: true
       
       - name: Lint CSS
         run: npm run lint:css
-        continue-on-error: true
       
       - name: Lint Markdown
         run: npm run lint:md
-        continue-on-error: true
+        continue-on-error: true  # Reference docs may have warnings
 
   build:
     name: Build Site
