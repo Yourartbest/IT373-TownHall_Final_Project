@@ -2,6 +2,8 @@
 
 Making AI education accessible, plain-language, and community-centered for Newark residents.
 
+Live site: https://yourartbest.github.io/IT373-TownHall_Final_Project/
+
 ## 🏗️ Project Structure
 
 ```
@@ -22,8 +24,8 @@ IT373-TownHall_Final_Project/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js v22.19.0+
-- npm v11.6.2+
+- Node.js v20+
+- npm
 
 ### Installation
 
@@ -43,7 +45,7 @@ IT373-TownHall_Final_Project/
    ```bash
    npm run dev
    ```
-   Opens at `http://localhost:8080`
+   Opens at `http://localhost:8080/IT373-TownHall_Final_Project/`
 
 ## 🎨 Design System
 
@@ -61,6 +63,9 @@ IT373-TownHall_Final_Project/
 - **JavaScript:** Vanilla JS (mobile menu, accessibility)
 - **Date Handling:** Luxon
 - **Content Queries:** GROQ (Sanity Query Language)
+- **Automation:** Make.com (event registration webhook)
+- **Analytics:** Google Analytics 4 (loaded only after cookie consent)
+- **QA/CI:** Playwright, Lighthouse CI, GitHub Actions
 
 ## 📝 Content Types
 
@@ -94,8 +99,16 @@ IT373-TownHall_Final_Project/
 - Tailwind CSS with PurgeCSS (99% size reduction)
 - Lazy loading images
 - CDN-optimized assets via Sanity
-- Minimal JavaScript (mobile menu only)
+- Minimal JavaScript (mobile menu, cookie consent, event registration modal)
 - Static site generation (fast page loads)
+
+## 🧾 Event Registration + Automation
+
+Event registration submits a JSON payload to a Make.com webhook, which can then trigger automations such as confirmation emails, Discord notifications, and CRM entry.
+
+## 🍪 Cookie Consent + Google Analytics
+
+Google Analytics 4 is blocked by default and only loaded after a visitor opts into analytics in the cookie banner.
 
 ## 🎯 User Personas
 
@@ -109,6 +122,9 @@ IT373-TownHall_Final_Project/
 npm run dev      # Start Eleventy dev server
 npm run build    # Build static site
 npm start        # Alias for npm run dev
+npm run lint     # Run ESLint, Stylelint, and Markdownlint
+npm test         # Run Playwright tests
+npm run lighthouse # Run Lighthouse CI
 ```
 
 ## 🌐 CMS Setup
@@ -140,6 +156,8 @@ This is a student project for IT373. The project demonstrates:
 - WCAG 2.1 Level AA accessibility compliance
 - SEO best practices
 - Performance optimization techniques
+- Consent-based analytics implementation
+- Automation integration for event registrations
 
 ---
 
