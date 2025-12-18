@@ -15,7 +15,8 @@
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
-    "lighthouse": "lhci autorun"
+    "lighthouse": "lhci autorun",
+    "sync:hubspot": "node scripts/sync-events-to-hubspot.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
