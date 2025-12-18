@@ -260,13 +260,18 @@ eleventyComputed:
     class="modal-panel"
     style="
       width: min(720px, 100%);
+      max-height: 90vh;
       background: white;
       border-radius: var(--radius-2xl);
       box-shadow: var(--shadow-lg);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     "
   >
-    <div style="padding: var(--grid-6); border-bottom: 1px solid var(--color-gray-200)">
+    <div
+      style="padding: var(--grid-6); border-bottom: 1px solid var(--color-gray-200); flex-shrink: 0"
+    >
       <div style="display: flex; align-items: center; gap: var(--grid-3)">
         <h2
           id="register-modal-title"
@@ -289,7 +294,7 @@ eleventyComputed:
         Library" }}
       </p>
     </div>
-    <div style="padding: var(--grid-6)">
+    <div style="padding: var(--grid-6); overflow-y: auto; flex: 1">
       <form id="event-register-form" novalidate>
         <style>
           /* Minimal styled inputs and chips */
@@ -402,6 +407,15 @@ eleventyComputed:
               style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
               >Full name</label
             >
+            <p
+              style="
+                font-size: var(--text-xs);
+                color: var(--color-gray-500);
+                margin-bottom: var(--grid-1);
+              "
+            >
+              Required
+            </p>
             <input
               id="reg-name"
               name="name"
@@ -418,6 +432,15 @@ eleventyComputed:
               style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
               >Email</label
             >
+            <p
+              style="
+                font-size: var(--text-xs);
+                color: var(--color-gray-500);
+                margin-bottom: var(--grid-1);
+              "
+            >
+              Required
+            </p>
             <input
               id="reg-email"
               name="email"
@@ -439,6 +462,15 @@ eleventyComputed:
               style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
               >Neighborhood</label
             >
+            <p
+              style="
+                font-size: var(--text-xs);
+                color: var(--color-gray-500);
+                margin-bottom: var(--grid-1);
+              "
+            >
+              Required
+            </p>
             <input
               id="reg-neighborhood"
               name="neighborhood"
@@ -450,29 +482,41 @@ eleventyComputed:
           </div>
         </div>
         <div class="form-section">
-          <p style="font-weight: 600; margin-bottom: var(--grid-2)">Include events</p>
-          <div class="h-scroll" id="events-selector">
-            {% for e in allEvents %} {% set eTitle = e.title %} {% set eVal = eTitle | replace("'",
-            '') %} {% set isCurrent = e.slug == event.slug %}
-            <label class="chip{% if isCurrent %} active{% endif %}">
-              <input
-                type="checkbox"
-                name="eventsSel"
-                value="{{ eVal }}"
-                {%
-                if
-                isCurrent
-                %}checked{%
-                endif
-                %}
-                onchange="this.parentElement.classList.toggle('active', this.checked)"
-              />
-              {{ eTitle }}
-            </label>
-            {% endfor %}
+          <p style="font-weight: 600; margin-bottom: var(--grid-2)">Event Details</p>
+          <div
+            style="
+              background: var(--color-gray-50);
+              border: 1px solid var(--color-gray-200);
+              border-radius: var(--radius-lg);
+              padding: var(--grid-4);
+            "
+          >
+            <div
+              style="font-weight: 600; color: var(--color-gray-900); margin-bottom: var(--grid-1)"
+            >
+              {{ event.title }}
+            </div>
+            <div
+              style="
+                font-size: var(--text-sm);
+                color: var(--color-gray-600);
+                margin-bottom: var(--grid-2);
+              "
+            >
+              {{ event.date | dateFormat }} • {{ event.location }}
+            </div>
+            <div style="font-size: var(--text-sm); color: var(--color-gray-700); line-height: 1.6)">
+              {{ event.description }}
+            </div>
           </div>
-          <p style="font-size: var(--text-xs); color: var(--color-gray-600); margin-top: 6px">
-            The current event is preselected. Add or remove others as you like.
+          <p
+            style="
+              font-size: var(--text-xs);
+              color: var(--color-gray-600);
+              margin-top: var(--grid-2);
+            "
+          >
+            You're registering for this event.
           </p>
         </div>
         <div class="form-section">
@@ -567,13 +611,9 @@ eleventyComputed:
       statusEl && (statusEl.textContent = 'Submitting...')
       const name = document.getElementById('reg-name').value.trim()
       const email = document.getElementById('reg-email').value.trim()
-      // Collect selected events from the horizontal selector
-      const selectedEvents = Array.from(document.querySelectorAll('input[name="eventsSel"]:checked')).map(el => el.value)
       const neighborhood = document.getElementById('reg-neighborhood').value.trim()
       const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(el => el.value)
-      // Ensure current event is included even if user deselects accidentally
       const currentEventTitle = '{{ event.title | replace("'", "") }}'
-      const eventsList = Array.from(new Set([currentEventTitle, ...selectedEvents]))
 
       // Split full name to firstname/lastname
       const parts = name.split(' ').filter(Boolean)
@@ -587,7 +627,7 @@ eleventyComputed:
         lastname,
         neighborhood,
         interests,
-        events: eventsList,
+        events: [currentEventTitle],
         member_type: 'Community Member',
         send_confirmation: true
       }

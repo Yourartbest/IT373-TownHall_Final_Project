@@ -543,11 +543,13 @@ permalink: /volunteer/
       max-width: 600px;
       width: 100%;
       max-height: 90vh;
-      overflow-y: auto;
       box-shadow: var(--shadow-xl);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
     "
   >
-    <div style="padding: var(--grid-8)">
+    <div style="padding: var(--grid-8); overflow-y: auto; flex: 1">
       <div
         style="
           display: flex;
@@ -606,6 +608,15 @@ permalink: /volunteer/
               style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
               >Full name</label
             >
+            <p
+              style="
+                font-size: var(--text-xs);
+                color: var(--color-gray-500);
+                margin-bottom: var(--grid-1);
+              "
+            >
+              Required
+            </p>
             <input
               id="vol-name"
               name="name"
@@ -622,6 +633,15 @@ permalink: /volunteer/
               style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
               >Email</label
             >
+            <p
+              style="
+                font-size: var(--text-xs);
+                color: var(--color-gray-500);
+                margin-bottom: var(--grid-1);
+              "
+            >
+              Required
+            </p>
             <input
               id="vol-email"
               name="email"
@@ -649,6 +669,15 @@ permalink: /volunteer/
               style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
               >Neighborhood</label
             >
+            <p
+              style="
+                font-size: var(--text-xs);
+                color: var(--color-gray-500);
+                margin-bottom: var(--grid-1);
+              "
+            >
+              Required
+            </p>
             <input
               id="vol-neighborhood"
               name="neighborhood"
@@ -658,53 +687,6 @@ permalink: /volunteer/
               style="width: 100%"
             />
           </div>
-        </div>
-
-        <div class="form-section" style="margin-bottom: var(--grid-5)">
-          <p style="font-weight: 600; margin-bottom: var(--grid-2)">Events to volunteer for</p>
-          <div
-            class="h-scroll"
-            id="vol-events-selector"
-            style="
-              max-width: 100%;
-              min-width: 0;
-              overflow-x: auto;
-              padding-bottom: var(--grid-2);
-              display: flex;
-              gap: var(--grid-2);
-            "
-          >
-            {% for e in allEvents %} {% set eTitle = e.title %} {% set eVal = eTitle | replace("'",
-            '') %}
-            <label
-              class="chip"
-              style="
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                padding: 8px 16px;
-                border: 1px solid var(--color-gray-300);
-                border-radius: var(--radius-full);
-                cursor: pointer;
-                user-select: none;
-                white-space: nowrap;
-                transition: all 0.2s;
-              "
-            >
-              <input
-                type="checkbox"
-                name="eventsSel"
-                value="{{ eVal }}"
-                onchange="this.parentElement.classList.toggle('active', this.checked)"
-                style="display: none"
-              />
-              {{ eTitle }}
-            </label>
-            {% endfor %}
-          </div>
-          <p style="font-size: var(--text-xs); color: var(--color-gray-600); margin-top: 6px">
-            Select the events you'd like to help with.
-          </p>
         </div>
 
         <div class="form-section" style="margin-bottom: var(--grid-5)">
@@ -883,7 +865,6 @@ permalink: /volunteer/
       const lastname = nameParts.slice(1).join(' ') || ''
 
       const interests = formData.getAll('skills')
-      const events = formData.getAll('eventsSel')
 
       const payload = {
         email,
@@ -892,7 +873,7 @@ permalink: /volunteer/
         lastname,
         neighborhood,
         interests,
-        events,
+        events: [],
         member_type: 'Volunteer',
         send_confirmation: true
       }
