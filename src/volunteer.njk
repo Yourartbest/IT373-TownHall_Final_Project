@@ -622,6 +622,29 @@ permalink: /volunteer/
         </div>
 
         <div class="form-section" style="margin-bottom: var(--grid-5)">
+          <p style="font-weight: 600; margin-bottom: var(--grid-2)">Events to volunteer for</p>
+          <div class="h-scroll" id="vol-events-selector" style="max-width: 100%; min-width: 0; overflow-x: auto; padding-bottom: var(--grid-2); display: flex; gap: var(--grid-2)">
+            {% for e in allEvents %}
+            {% set eTitle = e.title %}
+            {% set eVal = eTitle | replace("'", '') %}
+            <label class="chip" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border: 1px solid var(--color-gray-300); border-radius: var(--radius-full); cursor: pointer; user-select: none; white-space: nowrap; transition: all 0.2s">
+              <input
+                type="checkbox"
+                name="eventsSel"
+                value="{{ eVal }}"
+                onchange="this.parentElement.classList.toggle('active', this.checked)"
+                style="display: none"
+              />
+              {{ eTitle }}
+            </label>
+            {% endfor %}
+          </div>
+          <p style="font-size: var(--text-xs); color: var(--color-gray-600); margin-top: 6px">
+            Select the events you'd like to help with.
+          </p>
+        </div>
+
+        <div class="form-section" style="margin-bottom: var(--grid-5)">
           <p style="font-weight: 600; margin-bottom: var(--grid-2)">Skills/Interests (optional)</p>
           <div class="check-row" style="display: flex; flex-wrap: wrap; gap: var(--grid-3)">
             <label style="display: flex; align-items: center; gap: 6px">
@@ -683,6 +706,37 @@ permalink: /volunteer/
 }
 .check-row input[type="checkbox"] {
   cursor: pointer;
+}
+.chip {
+  background: white;
+}
+.chip.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+.chip:focus-within {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.h-scroll {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+.h-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.h-scroll::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+  border-radius: 4px;
+}
+.h-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: 4px;
+}
+.h-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
 }
 @media (max-width: 640px) {
   .form-grid {
@@ -754,23 +808,28 @@ permalink: /volunteer/
 
     const formData = new FormData(form);
     const name = formData.get('name');
+    const email = formData.get('email');
+    const neighborhood = formData.get('neighborhood') || '';
     const nameParts = name.trim().split(/\s+/);
     const firstname = nameParts[0] || '';
     const lastname = nameParts.slice(1).join(' ') || '';
 
-    const skills = formData.getAll('skills');
+    const interests = formData.getAll('skills');
+    const events = formData.getAll('eventsSel');
 
     const payload = {
+      email,
+      name,
       firstname,
       lastname,
-      email: formData.get('email'),
-      neighborhood: formData.get('neighborhood') || '',
-      skills: skills,
-      volunteer_type: 'general',
+      neighborhood,
+      interests,
+      events,
+      member_type: 'Volunteer',
       send_confirmation: true
     };
 
-    const webhookUrl = 'https://hook.us2.make.com/h0xlws1ujlnkwbbsaezdacvjao4iprrx';
+    const webhookUrl = '{{ site.webhookUrl }}';
     
     try {
       const res = await fetch(webhookUrl, {
@@ -780,12 +839,10 @@ permalink: /volunteer/
       });
 
       if (res.ok) {
-        statusSpan.textContent = 'Success! Opening Discord...';
-        statusSpan.style.color = 'var(--color-accent)';
-        setTimeout(() => {
-          window.open('{{ site.discordInvite }}', '_blank');
-          closeModal();
-        }, 1000);
+        statusSpan.textContent = '';
+        window.open('{{ site.discordInvite }}', '_blank');
+        closeModal();
+        window.location.href = '{{ "/events/thanks/" | url }}';
       } else {
         throw new Error('Submission failed');
       }
