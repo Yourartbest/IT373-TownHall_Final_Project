@@ -589,19 +589,7 @@ eleventyComputed:
         interests,
         events: eventsList,
         member_type: 'Community Member',
-        send_confirmation: true,
-        // Enhanced event metadata for HubSpot
-        eventTitle: '{{ event.title | replace("'", "\\'") }}',
-        eventDate: '{{ event.date }}',
-        eventLocation: '{{ event.location | replace("'", "\\'") }}',
-        eventId: '{{ event._id }}',
-        {% if event.difficultyLevel %}
-        eventDifficulty: '{{ event.difficultyLevel }}',
-        {% endif %}
-        {% if event.maxAttendees %}
-        eventCapacity: {{ event.maxAttendees }},
-        {% endif %}
-        registrationTimestamp: new Date().toISOString()
+        send_confirmation: true
       }
 
       try {
