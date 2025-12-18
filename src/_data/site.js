@@ -13,5 +13,7 @@ export default {
   description:
     'Making AI education accessible, plain-language, and community-centered for Newark residents.',
   author: 'Newark AI Community',
+  webhookUrl: 'https://hook.us2.make.com/vn41m5vw3xu73monp6u3la4q9v7f91oy',
+  discordInvite: 'https://discord.com/invite/5t64muTcXf',
   sanity: client
 }
