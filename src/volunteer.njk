@@ -548,13 +548,24 @@ permalink: /volunteer/
     "
   >
     <div style="padding: var(--grid-8)">
-      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--grid-6)">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: start;
+          margin-bottom: var(--grid-6);
+        "
+      >
         <div>
-          <h2 id="volunteer-modal-title" style="font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--grid-2)">
+          <h2
+            id="volunteer-modal-title"
+            style="font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--grid-2)"
+          >
             Join Our Volunteer Team
           </h2>
           <p style="color: var(--color-gray-600); font-size: var(--text-sm)">
-            <strong>All volunteers must join our Discord</strong> to coordinate event planning and stay connected with the team.
+            <strong>All volunteers must join our Discord</strong> to coordinate event planning and
+            stay connected with the team.
           </p>
         </div>
         <button
@@ -580,9 +591,21 @@ permalink: /volunteer/
       </div>
 
       <form id="volunteer-form">
-        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-4); margin-bottom: var(--grid-5)">
+        <div
+          class="form-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--grid-4);
+            margin-bottom: var(--grid-5);
+          "
+        >
           <div>
-            <label for="vol-name" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Full name</label>
+            <label
+              for="vol-name"
+              style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+              >Full name</label
+            >
             <input
               id="vol-name"
               name="name"
@@ -594,7 +617,11 @@ permalink: /volunteer/
             />
           </div>
           <div>
-            <label for="vol-email" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Email</label>
+            <label
+              for="vol-email"
+              style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+              >Email</label
+            >
             <input
               id="vol-email"
               name="email"
@@ -607,9 +634,21 @@ permalink: /volunteer/
           </div>
         </div>
 
-        <div class="form-section" style="display: grid; grid-template-columns: 1fr; gap: var(--grid-4); margin-bottom: var(--grid-5)">
+        <div
+          class="form-section"
+          style="
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--grid-4);
+            margin-bottom: var(--grid-5);
+          "
+        >
           <div>
-            <label for="vol-neighborhood" style="font-weight: 600; display: block; margin-bottom: var(--grid-2)">Neighborhood</label>
+            <label
+              for="vol-neighborhood"
+              style="font-weight: 600; display: block; margin-bottom: var(--grid-2)"
+              >Neighborhood</label
+            >
             <input
               id="vol-neighborhood"
               name="neighborhood"
@@ -623,11 +662,35 @@ permalink: /volunteer/
 
         <div class="form-section" style="margin-bottom: var(--grid-5)">
           <p style="font-weight: 600; margin-bottom: var(--grid-2)">Events to volunteer for</p>
-          <div class="h-scroll" id="vol-events-selector" style="max-width: 100%; min-width: 0; overflow-x: auto; padding-bottom: var(--grid-2); display: flex; gap: var(--grid-2)">
-            {% for e in allEvents %}
-            {% set eTitle = e.title %}
-            {% set eVal = eTitle | replace("'", '') %}
-            <label class="chip" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border: 1px solid var(--color-gray-300); border-radius: var(--radius-full); cursor: pointer; user-select: none; white-space: nowrap; transition: all 0.2s">
+          <div
+            class="h-scroll"
+            id="vol-events-selector"
+            style="
+              max-width: 100%;
+              min-width: 0;
+              overflow-x: auto;
+              padding-bottom: var(--grid-2);
+              display: flex;
+              gap: var(--grid-2);
+            "
+          >
+            {% for e in allEvents %} {% set eTitle = e.title %} {% set eVal = eTitle | replace("'",
+            '') %}
+            <label
+              class="chip"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 8px 16px;
+                border: 1px solid var(--color-gray-300);
+                border-radius: var(--radius-full);
+                cursor: pointer;
+                user-select: none;
+                white-space: nowrap;
+                transition: all 0.2s;
+              "
+            >
               <input
                 type="checkbox"
                 name="eventsSel"
@@ -668,7 +731,10 @@ permalink: /volunteer/
         <div style="display: flex; gap: var(--grid-3); align-items: center">
           <button type="submit" class="btn btn-primary">Submit & Join Discord</button>
           <button type="button" class="btn btn-outline" id="cancel-volunteer">Cancel</button>
-          <span id="volunteer-status" style="color: var(--color-gray-600); font-size: var(--text-sm)"></span>
+          <span
+            id="volunteer-status"
+            style="color: var(--color-gray-600); font-size: var(--text-sm)"
+          ></span>
         </div>
       </form>
     </div>
@@ -676,180 +742,182 @@ permalink: /volunteer/
 </div>
 
 <style>
-#volunteer-modal[hidden] {
-  display: none !important;
-}
-.input {
-  padding: var(--grid-3);
-  border: 1px solid var(--color-gray-300);
-  border-radius: var(--radius-md);
-  font-size: var(--text-base);
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
-  box-sizing: border-box;
-  min-width: 0;
-  max-width: 100%;
-}
-.input:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-}
-.input::placeholder {
-  color: var(--color-gray-400);
-}
-.form-grid > div {
-  min-width: 0;
-}
-.check-row label {
-  cursor: pointer;
-  user-select: none;
-}
-.check-row input[type="checkbox"] {
-  cursor: pointer;
-}
-.chip {
-  background: white;
-}
-.chip.active {
-  background: var(--color-accent);
-  color: white;
-  border-color: var(--color-accent);
-}
-.chip:focus-within {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.h-scroll {
-  max-width: 100%;
-  min-width: 0;
-  overflow-x: auto;
-}
-.h-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-.h-scroll::-webkit-scrollbar-track {
-  background: var(--color-gray-100);
-  border-radius: 4px;
-}
-.h-scroll::-webkit-scrollbar-thumb {
-  background: var(--color-gray-300);
-  border-radius: 4px;
-}
-.h-scroll::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-400);
-}
-@media (max-width: 640px) {
-  .form-grid {
-    grid-template-columns: 1fr !important;
+  #volunteer-modal[hidden] {
+    display: none !important;
   }
-}
+  .input {
+    padding: var(--grid-3);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    transition:
+      border-color var(--transition-base),
+      box-shadow var(--transition-base);
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+  .input::placeholder {
+    color: var(--color-gray-400);
+  }
+  .form-grid > div {
+    min-width: 0;
+  }
+  .check-row label {
+    cursor: pointer;
+    user-select: none;
+  }
+  .check-row input[type='checkbox'] {
+    cursor: pointer;
+  }
+  .chip {
+    background: white;
+  }
+  .chip.active {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
+  .chip:focus-within {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  .h-scroll {
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+  }
+  .h-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+  .h-scroll::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+    border-radius: 4px;
+  }
+  .h-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-gray-300);
+    border-radius: 4px;
+  }
+  .h-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-400);
+  }
+  @media (max-width: 640px) {
+    .form-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
 </style>
 
 <script>
-(function() {
-  const modal = document.getElementById('volunteer-modal');
-  const form = document.getElementById('volunteer-form');
-  const statusSpan = document.getElementById('volunteer-status');
-  const signupBtn = document.getElementById('volunteer-signup-btn');
-  const ctaBtn = document.getElementById('volunteer-cta-btn');
-  const closeBtn = document.getElementById('close-volunteer-modal');
-  const cancelBtn = document.getElementById('cancel-volunteer');
+  ;(function () {
+    const modal = document.getElementById('volunteer-modal')
+    const form = document.getElementById('volunteer-form')
+    const statusSpan = document.getElementById('volunteer-status')
+    const signupBtn = document.getElementById('volunteer-signup-btn')
+    const ctaBtn = document.getElementById('volunteer-cta-btn')
+    const closeBtn = document.getElementById('close-volunteer-modal')
+    const cancelBtn = document.getElementById('cancel-volunteer')
 
-  function openModal() {
-    modal.hidden = false;
-    modal.style.display = 'flex';
-    modal.style.pointerEvents = 'auto';
-    document.body.style.overflow = 'hidden';
-    const firstInput = form.querySelector('input');
-    if (firstInput) firstInput.focus();
-  }
-
-  function closeModal() {
-    modal.hidden = true;
-    modal.style.display = 'none';
-    modal.style.pointerEvents = 'none';
-    document.body.style.overflow = '';
-    form.reset();
-    statusSpan.textContent = '';
-  }
-
-  if (signupBtn) signupBtn.addEventListener('click', openModal);
-  if (ctaBtn) ctaBtn.addEventListener('click', openModal);
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.hidden) closeModal();
-  });
-
-  form.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-      const focusable = form.querySelectorAll('input, button, select, textarea');
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
+    function openModal() {
+      modal.hidden = false
+      modal.style.display = 'flex'
+      modal.style.pointerEvents = 'auto'
+      document.body.style.overflow = 'hidden'
+      const firstInput = form.querySelector('input')
+      if (firstInput) firstInput.focus()
     }
-  });
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    statusSpan.textContent = 'Submitting...';
-    statusSpan.style.color = 'var(--color-gray-600)';
-
-    const formData = new FormData(form);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const neighborhood = formData.get('neighborhood') || '';
-    const nameParts = name.trim().split(/\s+/);
-    const firstname = nameParts[0] || '';
-    const lastname = nameParts.slice(1).join(' ') || '';
-
-    const interests = formData.getAll('skills');
-    const events = formData.getAll('eventsSel');
-
-    const payload = {
-      email,
-      name,
-      firstname,
-      lastname,
-      neighborhood,
-      interests,
-      events,
-      member_type: 'Volunteer',
-      send_confirmation: true
-    };
-
-    const webhookUrl = '{{ site.webhookUrl }}';
-    
-    try {
-      const res = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      if (res.ok) {
-        statusSpan.textContent = '';
-        window.open('{{ site.discordInvite }}', '_blank');
-        closeModal();
-        window.location.href = '{{ "/events/thanks/" | url }}';
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch (err) {
-      statusSpan.textContent = 'Error. Please try again.';
-      statusSpan.style.color = 'var(--color-error, #dc2626)';
+    function closeModal() {
+      modal.hidden = true
+      modal.style.display = 'none'
+      modal.style.pointerEvents = 'none'
+      document.body.style.overflow = ''
+      form.reset()
+      statusSpan.textContent = ''
     }
-  });
-})();
+
+    if (signupBtn) signupBtn.addEventListener('click', openModal)
+    if (ctaBtn) ctaBtn.addEventListener('click', openModal)
+    if (closeBtn) closeBtn.addEventListener('click', closeModal)
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal)
+
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal()
+    })
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !modal.hidden) closeModal()
+    })
+
+    form.addEventListener('keydown', e => {
+      if (e.key === 'Tab') {
+        const focusable = form.querySelectorAll('input, button, select, textarea')
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
+    })
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault()
+      statusSpan.textContent = 'Submitting...'
+      statusSpan.style.color = 'var(--color-gray-600)'
+
+      const formData = new FormData(form)
+      const name = formData.get('name')
+      const email = formData.get('email')
+      const neighborhood = formData.get('neighborhood') || ''
+      const nameParts = name.trim().split(/\s+/)
+      const firstname = nameParts[0] || ''
+      const lastname = nameParts.slice(1).join(' ') || ''
+
+      const interests = formData.getAll('skills')
+      const events = formData.getAll('eventsSel')
+
+      const payload = {
+        email,
+        name,
+        firstname,
+        lastname,
+        neighborhood,
+        interests,
+        events,
+        member_type: 'Volunteer',
+        send_confirmation: true
+      }
+
+      const webhookUrl = '{{ site.webhookUrl }}'
+
+      try {
+        const res = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+
+        if (res.ok) {
+          statusSpan.textContent = ''
+          window.open('{{ site.discordInvite }}', '_blank')
+          closeModal()
+          window.location.href = '{{ "/events/thanks/" | url }}'
+        } else {
+          throw new Error('Submission failed')
+        }
+      } catch (err) {
+        statusSpan.textContent = 'Error. Please try again.'
+        statusSpan.style.color = 'var(--color-error, #dc2626)'
+      }
+    })
+  })()
 </script>
