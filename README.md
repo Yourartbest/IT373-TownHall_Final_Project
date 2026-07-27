@@ -2,7 +2,7 @@
 
 Making AI education accessible, plain-language, and community-centered for Newark residents.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 IT373-TownHall_Final_Project/
@@ -18,8 +18,6 @@ IT373-TownHall_Final_Project/
 ├── reference/                    # Technical analysis documents
 └── _site/                        # Generated static site (git ignored)
 ```
-
-## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js v22.19.0+
@@ -45,7 +43,7 @@ IT373-TownHall_Final_Project/
    ```
    Opens at `http://localhost:8080`
 
-## 🎨 Design System
+##  Design System
 
 **Bauhaus Modernist Principles:**
 - **Colors:** Red (#E63946), Blue (#1D3557), Yellow (#F1C40F)
@@ -53,7 +51,7 @@ IT373-TownHall_Final_Project/
 - **Layout:** 8px grid system, 4px borders, 8px offset shadows
 - **Accessibility:** WCAG 2.1 Level AA, 56px touch targets
 
-## 📦 Tech Stack
+##  Tech Stack
 
 - **Static Site Generator:** Eleventy 3.1.2
 - **CMS:** Sanity Studio v4
@@ -62,7 +60,7 @@ IT373-TownHall_Final_Project/
 - **Date Handling:** Luxon
 - **Content Queries:** GROQ (Sanity Query Language)
 
-## 📝 Content Types
+##  Content Types
 
 1. **Event** - Town hall events with registration
 2. **Blog Post** - AI education articles
@@ -70,7 +68,7 @@ IT373-TownHall_Final_Project/
 4. **Volunteer Opportunity** - Ways to get involved
 5. **Author** - Content creators and organizers
 
-## ♿ Accessibility Features
+##  Accessibility Features
 
 - ARIA landmarks (`role="banner"`, `role="main"`, `role="contentinfo"`)
 - Skip link for keyboard users
@@ -80,7 +78,7 @@ IT373-TownHall_Final_Project/
 - `prefers-reduced-motion` support
 - Screen reader text (`.sr-only` class)
 
-## 🔍 SEO Features
+##  SEO Features
 
 - Complete meta tags (title, description, author)
 - Open Graph protocol for social sharing
@@ -89,7 +87,7 @@ IT373-TownHall_Final_Project/
 - Semantic HTML5 elements
 - Image optimization with Sanity CDN
 
-## 📊 Performance
+##  Performance
 
 - Tailwind CSS with PurgeCSS (99% size reduction)
 - Lazy loading images
@@ -97,13 +95,13 @@ IT373-TownHall_Final_Project/
 - Minimal JavaScript (mobile menu only)
 - Static site generation (fast page loads)
 
-## 🎯 User Personas
+##  User Personas
 
 1. **Angela (Parent, Low Tech)** - Needs plain language, visual examples
 2. **James (Educator, Medium Tech)** - Wants classroom-ready resources
 3. **Aisha (Student Volunteer, High Tech)** - Seeks leadership experience
 
-## 📄 Scripts
+##  Scripts
 
 ```bash
 npm run dev      # Start Eleventy dev server
@@ -111,7 +109,7 @@ npm run build    # Build static site
 npm start        # Alias for npm run dev
 ```
 
-## 🌐 CMS Setup
+##  CMS Setup
 
 **Sanity Studio** runs independently at `http://localhost:3333`
 
@@ -126,12 +124,12 @@ npm start        # Alias for npm run dev
 3. Create events, blog posts, resources, etc.
 4. Content automatically syncs to Eleventy via GROQ queries
 
-## 📚 Documentation
+##  Documentation
 
 See `/docs` folder for complete planning documentation.
 See `/reference` folder for technical analysis and reusable patterns.
 
-## 🤝 Contributing
+##  Contributing
 
 This is a student project for IT373. The project demonstrates:
 - Static site generation with Eleventy
@@ -143,4 +141,4 @@ This is a student project for IT373. The project demonstrates:
 
 ---
 
-**Built with ❤️ for the Newark community**
+**Built with love for the Newark community**
